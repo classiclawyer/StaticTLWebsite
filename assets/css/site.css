@@ -272,3 +272,26 @@ html[lang="ko"] .story p,html[lang="ko"] .legal p,html[lang="ko"] .stone-guide p
 @media (max-width: 700px) {
   nav.open { left: 0; right: 0; width: 100%; }
 }
+
+/* Inquiry forms share one static-site submission service. */
+.form-honeypot{display:none}
+.cart-inquiry-form>*{min-width:0}
+.cart-inquiry-form .cart-item{grid-template-columns:132px minmax(0,1fr)}
+.cart-inquiry-form .cart-item h3{font-size:clamp(24px,2.4vw,31px);line-height:1.15;margin:0 0 8px}
+.cart-inquiry-form .cart-item p,.cart-inquiry-form .cart-item h3{overflow-wrap:anywhere}
+.cart-checkout textarea{display:block;width:100%;max-width:100%;min-width:0;min-height:110px;margin-bottom:16px;background:#fff}
+.cart-checkout .inquiry-disclaimer{margin:0 0 24px;line-height:1.65}
+.cart-checkout input,.cart-checkout textarea{min-width:0}
+.cart-checkout button[type="submit"]:disabled,.form-wrap button[type="submit"]:disabled{opacity:.65;cursor:wait}
+.alternate-contact{max-width:780px;margin:28px auto 0;text-align:center;line-height:1.65;overflow-wrap:anywhere}
+.alternate-contact a{color:#573663;text-underline-offset:4px}
+.success.error{border-color:#a44b56;background:#fff6f6;color:#7b2735}
+@media(max-width:800px){
+  .cart-inquiry-form{grid-template-columns:minmax(0,1fr)}
+  .cart-checkout{width:100%}
+}
+@media(max-width:500px){
+  .cart-inquiry-form .cart-item{grid-template-columns:95px minmax(0,1fr)}
+  .cart-inquiry-form .cart-item img{width:95px}
+  .cart-checkout{padding:22px 18px}
+}
