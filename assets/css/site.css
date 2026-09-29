@@ -258,3 +258,40 @@ html[lang="ko"] .story p,html[lang="ko"] .legal p,html[lang="ko"] .stone-guide p
 
 /* Keep supplied weights legible on every collection card. */
 .card-specs{display:block;margin:16px 7px;padding:10px 13px;background:#f7f3f8;border-top:1px solid #b69fbe;border-bottom:1px solid #d8c9dc;color:#352b40;font-size:13px;line-height:1.5}.card-spec-row{display:flex;justify-content:space-between;gap:14px;padding:5px 0}.card-spec-row+.card-spec-row{border-top:1px solid #e3d9e5}.card-spec-row span{color:#63556b}.card-spec-row strong{font-weight:600;color:#32263d;white-space:nowrap}.card-specs .card-spec-pending{margin:5px 0 0;font-size:12px;color:#6b6170}.catalog-details .spec-pending{margin:0 0 18px;font-size:13px;color:#665a70}
+
+/* Keep the full navigation from widening ordinary desktop viewports. */
+@media (max-width: 2000px) {
+  .top { position: relative; flex-wrap: nowrap; width: 100%; min-width: 0; }
+  .identity { min-width: 0; flex-shrink: 1; }
+  .top > .languages { display: flex; order: 2; margin-left: auto; }
+  .menu { display: block; order: 3; flex: none; margin-left: 5px; }
+  nav { display: none; order: 4; width: auto; padding: 12px 20px; }
+  nav.open { display: flex; position: absolute; top: 100%; right: 4%; z-index: 20; width: min(390px, 92vw); max-height: calc(100vh - 75px); overflow: auto; flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 0; background: var(--violet); border: 1px solid #8873a7; box-shadow: 0 15px 25px #21182b40; }
+  nav a { display: block; padding: 10px 9px; white-space: normal; line-height: 1.4; }
+}
+@media (max-width: 700px) {
+  nav.open { left: 0; right: 0; width: 100%; }
+}
+
+/* Inquiry forms share one static-site submission service. */
+.form-honeypot{display:none}
+.cart-inquiry-form>*{min-width:0}
+.cart-inquiry-form .cart-item{grid-template-columns:132px minmax(0,1fr)}
+.cart-inquiry-form .cart-item h3{font-size:clamp(24px,2.4vw,31px);line-height:1.15;margin:0 0 8px}
+.cart-inquiry-form .cart-item p,.cart-inquiry-form .cart-item h3{overflow-wrap:anywhere}
+.cart-checkout textarea{display:block;width:100%;max-width:100%;min-width:0;min-height:110px;margin-bottom:16px;background:#fff}
+.cart-checkout .inquiry-disclaimer{margin:0 0 24px;line-height:1.65}
+.cart-checkout input,.cart-checkout textarea{min-width:0}
+.cart-checkout button[type="submit"]:disabled,.form-wrap button[type="submit"]:disabled{opacity:.65;cursor:wait}
+.alternate-contact{max-width:780px;margin:28px auto 0;text-align:center;line-height:1.65;overflow-wrap:anywhere}
+.alternate-contact a{color:#573663;text-underline-offset:4px}
+.success.error{border-color:#a44b56;background:#fff6f6;color:#7b2735}
+@media(max-width:800px){
+  .cart-inquiry-form{grid-template-columns:minmax(0,1fr)}
+  .cart-checkout{width:100%}
+}
+@media(max-width:500px){
+  .cart-inquiry-form .cart-item{grid-template-columns:95px minmax(0,1fr)}
+  .cart-inquiry-form .cart-item img{width:95px}
+  .cart-checkout{padding:22px 18px}
+}
