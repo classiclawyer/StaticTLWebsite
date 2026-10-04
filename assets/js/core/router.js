@@ -1,0 +1,130 @@
+import { writeWishlist, readWishlist } from "../features/wishlist.js";
+import { decodeShare } from "../features/sharing.js";
+import { MAX_CART_ENTRIES, writeCart, readCart } from "../features/cart.js";
+import { copy, labels } from "../content/site.js";
+import { lang } from "./language.js";
+import { productRecord } from "../components/products.js";
+import { homePage } from "../pages/home.js";
+import { storyPage } from "../pages/story.js";
+import { collectionPage } from "../pages/collection.js";
+import { wishlistPage } from "../pages/wishlist.js";
+import { cartPage } from "../pages/cart.js";
+import { productDetail } from "../pages/product.js";
+import { stonePage } from "../pages/stones.js";
+import { bespokePage } from "../pages/bespoke.js";
+import { contactPage } from "../pages/contact.js";
+import { legalPage } from "../pages/legal.js";
+import { bindPageEvents } from "./events.js";
+
+const routes = ["home", "story", "collection", "bespoke", "stones", "contact", "wishlist", "cart"];
+function render() {
+  let [route, sharedQuery = ""] = (location.hash.slice(1) || "home").split("?");
+  const sharedParams = new URLSearchParams(sharedQuery);
+  if (
+    route === "wishlist" &&
+    sharedParams.has("items") &&
+    window.__importedShareLink !== location.hash
+  ) {
+    window.__importedShareLink = location.hash;
+    const imported = sharedParams
+      .get("items")
+      .split(",")
+      .map(Number)
+      .filter((n) => Number.isInteger(n) && n >= 1 && n <= 9);
+    writeWishlist([...new Set([...readWishlist(), ...imported])]);
+    window.history?.replaceState(null, "", "#wishlist");
+  }
+  if (
+    route === "cart" &&
+    sharedParams.has("items") &&
+    window.__importedShareLink !== location.hash
+  ) {
+    window.__importedShareLink = location.hash;
+    const tuples = decodeShare(sharedParams.get("items"));
+    if (Array.isArray(tuples)) {
+      const imported = tuples
+        .slice(0, MAX_CART_ENTRIES)
+        .filter(Array.isArray)
+        .map(([n, origin, color, gold, size, qty]) => ({ n, origin, color, gold, size, qty }));
+      const valid = imported.filter(
+        (x) =>
+          Number.isInteger(x.n) &&
+          x.n >= 1 &&
+          x.n <= 9 &&
+          ["natural", "lab-grown", "confirm"].includes(x.origin) &&
+          ["white", "pink", "yellow", "blue", "other"].includes(x.color) &&
+          ["white", "yellow", "rose", "pictured"].includes(x.gold) &&
+          Number.isInteger(x.qty) &&
+          x.qty > 0 &&
+          x.qty <= 10,
+      );
+      writeCart([...readCart(), ...valid].slice(0, MAX_CART_ENTRIES));
+      window.history?.replaceState(null, "", "#cart");
+    }
+  }
+  if (route === "privacy" || route === "terms") route = "legal";
+  if (route === "founders") route = "story";
+  let pieceNumber = /^piece-([1-9])$/.exec(route);
+  if (![...routes, "legal"].includes(route) && !pieceNumber) route = "home";
+  let t = copy[lang],
+    l = labels[lang];
+  document.documentElement.lang = lang;
+  document.title = `${pieceNumber ? productRecord(Number(pieceNumber[1])).name : l[route]} | Atelier Tamara de Launay`;
+  document.getElementById("nav").innerHTML = routes
+    .map(
+      (r) =>
+        `<a href="#${r}" class="${r === route ? "active" : ""}"
+          >${l[r]}${r === "cart" ? ` <span id="cart-count">${readCart().reduce((n, x) => n + x.qty, 0) || ""}</span>` : ""}</a
+        >`,
+    )
+    .join("");
+  let langs = Object.keys(copy)
+    .map(
+      (x) =>
+        `<button
+          class="lang ${lang === x ? "active" : ""}"
+          data-lang="${x}"
+          aria-label="${{ en: "English", fr: "Français", ko: "한국어" }[x]}"
+        >
+          ${x.toUpperCase()}
+        </button>`,
+    )
+    .join("");
+  document.getElementById("languages").innerHTML = langs;
+  document.getElementById("footlinks").innerHTML = `<a
+      href="https://www.instagram.com/atelier_tamara_de_launay/"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Instagram</a
+    ><a href="#stones">${l.stones}</a><a href="#legal">${l.legal}</a>
+    <div class="languages">${langs}</div>`;
+  document.getElementById("year").textContent = new Date().getFullYear();
+  let selectedInquiry = null;
+  try {
+    const candidate = JSON.parse(sessionStorage.getItem("atelier-inquiry") || "null");
+    if (
+      candidate &&
+      Number.isInteger(candidate.n) &&
+      candidate.n >= 1 &&
+      candidate.n <= 9 &&
+      Date.now() - candidate.time < 30 * 60 * 1000
+    )
+      selectedInquiry = candidate;
+  } catch (_) {}
+  let app = document.getElementById("app");
+  if (route === "home") app.innerHTML = homePage();
+  else if (route === "story") app.innerHTML = storyPage();
+  else if (route === "collection") app.innerHTML = collectionPage();
+  else if (route === "wishlist") app.innerHTML = wishlistPage();
+  else if (route === "cart") app.innerHTML = cartPage();
+  else if (pieceNumber) app.innerHTML = productDetail(productRecord(Number(pieceNumber[1])));
+  else if (route === "stones") app.innerHTML = stonePage();
+  else if (route === "bespoke") app.innerHTML = bespokePage();
+  else if (route === "contact") app.innerHTML = contactPage(selectedInquiry);
+  else app.innerHTML = legalPage();
+  bindPageEvents({ route, pieceNumber, sharedParams, render });
+  document.getElementById("nav").classList.remove("open");
+  document.getElementById("menu").setAttribute("aria-expanded", "false");
+}
+
+export { render };
