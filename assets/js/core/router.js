@@ -113,7 +113,7 @@ function render() {
       class="footer-instagram"
       aria-label="Instagram"
       title="Instagram"
-      href="https://www.instagram.com/atelier_tamara_de_launay/"
+      href="https://www.instagram.com/tamara_de_launay/"
       target="_blank"
       rel="noopener noreferrer"
       ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">

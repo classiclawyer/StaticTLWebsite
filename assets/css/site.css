@@ -4601,6 +4601,11 @@ html[lang="ko"] h3 {
 
 /* Compact footer */
 footer {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.7;
   border-top: 1px solid #8873a7;
   padding: 13.5px 4%;
 }
@@ -4642,6 +4647,9 @@ footer .links {
   outline-offset: 2px;
 }
 footer .fine {
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: normal;
   margin: 4px 0 0;
   padding: 0;
   border: 0;
