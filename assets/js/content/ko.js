@@ -1,16 +1,16 @@
 const labelsKO = {
   home: "홈",
-  story: "브랜드 스토리",
-  collection: "주문제작 파인 주얼리",
-  bespoke: "비스포크 하이 주얼리",
-  stones: "아뜰리에의 기준",
-  contact: "문의 및 상담 예약",
+  story: "브랜드 소개",
+  collection: "파인 주얼리",
+  bespoke: "하이 주얼리",
+  stones: "품질 철학",
+  contact: "프라이빗 컨설팅",
   privacy: "개인정보 처리방침",
   terms: "이용약관",
   discover: "파인 주얼리 컬렉션 살펴보기",
   begin: "1:1 맞춤제작 주얼리 문의",
   legal: "이용약관 및 개인정보 안내",
-  cart: "장바구니",
+  cart: "쇼핑백",
   wishlist: "위시리스트",
 };
 const copyKO = {

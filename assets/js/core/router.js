@@ -17,6 +17,7 @@ import { legalPage } from "../pages/legal.js";
 import { bindPageEvents } from "./events.js";
 
 const routes = ["home", "story", "collection", "bespoke", "stones", "contact", "wishlist", "cart"];
+const menuRoutes = ["story", "collection", "bespoke", "stones", "contact"];
 function render() {
   let [route, sharedQuery = ""] = (location.hash.slice(1) || "home").split("?");
   const sharedParams = new URLSearchParams(sharedQuery);
@@ -70,11 +71,11 @@ function render() {
     l = labels[lang];
   document.documentElement.lang = lang;
   document.title = `${pieceNumber ? productRecord(Number(pieceNumber[1])).name : l[route]} | Atelier Tamara de Launay`;
-  document.getElementById("nav").innerHTML = routes
+  document.getElementById("nav").innerHTML = menuRoutes
     .map(
       (r) =>
         `<a href="#${r}" class="${r === route ? "active" : ""}"
-          >${l[r]}${r === "cart" ? ` <span id="cart-count">${readCart().reduce((n, x) => n + x.qty, 0) || ""}</span>` : ""}</a
+          >${l[r]}</a
         >`,
     )
     .join("");
@@ -91,6 +92,23 @@ function render() {
     )
     .join("");
   document.getElementById("languages").innerHTML = langs;
+  const bagCount = readCart().reduce((count, item) => count + item.qty, 0);
+  document.getElementById("header-actions").innerHTML = `
+    <a class="header-icon" href="#wishlist" aria-label="${l.wishlist}" title="${l.wishlist}"${route === "wishlist" ? ' aria-current="page"' : ""}>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path d="M20.8 4.6a5.4 5.4 0 0 0-7.6 0L12 5.8l-1.2-1.2a5.4 5.4 0 0 0-7.6 7.6L12 21l8.8-8.8a5.4 5.4 0 0 0 0-7.6Z"/>
+      </svg>
+    </a>
+    <a class="header-icon" href="#cart" aria-label="${l.cart}" title="${l.cart}"${route === "cart" ? ' aria-current="page"' : ""}>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path d="M5 7h14l1 14H4L5 7Z"/>
+        <path d="M9 9V6a3 3 0 0 1 6 0v3"/>
+      </svg>
+      <span class="bag-count" id="cart-count" aria-live="polite" aria-atomic="true">${bagCount || ""}</span>
+    </a>`;
+  document.getElementById("menu").setAttribute("aria-label", lang === "ko" ? "메뉴 열기" : "Open menu");
+  document.getElementById("nav").setAttribute("aria-label", lang === "ko" ? "주 메뉴" : "Main navigation");
+
   document.getElementById("footlinks").innerHTML = `<a
       href="https://www.instagram.com/atelier_tamara_de_launay/"
       target="_blank"
