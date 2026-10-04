@@ -110,11 +110,18 @@ function render() {
   document.getElementById("nav").setAttribute("aria-label", lang === "ko" ? "주 메뉴" : "Main navigation");
 
   document.getElementById("footlinks").innerHTML = `<a
-      href="https://www.instagram.com/atelier_tamara_de_launay/"
+      class="footer-instagram"
+      aria-label="Instagram"
+      title="Instagram"
+      href="https://www.instagram.com/tamara_de_launay/"
       target="_blank"
       rel="noopener noreferrer"
-      >Instagram</a
-    ><a href="#stones">${l.stones}</a><a href="#legal">${l.legal}</a>
+      ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <rect x="3" y="3" width="18" height="18" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r=".75" fill="currentColor" stroke="none"/>
+      </svg></a
+    ><a href="#legal">${l.legal}</a>
     <div class="languages">${langs}</div>`;
   document.getElementById("year").textContent = new Date().getFullYear();
   let selectedInquiry = null;
