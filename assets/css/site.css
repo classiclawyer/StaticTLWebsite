@@ -4322,43 +4322,62 @@ html[lang="ko"] .bespoke-invitation {
   color: #665a70;
 }
 
-/* Desktop navigation */
-@media (max-width: 2000px) {
+/* Centered navigation */
+.top {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(162px, 1fr) auto minmax(162px, 1fr);
+  gap: 20px;
+  width: 100%;
+  min-width: 0;
+}
+.identity {
+  justify-self: start;
+}
+header nav {
+  order: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: auto;
+  padding: 0;
+  gap: clamp(12px, 1.5vw, 24px);
+}
+header nav a {
+  white-space: nowrap;
+}
+.header-tools {
+  justify-self: end;
+}
+header .menu {
+  display: none;
+}
+html[lang="ko"] header nav a {
+  font-size: 15px;
+}
+@media (max-width: 1100px) {
   .top {
-    position: relative;
-    flex-wrap: nowrap;
-    width: 100%;
-    min-width: 0;
-  }
-  .identity {
-    min-width: 0;
-    flex-shrink: 1;
-  }
-  .top > .languages {
     display: flex;
-    order: 2;
-    margin-left: auto;
+    flex-wrap: nowrap;
   }
-  .menu {
+  header .menu {
     display: block;
-    order: 3;
     flex: none;
-    margin-left: 5px;
   }
-  nav {
+  header nav {
     display: none;
     order: 4;
-    width: auto;
     padding: 12px 20px;
   }
-  nav.open {
+  header nav.open {
     display: flex;
     position: absolute;
     top: 100%;
     right: 4%;
     z-index: 20;
     width: min(390px, 92vw);
-    max-height: calc(100vh - 75px);
+    max-height: calc(100vh - 120px);
     overflow: auto;
     flex-direction: column;
     align-items: stretch;
@@ -4368,7 +4387,7 @@ html[lang="ko"] .bespoke-invitation {
     border: 1px solid #8873a7;
     box-shadow: 0 15px 25px #21182b40;
   }
-  nav a {
+  header nav a {
     display: block;
     padding: 10px 9px;
     white-space: normal;
@@ -4376,7 +4395,7 @@ html[lang="ko"] .bespoke-invitation {
   }
 }
 @media (max-width: 700px) {
-  nav.open {
+  header nav.open {
     left: 0;
     right: 0;
     width: 100%;
