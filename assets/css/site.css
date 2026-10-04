@@ -666,7 +666,7 @@ a:focus-visible {
   outline-offset: 3px;
 }
 footer {
-  background: var(--violet-dark);
+  background: var(--violet);
 }
 footer .fine {
   border-color: #79658d;
@@ -4601,6 +4601,7 @@ html[lang="ko"] h3 {
 
 /* Compact footer */
 footer {
+  border-top: 1px solid #8873a7;
   padding: 13.5px 4%;
 }
 .foot-inner {
