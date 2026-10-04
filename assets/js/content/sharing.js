@@ -1,0 +1,46 @@
+const shareText = {
+  en: {
+    title: "Share this",
+    native: "Share…",
+    copy: "Copy link",
+    email: "Email a hint",
+    whatsapp: "WhatsApp",
+    facebook: "Facebook",
+    messenger: "Messenger",
+    kakao: "KakaoTalk",
+    hint: "Send a hint to someone you love.",
+    copied: "Link copied.",
+    choose:
+      "Choose the app in your device’s share menu. If it is unavailable, the link is copied for you to paste.",
+    empty: "Your wishlist is waiting for its first piece.",
+    save: "Save a piece to start your wishlist.",
+    remove: "Remove",
+    view: "View piece",
+    wishlist: "Your wishlist",
+    shareCart: "Share your selection",
+    shareWish: "Share your wishlist",
+  },
+  ko: {
+    title: "공유하기",
+    native: "공유 메뉴",
+    copy: "링크 복사",
+    email: "이메일로 힌트 보내기",
+    whatsapp: "WhatsApp",
+    facebook: "Facebook",
+    messenger: "Messenger",
+    kakao: "카카오톡",
+    hint: "마음에 드는 주얼리를 소중한 사람에게 살짝 알려주세요.",
+    copied: "링크를 복사했습니다.",
+    choose:
+      "기기의 공유 메뉴에서 앱을 선택해 주세요. 사용할 수 없으면 링크가 복사되니 앱에 붙여넣어 보내세요.",
+    empty: "아직 위시리스트가 비어 있습니다.",
+    save: "마음에 드는 작품을 위시리스트에 담아보세요.",
+    remove: "삭제",
+    view: "작품 보기",
+    wishlist: "나의 위시리스트",
+    shareCart: "담은 작품 공유하기",
+    shareWish: "위시리스트 공유하기",
+  },
+};
+
+export { shareText };
