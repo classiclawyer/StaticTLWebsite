@@ -1298,7 +1298,7 @@ footer .mark {
   bottom: 14px;
   width: clamp(28px, 3vw, 44px);
   height: clamp(34px, 3.6vw, 53px);
-  background: url("../images/brand/brand-mark.png") center/contain no-repeat;
+  background: url("../images/brand/variants/tl-monogram/gold-transparent.svg") center/contain no-repeat;
   opacity: 0.82;
   filter: drop-shadow(0 1px 3px rgba(24, 14, 33, 0.65));
   z-index: 3;
@@ -1343,11 +1343,11 @@ footer .mark {
   height: 52px;
   opacity: 1;
   filter: none;
-  background-image: url("../images/brand/brand-mark-purple.png");
+  background-image: url("../images/brand/variants/tl-monogram/purple-transparent.svg");
 }
 .bespoke-editorials .wide-portrait::after,
 .bespoke-editorials .tall-portrait::after {
-  background-image: url("../images/brand/brand-mark.png");
+  background-image: url("../images/brand/variants/tl-monogram/gold-transparent.svg");
 }
 .hero-image::before {
   width: 48px;
@@ -2091,7 +2091,7 @@ footer .languages .lang:not(.active) {
 }
 
 .hero-image::before {
-  background-image: url("../images/brand/brand-mark.png");
+  background-image: url("../images/brand/variants/tl-monogram/gold-transparent.svg");
   filter: drop-shadow(0 1px 3px rgba(24, 14, 33, 0.7));
   opacity: 1;
 }
@@ -2410,7 +2410,7 @@ header #cart-count {
 }
 /* Image marks */
 .hero-image::before {
-  background-image: url("../images/brand/brand-mark-purple.png");
+  background-image: url("../images/brand/variants/tl-monogram/purple-transparent.svg");
   filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.45));
   right: max(20px, calc((100vw - 1510px) / 2 + 20px));
 }
@@ -2425,7 +2425,7 @@ header #cart-count {
   bottom: clamp(10px, 2vw, 24px);
   width: clamp(35px, 4vw, 54px);
   height: clamp(43px, 5vw, 66px);
-  background: url("../images/brand/brand-mark-purple.png") center/contain no-repeat;
+  background: url("../images/brand/variants/tl-monogram/purple-transparent.svg") center/contain no-repeat;
   z-index: 4;
   pointer-events: none;
   opacity: 1;
@@ -2441,11 +2441,11 @@ header #cart-count {
   bottom: 18px;
 }
 .bespoke-editorials .still-life::after {
-  background-image: url("../images/brand/brand-mark-purple.png");
+  background-image: url("../images/brand/variants/tl-monogram/purple-transparent.svg");
 }
 .bespoke-editorials .wide-portrait::after,
 .bespoke-editorials .tall-portrait::after {
-  background-image: url("../images/brand/brand-mark.png");
+  background-image: url("../images/brand/variants/tl-monogram/gold-transparent.svg");
   filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
 }
 @media (max-width: 700px) {
@@ -2477,7 +2477,7 @@ header #cart-count {
   bottom: 8px;
   width: 24px;
   height: 29px;
-  background: url("../images/brand/brand-mark-purple.png") center/contain no-repeat;
+  background: url("../images/brand/variants/tl-monogram/purple-transparent.svg") center/contain no-repeat;
   pointer-events: none;
 }
 .ring-sizing {
@@ -2748,7 +2748,7 @@ header #cart-count {
   bottom: auto !important;
   width: clamp(30px, 3vw, 44px) !important;
   height: clamp(38px, 3.8vw, 55px) !important;
-  background-image: url("../images/brand/brand-mark.png") !important;
+  background-image: url("../images/brand/variants/tl-monogram/gold-transparent.svg") !important;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.38)) !important;
 }
 .story-wide-image figcaption {
@@ -2767,7 +2767,7 @@ header #cart-count {
   top: clamp(12px, 2vw, 24px);
   right: auto;
   bottom: auto;
-  background-image: url("../images/brand/brand-mark.png") !important;
+  background-image: url("../images/brand/variants/tl-monogram/gold-transparent.svg") !important;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
 }
 @media (max-width: 700px) {
@@ -3200,7 +3200,7 @@ header #cart-count {
   left: 24px;
   width: 45px;
   height: 45px;
-  background: url("../images/brand/brand-mark.png") center/contain no-repeat;
+  background: url("../images/brand/variants/tl-monogram/gold-transparent.svg") center/contain no-repeat;
   opacity: 0.9;
   pointer-events: none;
 }
@@ -3285,11 +3285,11 @@ header #cart-count {
   left: 18px;
   width: 38px;
   height: 38px;
-  background: url("../images/brand/brand-mark.png") center/contain no-repeat;
+  background: url("../images/brand/variants/tl-monogram/gold-transparent.svg") center/contain no-repeat;
   pointer-events: none;
 }
 .stone-editorial-grid figure:first-child:after {
-  background-image: url("../images/brand/brand-mark-purple.png");
+  background-image: url("../images/brand/variants/tl-monogram/purple-transparent.svg");
 }
 .stone-editorial-grid figcaption {
   background: #f5f1f5;
@@ -3480,7 +3480,7 @@ header #cart-count {
   right: auto !important;
   width: clamp(28px, 3vw, 42px) !important;
   height: clamp(36px, 3.8vw, 54px) !important;
-  background-image: url("../images/brand/brand-mark.png") !important;
+  background-image: url("../images/brand/variants/tl-monogram/gold-transparent.svg") !important;
   z-index: 2;
 }
 .hero-copy,
@@ -3904,13 +3904,13 @@ html[lang="ko"] .hero-copy {
   left: clamp(13px, 2vw, 25px);
   width: clamp(27px, 3vw, 42px);
   height: clamp(34px, 3.7vw, 52px);
-  background: url("../images/brand/brand-mark-purple.png") center/contain no-repeat;
+  background: url("../images/brand/variants/tl-monogram/purple-transparent.svg") center/contain no-repeat;
   opacity: 0.9;
   pointer-events: none;
   z-index: 2;
 }
 .home-feature-bespoke .home-feature-image::after {
-  background-image: url("../images/brand/brand-mark.png");
+  background-image: url("../images/brand/variants/tl-monogram/gold-transparent.svg");
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
 }
 .home-feature-bespoke .button {
@@ -4023,13 +4023,13 @@ html[lang="ko"] .stone-guide p {
 .standard-origin figure::after {
   left: clamp(12px, 2vw, 25px);
   top: clamp(12px, 2vw, 25px);
-  background-image: url("../images/brand/brand-mark.png");
+  background-image: url("../images/brand/variants/tl-monogram/gold-transparent.svg");
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
 }
 .wishlist-card > a::after {
   right: 10px;
   bottom: 12px;
-  background-image: url("../images/brand/brand-mark-purple.png");
+  background-image: url("../images/brand/variants/tl-monogram/purple-transparent.svg");
   width: 27px;
   height: 34px;
 }
@@ -4045,7 +4045,7 @@ html[lang="ko"] .stone-guide p {
 .step-visual::after {
   right: 12px;
   bottom: 12px;
-  background-image: url("../images/brand/brand-mark-purple.png");
+  background-image: url("../images/brand/variants/tl-monogram/purple-transparent.svg");
   width: 30px;
   height: 37px;
 }
@@ -4058,7 +4058,7 @@ html[lang="ko"] .stone-guide p {
 .ring-guide-visual::after {
   right: 12px;
   bottom: 10px;
-  background-image: url("../images/brand/brand-mark-purple.png");
+  background-image: url("../images/brand/variants/tl-monogram/purple-transparent.svg");
   width: 23px;
   height: 29px;
   opacity: 0.75;
@@ -4095,7 +4095,7 @@ html[lang="ko"] .stone-guide p {
   top: clamp(12px, 2vw, 24px);
   width: clamp(25px, 3vw, 39px);
   height: clamp(31px, 3.8vw, 49px);
-  background: url("../images/brand/brand-mark-purple.png") center/contain no-repeat;
+  background: url("../images/brand/variants/tl-monogram/purple-transparent.svg") center/contain no-repeat;
   pointer-events: none;
   opacity: 0.88;
 }
@@ -4181,7 +4181,7 @@ html[lang="ko"] .story-visual-copy p {
   top: 18px;
   width: 36px;
   height: 45px;
-  background: url("../images/brand/brand-mark-purple.png") center/contain no-repeat;
+  background: url("../images/brand/variants/tl-monogram/purple-transparent.svg") center/contain no-repeat;
   pointer-events: none;
 }
 .story-editorial-portraits {
@@ -4215,7 +4215,7 @@ html[lang="ko"] .story-visual-copy p {
   object-position: center 44%;
 }
 .story-editorial-portraits figure::after {
-  background-image: url("../images/brand/brand-mark.png");
+  background-image: url("../images/brand/variants/tl-monogram/gold-transparent.svg");
   filter: drop-shadow(0 1px 3px #1a1129);
 }
 .story-editorial-portraits p {
@@ -4467,5 +4467,40 @@ html[lang="ko"] .bespoke-invitation {
   }
   .cart-checkout {
     padding: 22px 18px;
+  }
+}
+
+/* Supplied full logo */
+.identity {
+  min-width: 0;
+  flex-shrink: 0;
+}
+.brand-logo {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+.identity .brand-logo {
+  width: 180px;
+}
+.footer-identity {
+  display: block;
+  width: 260px;
+  max-width: 100%;
+}
+@media (max-width: 700px) {
+  .top {
+    gap: 12px;
+  }
+  .identity .brand-logo {
+    width: 140px;
+  }
+  .footer-identity {
+    width: 230px;
+  }
+}
+@media (max-width: 360px) {
+  .identity .brand-logo {
+    width: 120px;
   }
 }
