@@ -41,7 +41,7 @@ header {
 .top {
   max-width: 1500px;
   margin: auto;
-  padding: 15px 4%;
+  padding: 13.5px 4%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,7 +60,7 @@ header {
   flex: none;
 }
 .wordmark {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-size: 16px;
   line-height: 1.05;
   letter-spacing: 0.17em;
@@ -138,7 +138,7 @@ nav a:hover {
 h1,
 h2,
 h3 {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 400;
   line-height: 1.04;
 }
@@ -199,7 +199,7 @@ h3 {
   max-width: 830px;
 }
 .intro {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(26px, 2.8vw, 39px);
   line-height: 1.3;
 }
@@ -235,7 +235,7 @@ h3 {
   line-height: 1.85;
 }
 .quote {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(29px, 3vw, 44px);
   line-height: 1.24;
   border-left: 1px solid var(--gold);
@@ -302,7 +302,7 @@ h3 {
   counter-increment: step;
   content: "0" counter(step);
   color: var(--deep);
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-display);
   font-size: 32px;
 }
 .step h3 {
@@ -449,7 +449,7 @@ footer .fine {
 }
 @media (max-width: 700px) {
   .top {
-    padding: 12px 5%;
+    padding: 10.8px 5%;
   }
   .identity {
     min-width: 0;
@@ -718,7 +718,7 @@ footer .fine {
 
 /* Editorial proportions */
 header {
-  border-top: 3px solid var(--gold);
+  border-top: 1px solid #8873a7;
 }
 .top {
   min-height: 76px;
@@ -1203,7 +1203,7 @@ header nav a:focus-visible {
   padding-top: 16px;
 }
 .catalog-details .catalog-price {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-size: 28px;
   line-height: 1.2;
   color: var(--violet);
@@ -1388,7 +1388,6 @@ footer .mark {
 
 /* Korean typography */
 html[lang="ko"] body {
-  font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   line-height: 1.85;
   word-break: keep-all;
   overflow-wrap: break-word;
@@ -1396,7 +1395,6 @@ html[lang="ko"] body {
 html[lang="ko"] h1,
 html[lang="ko"] h2,
 html[lang="ko"] h3 {
-  font-family: "Noto Serif KR", "Apple SD Gothic Neo", "Malgun Gothic", serif;
   font-weight: 500;
   line-height: 1.38;
   letter-spacing: -0.045em;
@@ -1436,7 +1434,6 @@ html[lang="ko"] .page-hero p {
   max-width: 750px;
 }
 html[lang="ko"] .intro {
-  font-family: "Noto Serif KR", "Apple SD Gothic Neo", "Malgun Gothic", serif;
   font-size: clamp(20px, 1.9vw, 26px);
   line-height: 1.85;
   letter-spacing: -0.035em;
@@ -1447,7 +1444,6 @@ html[lang="ko"] .story p {
   letter-spacing: -0.02em;
 }
 html[lang="ko"] .story .quote {
-  font-family: "Noto Serif KR", "Apple SD Gothic Neo", "Malgun Gothic", serif;
   font-size: clamp(20px, 2.1vw, 29px);
   line-height: 1.75;
 }
@@ -1475,7 +1471,6 @@ html[lang="ko"] .eyebrow {
   line-height: 1.6;
 }
 html[lang="ko"] .button {
-  font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   font-size: 14px;
   letter-spacing: -0.025em;
   line-height: 1.5;
@@ -1496,7 +1491,6 @@ html[lang="ko"] .product-card .meta {
   line-height: 1.6;
 }
 html[lang="ko"] .catalog-details .catalog-price {
-  font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   font-size: 22px;
   font-weight: 600;
 }
@@ -2269,7 +2263,7 @@ footer .languages .lang:not(.active) {
   letter-spacing: 0.05em;
 }
 .selection-summary span {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-size: 27px;
 }
 @media (max-width: 600px) {
@@ -3927,14 +3921,14 @@ html[lang="ko"] .hero-copy {
 }
 /* Typography */
 html:not([lang="ko"]) body {
-  font-family: "Libre Baskerville", Georgia, serif;
+  font-family: var(--font-body);
   font-size: 14px;
   line-height: 1.85;
 }
 html:not([lang="ko"]) h1,
 html:not([lang="ko"]) h2,
 html:not([lang="ko"]) h3 {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 500;
   letter-spacing: -0.018em;
 }
@@ -3942,7 +3936,7 @@ html:not([lang="ko"]) .button,
 html:not([lang="ko"]) nav a,
 html:not([lang="ko"]) .eyebrow,
 html:not([lang="ko"]) label {
-  font-family: "Libre Baskerville", Georgia, serif;
+  font-family: var(--font-body);
   font-weight: 400;
 }
 html:not([lang="ko"]) .button {
@@ -3961,7 +3955,6 @@ html:not([lang="ko"]) .stone-guide p {
   line-height: 1.9;
 }
 html[lang="ko"] body {
-  font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
   font-weight: 400;
   letter-spacing: -0.016em;
   line-height: 1.85;
@@ -3969,12 +3962,10 @@ html[lang="ko"] body {
 html[lang="ko"] h1,
 html[lang="ko"] h2,
 html[lang="ko"] h3 {
-  font-family: "Noto Serif KR", "Apple SD Gothic Neo", serif;
   font-weight: 400;
   letter-spacing: -0.042em;
 }
 html[lang="ko"] .wordmark {
-  font-family: "Cormorant Garamond", Georgia, serif;
   letter-spacing: 0.17em;
 }
 html[lang="ko"] .button {
@@ -4169,7 +4160,6 @@ html:not([lang="ko"]) .legal .legal-business {
   margin: 18px 0 0;
 }
 html[lang="ko"] .story-visual-copy p {
-  font-family: "Noto Serif KR", serif;
   font-size: clamp(22px, 2.4vw, 35px);
   line-height: 1.55;
 }
@@ -4332,43 +4322,62 @@ html[lang="ko"] .bespoke-invitation {
   color: #665a70;
 }
 
-/* Desktop navigation */
-@media (max-width: 2000px) {
+/* Centered navigation */
+.top {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(162px, 1fr) auto minmax(162px, 1fr);
+  gap: 20px;
+  width: 100%;
+  min-width: 0;
+}
+.identity {
+  justify-self: start;
+}
+header nav {
+  order: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: auto;
+  padding: 0;
+  gap: clamp(12px, 1.5vw, 24px);
+}
+header nav a {
+  white-space: nowrap;
+}
+.header-tools {
+  justify-self: end;
+}
+header .menu {
+  display: none;
+}
+html[lang="ko"] header nav a {
+  font-size: 17px;
+}
+@media (max-width: 1100px) {
   .top {
-    position: relative;
-    flex-wrap: nowrap;
-    width: 100%;
-    min-width: 0;
-  }
-  .identity {
-    min-width: 0;
-    flex-shrink: 1;
-  }
-  .top > .languages {
     display: flex;
-    order: 2;
-    margin-left: auto;
+    flex-wrap: nowrap;
   }
-  .menu {
+  header .menu {
     display: block;
-    order: 3;
     flex: none;
-    margin-left: 5px;
   }
-  nav {
+  header nav {
     display: none;
     order: 4;
-    width: auto;
     padding: 12px 20px;
   }
-  nav.open {
+  header nav.open {
     display: flex;
     position: absolute;
     top: 100%;
     right: 4%;
     z-index: 20;
     width: min(390px, 92vw);
-    max-height: calc(100vh - 75px);
+    max-height: calc(100vh - 120px);
     overflow: auto;
     flex-direction: column;
     align-items: stretch;
@@ -4378,7 +4387,7 @@ html[lang="ko"] .bespoke-invitation {
     border: 1px solid #8873a7;
     box-shadow: 0 15px 25px #21182b40;
   }
-  nav a {
+  header nav a {
     display: block;
     padding: 10px 9px;
     white-space: normal;
@@ -4386,7 +4395,7 @@ html[lang="ko"] .bespoke-invitation {
   }
 }
 @media (max-width: 700px) {
-  nav.open {
+  header nav.open {
     left: 0;
     right: 0;
     width: 100%;
@@ -4481,7 +4490,7 @@ html[lang="ko"] .bespoke-invitation {
   max-width: 100%;
 }
 .identity .brand-logo {
-  width: 180px;
+  width: 162px;
 }
 .footer-identity {
   display: block;
@@ -4493,7 +4502,7 @@ html[lang="ko"] .bespoke-invitation {
     gap: 12px;
   }
   .identity .brand-logo {
-    width: 140px;
+    width: 126px;
   }
   .footer-identity {
     width: 230px;
@@ -4501,6 +4510,92 @@ html[lang="ko"] .bespoke-invitation {
 }
 @media (max-width: 360px) {
   .identity .brand-logo {
-    width: 120px;
+    width: 108px;
   }
+}
+
+/* Shared type families and header controls */
+:root {
+  --font-body: "Libre Baskerville", Georgia, "Noto Serif KR", serif;
+  --font-display: "Cormorant Garamond", Georgia, "Noto Serif KR", serif;
+}
+.header-tools,
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+.header-tools {
+  order: 2;
+  gap: 8px;
+  margin-left: auto;
+  flex: none;
+}
+.header-actions {
+  gap: 4px;
+}
+.header-tools .menu {
+  margin-left: 5px;
+}
+.header-icon {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 36px;
+  color: inherit;
+  text-decoration: none;
+}
+.header-icon svg {
+  width: 21px;
+  height: 21px;
+}
+.header-icon:hover,
+.header-icon[aria-current="page"] {
+  color: var(--gold);
+}
+.header-icon:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 2px;
+}
+.bag-count {
+  position: absolute;
+  top: -2px;
+  right: -3px;
+  min-width: 14px;
+  font-size: 10px;
+  line-height: 1.4;
+  text-align: center;
+  background: var(--violet);
+  color: var(--gold);
+}
+.bag-count:empty {
+  display: none;
+}
+@media (max-width: 700px) {
+  .header-tools {
+    gap: 2px;
+  }
+  .header-actions {
+    gap: 0;
+  }
+  .header-icon {
+    width: 30px;
+  }
+  .header-tools .lang {
+    padding: 5px;
+  }
+}
+
+html[lang="ko"] body,
+html[lang="ko"] .button,
+html[lang="ko"] nav a,
+html[lang="ko"] .eyebrow,
+html[lang="ko"] label {
+  font-family: var(--font-body);
+}
+html[lang="ko"] h1,
+html[lang="ko"] h2,
+html[lang="ko"] h3 {
+  font-family: var(--font-display);
 }

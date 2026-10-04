@@ -1,16 +1,16 @@
 const labelsEN = {
   home: "Home",
-  story: "Brand Story",
-  collection: "Made-to-order Fine Jewelry",
-  bespoke: "Bespoke High Jewelry",
-  stones: "The Atelier Standard",
-  contact: "Contact / Appointment",
+  story: "Our Story",
+  collection: "Fine Jewelry",
+  bespoke: "High Jewelry",
+  stones: "Our Standard",
+  contact: "Contact Us",
   privacy: "Privacy policy",
   terms: "Terms",
   discover: "Discover the fine jewelry collection",
   begin: "Begin a custom / bespoke commission",
   legal: "Terms & Privacy",
-  cart: "Cart",
+  cart: "Bag",
   wishlist: "Wishlist",
 };
 const copyEN = {
