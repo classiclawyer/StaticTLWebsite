@@ -17,16 +17,63 @@ function bindPageEvents({ route, pieceNumber, sharedParams, render }) {
       (b.onclick = () => {
         const n = Number(b.dataset.wish),
           items = readWishlist();
+        const checkout = document.querySelector(".checkout-button")?.cloneNode(true);
         writeWishlist(items.includes(n) ? items.filter((x) => x !== n) : [...items, n]);
         render();
+        if (!items.includes(n)) {
+          const icon = document.querySelector('#header-actions a[href="#wishlist"]');
+          if (icon) {
+            icon.classList.add("bag-icon-added");
+            icon.addEventListener("animationend", () => icon.classList.remove("bag-icon-added"), { once: true });
+          }
+        }
+        if (checkout) document.querySelector("[data-add-to-cart]")?.replaceWith(checkout);
+        const heart = document.querySelector(`.wishlist-heart[data-wish="${n}"]`);
+        if (heart) {
+          heart.classList.add("wish-clicked");
+          heart.focus({ preventScroll: true });
+        }
       }),
   );
-  document
-    .querySelectorAll("[data-size-guide]")
-    .forEach((b) => (b.onclick = () => document.getElementById("ring-size-dialog")?.showModal()));
-  document
-    .querySelectorAll("[data-close-size-guide]")
-    .forEach((b) => (b.onclick = () => b.closest("dialog").close()));
+  const sizeDialog = document.getElementById("ring-size-dialog");
+  const closeSizeGuide = () => {
+    if (!sizeDialog?.open || sizeDialog.classList.contains("is-closing")) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      sizeDialog.close();
+      return;
+    }
+    sizeDialog.classList.add("is-closing");
+    setTimeout(() => {
+      sizeDialog.close();
+      sizeDialog.classList.remove("is-closing");
+    }, 160);
+  };
+  document.querySelectorAll("[data-size-guide]").forEach((button) => {
+    button.onclick = () => sizeDialog?.showModal();
+  });
+  document.querySelectorAll("[data-close-size-guide]").forEach((button) => {
+    button.onclick = closeSizeGuide;
+  });
+  if (sizeDialog) {
+    sizeDialog.oncancel = (event) => {
+      event.preventDefault();
+      closeSizeGuide();
+    };
+    sizeDialog.onclick = (event) => {
+      const rect = sizeDialog.getBoundingClientRect();
+      if (event.target === sizeDialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) closeSizeGuide();
+    };
+  }
+  document.querySelectorAll("[data-cart-ring-size]").forEach((select) => {
+    select.onchange = () => {
+      const items = readCart(), item = items[Number(select.dataset.cartRingSize)];
+      if (!item || !ringIds.has(item.n)) return;
+      const size = select.value === "consult" ? "consult" : Number(select.value);
+      if (size !== "consult" && (!Number.isInteger(size) || size < 44 || size > 72)) return;
+      item.size = size;
+      writeCart(items);
+    };
+  });
   if (pieceNumber) {
     const n = Number(pieceNumber[1]),
       key = `atelier-piece-${n}`,
@@ -101,6 +148,7 @@ function bindPageEvents({ route, pieceNumber, sharedParams, render }) {
           "natural-premium-" + r.name.slice("diamond-origin-".length),
         );
         if (box) box.hidden = r.value !== "natural";
+        if (document.querySelector(".checkout-button")) render();
       }),
   );
   document.querySelectorAll("[data-inquire-piece]").forEach(

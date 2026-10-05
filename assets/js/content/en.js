@@ -40,12 +40,6 @@ const copyEN = {
     "Nine diamond pieces: the white-gold tennis bracelet and both halo rings are 14K gold; the remaining six pieces are 18K gold. Choose natural or lab-grown diamonds for any design. Editorial images are visualizations; final details are confirmed in your individual proposal.",
   pricePending: "Price on request",
   from: "Opening collection · From USD 2,500",
-  productNames: ["Onde de l'Aunay", "Céleste de l'Aunay — Radiant", "Céleste de l'Aunay — Round"],
-  productTypes: [
-    "18K yellow-gold pear diamond bracelet",
-    "14K gold radiant halo diamond ring",
-    "14K gold round halo diamond ring",
-  ],
   bespokeLead: "Your imagination, brought to life.",
   bespokeInvitation:
     "You do not need a finished design. An image you cannot quite place or a feeling you want to capture is enough. Your story and imagination are where the bespoke design begins.",
@@ -84,7 +78,7 @@ const copyEN = {
     "As Buyer and CFO, Lionel draws on relationships built across countries to help source exceptional gemstones, considering each choice in light of quality, value, and the client’s vision. He also helped build this website. Together with Tamara, he brings the same quiet attention to detail to the experience of commissioning a piece as to the stones at its heart.",
   formLead: "Your next piece begins with a conversation.",
   formText:
-    "Tell us what you imagine using the form below, or begin a private conversation on Instagram.",
+    "Your next piece begins with a conversation, tell us what you imagine using the form below.",
   name: "Name",
   email: "Email",
   city: "City",

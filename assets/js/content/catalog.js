@@ -1,97 +1,18 @@
+import { products } from "./products.js";
+
 const signatures = {
-  en: {
-    heading: "Explore the opening collection",
-    lead: "Nine diamond pieces, presented in warm and cool tones. The Ligne de Lumière tennis bracelet and both Céleste de l'Aunay rings are 14K gold; the remaining six pieces are 18K gold. Choose natural or lab-grown diamonds for any design. For availability or a private commission, DM us anytime.",
-    groups: ["Warm tones", "Cool tones"],
-    inquire: "Enquire on Instagram",
-    concepts: "Explore the rest of the collection",
-    items: [
-      [
-        "Fleur de l'Aunay — Pendant",
-        "18K yellow-gold floral diamond necklace",
-        "Pear-shaped diamonds form a flower pendant on a delicate gold chain.",
-      ],
-      [
-        "Fleur de l'Aunay — Ring",
-        "18K yellow-gold floral diamond ring",
-        "A sculptural flower of pear-shaped diamonds, paired with the pendant.",
-      ],
-      [
-        "Éternelle de l'Aunay",
-        "18K yellow-gold diamond eternity ring",
-        "A continuous circle of diamonds, made to be worn every day.",
-      ],
-      [
-        "L’Amour de Tamara — Pear",
-        "18K gold pink pear diamond ring",
-        "A pear-shaped pink diamond framed by a sweep of white diamonds.",
-      ],
-      [
-        "L’Amour de Tamara — Radiant",
-        "18K gold pink radiant diamond ring",
-        "A pink radiant-cut diamond, flanked by white diamonds.",
-      ],
-      [
-        "Ligne de Lumière",
-        "14K white-gold diamond tennis bracelet",
-        "A clean line of white diamonds with a cool, even brilliance.",
-      ],
-    ],
+  "en": {
+    "heading": "Explore the opening collection",
+    "lead": "Nine diamond pieces. The Ligne de Lumière tennis bracelet and both Céleste de l'Aunay rings are 14K gold; the remaining six pieces are 18K gold. Choose natural or lab-grown diamonds for any design. For availability or a private commission, DM us anytime.",
+    "inquire": "Enquire on Instagram",
+    "concepts": "Explore the rest of the collection"
   },
-  ko: {
-    heading: "오프닝 컬렉션 둘러보기",
-    lead: "다이아몬드 주얼리 아홉 점을 웜톤과 쿨톤으로 선보입니다. Ligne de Lumière 테니스 브레이슬릿과 Céleste de l'Aunay 링 두 점은 14K 골드, 나머지 여섯 점은 18K 골드입니다. 모든 디자인에 천연 혹은 랩그로운 다이아몬드를 선택하실 수 있습니다. 주문 가능 여부와 1:1 맞춤제작 상담은 언제든 인스타그램 DM으로 문의해 주세요.",
-    groups: ["웜톤", "쿨톤"],
-    inquire: "인스타그램 DM 문의",
-    concepts: "컬렉션의 다른 작품",
-    items: [
-      [
-        "Fleur de l'Aunay — 목걸이",
-        "18K 옐로 골드 플라워 다이아몬드 목걸이",
-        "물방울 모양의 다이아몬드가 꽃을 이루는 펜던트 목걸이.",
-      ],
-      [
-        "Fleur de l'Aunay — 반지",
-        "18K 옐로 골드 플라워 다이아몬드 링",
-        "목걸이와 한 세트를 이루는 플라워 링.",
-      ],
-      [
-        "Éternelle de l'Aunay",
-        "18K 옐로 골드 다이아몬드 이터니티 링",
-        "다이아몬드가 끊임없이 이어지는 이터니티 링.",
-      ],
-      [
-        "L’Amour de Tamara — 페어",
-        "18K 골드 핑크 페어 다이아몬드 링",
-        "핑크빛 물방울 모양 다이아몬드를 화이트 다이아몬드가 감싸는 링.",
-      ],
-      [
-        "L’Amour de Tamara — 래디언트",
-        "18K 골드 핑크 래디언트 다이아몬드 링",
-        "핑크빛 래디언트 컷 다이아몬드와 화이트 다이아몬드가 어우러진 링.",
-      ],
-      [
-        "Ligne de Lumière",
-        "14K 화이트 골드 다이아몬드 테니스 브레이슬릿",
-        "화이트 다이아몬드가 가지런히 이어지는 테니스 브레이슬릿.",
-      ],
-    ],
-  },
-};
-const catalogSpecs = {
-  signature: [
-    { price: 3200, gold: "18K", total: "2.49 ct", goldWeight: "3.7 g" },
-    { price: 3300, gold: "18K", total: "2.72 ct", goldWeight: "3.85 g" },
-    { price: 2500, gold: "18K", total: "2.8 ct", pieces: 26, goldWeight: "2.55 g" },
-    { price: 5400, gold: "18K", center: "2.44 ct", melee: "2.43 ct", goldWeight: "4.56 g" },
-    { price: 4600, gold: "18K", center: "3.02 ct", melee: "0.79 ct", goldWeight: "3.04 g" },
-    { price: 3900, gold: "14K", total: "7.1 ct", goldWeight: "8 g" },
-  ],
-  concept: [
-    { price: 3900, gold: "18K", total: "5.49 ct", goldWeight: "5.16 g" },
-    { price: 7600, gold: "14K" },
-    { price: 3800, gold: "14K" },
-  ],
+  "ko": {
+    "heading": "오프닝 컬렉션 둘러보기",
+    "lead": "다이아몬드 주얼리 아홉 점을 선보입니다. Ligne de Lumière 테니스 브레이슬릿과 Céleste de l'Aunay 링 두 점은 14K 골드, 나머지 여섯 점은 18K 골드입니다. 모든 디자인에 천연 혹은 랩그로운 다이아몬드를 선택하실 수 있습니다. 주문 가능 여부와 1:1 맞춤제작 상담은 언제든 인스타그램 DM으로 문의해 주세요.",
+    "inquire": "인스타그램 DM 문의",
+    "concepts": "컬렉션의 다른 작품"
+  }
 };
 const catalogLabels = {
   en: {
@@ -142,7 +63,7 @@ const catalogLabels = {
 };
 const jewelryOptions = {
   en: {
-    origin: "Diamond origin",
+    origin: "Diamond origin selection",
     colors: "Diamond color",
     metals: "Gold color",
     lab: "Lab-grown",
@@ -162,7 +83,7 @@ const jewelryOptions = {
     hint: "Select your preferences. Every combination is subject to stone availability, design feasibility, and an individual quote.",
   },
   ko: {
-    origin: "다이아몬드 종류",
+    origin: "다이아몬드 종류 선택",
     colors: "다이아몬드 색상",
     metals: "골드 색상",
     lab: "랩그로운",
@@ -182,40 +103,25 @@ const jewelryOptions = {
     hint: "원하시는 조합을 선택해 주세요. 실제 제작 가능 여부와 최종 가격은 보석 수급, 디자인 검토 후 개별적으로 안내합니다.",
   },
 };
-const editorialPhotos = [1, 7, 4, 8, 9, 3].map(
-  (i) => `assets/images/collection/collection-${i}-editorial.webp`,
-);
-const collectionIndex = { signature: [1, 7, 4, 8, 9, 3], more: [2, 5, 6] };
-const toneGroups = { warm: [1, 7, 4, 2, 5], cool: [8, 9, 3, 6] };
 const productPageCopy = {
-  en: {
-    back: "Back to the collection",
-    view: "View piece",
-    discuss: "Discuss this piece",
-    details: "The piece",
-    origin: "Select your preferred diamond",
-    note: "Editorial visualization. Specifications and starting prices are approximate; the final proposal depends on the chosen diamonds and details.",
-    moreDescriptions: [
-      "A flowing sequence of pear-shaped diamonds in yellow gold.",
-      "A radiant-cut center framed by a halo of diamonds.",
-      "A round center framed by a halo of diamonds.",
-    ],
+  "en": {
+    "back": "Back to the collection",
+    "view": "View piece",
+    "discuss": "Discuss this piece",
+    "details": "The piece",
+    "origin": "Select your preferred diamond",
+    "note": "Editorial visualization. Specifications and starting prices are approximate; the final proposal depends on the chosen diamonds and details."
   },
-  ko: {
-    back: "컬렉션으로 돌아가기",
-    view: "작품 자세히 보기",
-    discuss: "이 작품 상담하기",
-    details: "작품 정보",
-    origin: "다이아몬드 종류 선택",
-    note: "연출 이미지는 작품의 분위기를 보여줍니다. 사양과 시작 가격은 대략적인 안내이며, 최종 조건은 선택하신 다이아몬드와 사양에 따라 개별적으로 확정됩니다.",
-    moreDescriptions: [
-      "물방울 모양 다이아몬드가 옐로 골드를 따라 흐르듯 이어지는 브레이슬릿.",
-      "래디언트 컷 중심석을 다이아몬드 헤일로가 감싸는 링.",
-      "라운드 중심석을 다이아몬드 헤일로가 감싸는 링.",
-    ],
-  },
+  "ko": {
+    "back": "컬렉션으로 돌아가기",
+    "view": "작품 자세히 보기",
+    "discuss": "이 작품 상담하기",
+    "details": "작품 정보",
+    "origin": "다이아몬드 종류 선택",
+    "note": "연출 이미지는 작품의 분위기를 보여줍니다. 사양과 시작 가격은 대략적인 안내이며, 최종 조건은 선택하신 다이아몬드와 사양에 따라 개별적으로 확정됩니다."
+  }
 };
-const ringIds = new Set([4, 5, 6, 7, 8, 9]);
+const ringIds = new Set(products.filter((product) => product.kind === "ring").map((product) => product.id));
 const ringCopy = {
   en: {
     label: "Ring size · finger circumference",
@@ -258,37 +164,13 @@ const ringCopy = {
     variant: "반지 사이즈",
   },
 };
-const picturedColor = {
-  1: "white",
-  2: "white",
-  3: "white",
-  4: "white",
-  5: "white",
-  6: "white",
-  7: "white",
-  8: "pink",
-  9: "pink",
-};
-const picturedGold = {
-  1: "yellow",
-  2: "yellow",
-  3: "white",
-  4: "yellow",
-  5: "yellow",
-  6: "white",
-  7: "yellow",
-  8: "pictured",
-  9: "pictured",
-};
+const picturedColor = Object.fromEntries(products.map((product) => [product.id, product["diamond-color"]]));
+const picturedGold = Object.fromEntries(products.map((product) => [product.id, product["gold-color"]]));
 
 export {
   signatures,
-  catalogSpecs,
   catalogLabels,
   jewelryOptions,
-  editorialPhotos,
-  collectionIndex,
-  toneGroups,
   productPageCopy,
   ringIds,
   ringCopy,

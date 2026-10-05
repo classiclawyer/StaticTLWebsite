@@ -2,7 +2,6 @@ import { shareText } from "../content/sharing.js";
 import { lang } from "../core/language.js";
 import { readWishlist } from "./wishlist.js";
 import { readCart, MAX_CART_ENTRIES } from "./cart.js";
-import { picturedColor, picturedGold, ringIds } from "../content/catalog.js";
 import { productRecord } from "../components/products.js";
 import { cartText } from "../content/cart.js";
 
@@ -13,15 +12,12 @@ function sharePanel(kind, n) {
     data-share-kind="${kind}"
     ${n ? `data-share-piece="${n}"` : ""}
   >
-    <h3>${kind === "cart" ? t.shareCart : kind === "wishlist" ? t.shareWish : t.title}</h3>
+    ${kind !== "wishlist" ? "" : `<h3>${kind === "cart" ? t.shareCart : t.shareWish}</h3>`}
     ${kind === "wishlist" ? `<p>${t.hint}</p>` : ""}
     <div class="share-actions">
       <button type="button" data-share="native">${t.native}</button
       ><button type="button" data-share="copy">${t.copy}</button
       ><button type="button" data-share="email">${t.email}</button
-      ><button type="button" data-share="whatsapp">${t.whatsapp}</button
-      ><button type="button" data-share="facebook">${t.facebook}</button
-      ><button type="button" data-share="messenger">${t.messenger}</button
       ><button type="button" data-share="kakao">${t.kakao}</button>
     </div>
     <p class="share-status" role="status" hidden></p>
@@ -50,11 +46,7 @@ function shareUrl(kind, n) {
     val = (key) => document.querySelector(`input[name="${key}-${id}"]:checked`)?.value;
   const params = new URLSearchParams({
     o: val("diamond-origin") || "lab-grown",
-    c: val("diamond-color") || picturedColor[n],
-    g: val("gold-color") || picturedGold[n],
   });
-  if (ringIds.has(n))
-    params.set("s", document.getElementById(`ring-size-${n}`)?.value || "consult");
   return `${base}#piece-${n}?${params}`;
 }
 async function copyShare(url) {
@@ -84,22 +76,6 @@ async function handleShare(button) {
     location.href = `mailto:?subject=${encodeURIComponent(lang === "ko" ? "이 주얼리 어때요?" : "A little jewelry hint")}&body=${encodeURIComponent(message)}`;
     return;
   }
-  if (action === "whatsapp") {
-    window.open(
-      `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`,
-      "_blank",
-      "noopener",
-    );
-    return;
-  }
-  if (action === "facebook") {
-    window.open(
-      `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-      "_blank",
-      "noopener",
-    );
-    return;
-  }
   if (action === "copy") {
     status.textContent = (await copyShare(url)) ? t.copied : url;
     status.hidden = false;
@@ -116,7 +92,6 @@ async function handleShare(button) {
   const copied = await copyShare(url);
   status.textContent = copied ? t.choose : url;
   status.hidden = false;
-  if (action === "messenger") window.open("https://www.messenger.com/", "_blank", "noopener");
   if (action === "kakao") window.open("https://talk.kakao.com/", "_blank", "noopener");
 }
 

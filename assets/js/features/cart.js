@@ -8,7 +8,6 @@ import {
 } from "../content/catalog.js";
 import { lang } from "../core/language.js";
 import { cartText } from "../content/cart.js";
-import { labels } from "../content/site.js";
 
 const MAX_CART_ENTRIES = 30;
 function readCart() {
@@ -87,8 +86,31 @@ function addCart(n, mode) {
     return;
   } else items.push(item);
   writeCart(items);
+  const bagIcon = document.querySelector('#header-actions a[href="#cart"]');
+  if (bagIcon) {
+    bagIcon.classList.remove("bag-icon-added");
+    void bagIcon.offsetWidth;
+    bagIcon.classList.add("bag-icon-added");
+    bagIcon.addEventListener("animationend", () => bagIcon.classList.remove("bag-icon-added"), { once: true });
+  }
   const feedback = document.getElementById("cart-feedback");
-  feedback.innerHTML = `${cartText[lang].added} <a href="#cart">${labels[lang].cart} →</a>`;
+  const button = document.querySelector(`[data-add-to-cart][data-piece="${n}"]`);
+  if (button) {
+    button.disabled = true;
+    button.classList.add("bag-added");
+    const checkout = document.createElement("a");
+    checkout.href = "#cart";
+    checkout.className = "button fill checkout-button";
+    checkout.textContent = lang === "ko" ? "체크아웃" : "Check out";
+    setTimeout(() => {
+      if (!button.isConnected) return;
+      const focused = document.activeElement === button;
+      button.replaceWith(checkout);
+      if (focused) checkout.focus();
+    }, window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 280);
+  }
+  feedback.textContent = lang === "ko" ? "쇼핑백에 담았습니다." : "Added to the bag.";
+  feedback.classList.add("visually-hidden");
   feedback.hidden = false;
 }
 

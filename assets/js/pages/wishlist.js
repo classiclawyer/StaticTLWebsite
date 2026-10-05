@@ -19,7 +19,7 @@ function wishlistPage() {
           ? `<div class="wishlist-grid">${items
               .map((n) => {
                 const product = productRecord(n);
-                return `<article class="wishlist-card"><a href="#piece-${n}"><img src="assets/images/collection/collection-${n}-editorial.webp" alt="${product.name}"></a><h2>${product.name}</h2><a class="button" href="#piece-${n}">${t.view}</a><button type="button" class="wish-button" data-wish="${n}" aria-pressed="true">♥ ${t.remove}</button></article>`;
+                return `<article class="wishlist-card"><a href="#piece-${n}"><img src="${product.image}" alt="${product.name}"></a><h2>${product.name}</h2><a class="button" href="#piece-${n}">${t.view}</a><button type="button" class="wish-button" data-wish="${n}" aria-pressed="true">♥ ${t.remove}</button></article>`;
               })
               .join("")}</div>${sharePanel("wishlist")}`
           : `<div class="wishlist-empty"><p>${t.save}</p><a class="button fill" href="#collection">${labels[lang].collection} →</a></div>`

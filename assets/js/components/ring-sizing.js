@@ -1,39 +1,36 @@
 import { ringIds, ringCopy } from "../content/catalog.js";
 import { lang } from "../core/language.js";
 
-function ringSizing(n) {
+function ringSizing(n, index, selected = "consult", showDialog = true) {
   if (!ringIds.has(n)) return "";
-  const t = ringCopy[lang],
-    chart = Array.from({ length: 13 }, (_, i) => 44 + i * 2)
-      .map(
-        (mm) =>
-          `<tr>
-            <td>${mm} mm</td>
-            <td>${(mm / Math.PI).toFixed(1)} mm</td>
-          </tr>`,
-      )
-      .join("");
+  const t = ringCopy[lang], id = index === undefined ? `ring-size-${n}` : `cart-ring-size-${index}`;
   return `<div class="ring-sizing">
       <div class="ring-size-heading">
-        <label for="ring-size-${n}">${t.label}</label
-        ><button
+        <label for="${id}">${index === undefined ? t.label : t.variant}</label><button
           type="button"
           data-size-guide
+          aria-label="${t.guide}"
           aria-haspopup="dialog"
           aria-controls="ring-size-dialog"
         >
-          ${t.guide} ↗
+          ${index === undefined ? `${t.guide} ↗` : "?"}
         </button>
       </div>
-      <select id="ring-size-${n}" name="ring-size-${n}">
-        <option value="consult">${t.unsure}</option>
+      <select id="${id}" name="${id}" aria-label="${t.variant}" ${index === undefined ? "" : `data-cart-ring-size="${index}"`}>
+        <option value="consult" ${selected === "consult" ? "selected" : ""}>${t.unsure}</option>
         ${Array.from({ length: 29 }, (_, i) => 44 + i)
-          .map((mm) => `<option value="${mm}">${mm} mm</option>`)
+          .map((mm) => `<option value="${mm}" ${selected === mm ? "selected" : ""}>${mm} mm</option>`)
           .join("")}
       </select>
-      <p class="ring-size-note">${t.note}</p>
+      ${index === undefined ? `<p class="ring-size-note">${t.note}</p>` : ""}
     </div>
-    <dialog class="ring-size-dialog" id="ring-size-dialog" aria-labelledby="ring-size-title">
+    ${showDialog ? ringSizeDialog() : ""}`;
+}
+
+function ringSizeDialog() {
+  const t = ringCopy[lang],
+    chart = Array.from({ length: 13 }, (_, i) => 44 + i * 2).map((mm) => `<tr><td>${mm} mm</td><td>${(mm / Math.PI).toFixed(1)} mm</td></tr>`).join("");
+  return `    <dialog class="ring-size-dialog" id="ring-size-dialog" aria-labelledby="ring-size-title">
       <button class="dialog-close" type="button" data-close-size-guide aria-label="${t.close}">
         ×
       </button>
@@ -73,4 +70,4 @@ function ringSizing(n) {
     </dialog>`;
 }
 
-export { ringSizing };
+export { ringSizing, ringSizeDialog };
