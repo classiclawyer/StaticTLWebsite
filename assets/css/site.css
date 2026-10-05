@@ -4834,3 +4834,11 @@ body > main { flex:1 0 auto; }
 .alternate-contact .contact-instagram-link:hover::after,
 .alternate-contact .contact-instagram-link:focus-visible::after { animation:discuss-underline 280ms ease-out; }
 @media (prefers-reduced-motion:reduce) { .alternate-contact .contact-instagram-link:hover::after, .alternate-contact .contact-instagram-link:focus-visible::after { animation:none; } }
+
+/* Collection artwork already includes its logo. */
+.signature-main::after,
+.product-image::before,
+.product-detail-image::after,
+.cart-item > a::after,
+.wishlist-card > a::after { content:none; display:none; }
+
