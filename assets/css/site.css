@@ -4740,3 +4740,10 @@ footer .fine {
 @keyframes wish-clicked { 45% { transform:scale(1.18); } 75% { transform:scale(.97); } }
 .wishlist-heart.wish-clicked { animation:wish-clicked 300ms ease-out; }
 @media (prefers-reduced-motion:reduce) { .wishlist-heart { transition:none; } .wishlist-heart:hover { transform:none; } .wishlist-heart.wish-clicked { animation:none; } }
+
+.product-purchase-actions { flex-wrap:wrap; }
+.product-wishlist-action { display:flex; align-items:center; gap:2px; margin-left:auto; }
+.product-wishlist-action > span { font-size:13px; color:var(--violet); }
+@keyframes bag-icon-added { 35% { transform:translateY(-3px) scale(1.14); } 70% { transform:translateY(1px) scale(.97); } }
+#header-actions .bag-icon-added { animation:bag-icon-added 420ms ease-out; }
+@media (prefers-reduced-motion:reduce) { #header-actions .bag-icon-added { animation:none; } }

@@ -86,6 +86,13 @@ function addCart(n, mode) {
     return;
   } else items.push(item);
   writeCart(items);
+  const bagIcon = document.querySelector('#header-actions a[href="#cart"]');
+  if (bagIcon) {
+    bagIcon.classList.remove("bag-icon-added");
+    void bagIcon.offsetWidth;
+    bagIcon.classList.add("bag-icon-added");
+    bagIcon.addEventListener("animationend", () => bagIcon.classList.remove("bag-icon-added"), { once: true });
+  }
   const feedback = document.getElementById("cart-feedback");
   const button = document.querySelector(`[data-add-to-cart][data-piece="${n}"]`);
   if (button) {

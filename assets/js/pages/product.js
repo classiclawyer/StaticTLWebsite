@@ -34,7 +34,7 @@ function productDetail(product) {
           <button type="button" class="button fill" data-add-to-cart="selected" data-piece="${n}">
             ${lang === "ko" ? "쇼핑백에 담기" : "Add to the bag"}
           </button>
-          ${wishlistHeart(n)}
+          <div class="product-wishlist-action"><span>${lang === "ko" ? "위시리스트" : "Wishlist"}</span>${wishlistHeart(n)}</div>
         </div>
         <p class="cart-feedback" id="cart-feedback" role="status" hidden></p>
         ${sharePanel("piece", n)}<a class="text-link" href="#contact" data-inquire-piece="${n}"
