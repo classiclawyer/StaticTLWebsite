@@ -4829,3 +4829,9 @@ body { min-height:100vh; min-height:100dvh; display:flex; flex-direction:column;
 body > header, body > footer { flex-shrink:0; }
 body > main { flex:1 0 auto; }
 
+.form-wrap .alternate-contact .contact-instagram-link { position:relative; border-bottom:0; }
+.form-wrap .alternate-contact .contact-instagram-link::after { content:""; position:absolute; left:0; right:0; bottom:0; height:1px; background:var(--gold); transform-origin:left; }
+.form-wrap .alternate-contact .contact-instagram-link:hover::after,
+.form-wrap .alternate-contact .contact-instagram-link:focus-visible::after { animation:discuss-underline 280ms ease-out; }
+@media (prefers-reduced-motion:reduce) { .form-wrap .alternate-contact .contact-instagram-link:hover::after, .form-wrap .alternate-contact .contact-instagram-link:focus-visible::after { animation:none; } }
+
