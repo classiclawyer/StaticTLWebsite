@@ -23,7 +23,7 @@ function productPrice(spec, origin = "lab-grown") {
   const price = origin === "natural" ? spec.naturalPrice : origin === "lab-grown" ? spec.price : "";
   if (price === "" || price === undefined || price === null) return t.request;
   const amount = new Intl.NumberFormat(lang === "ko" ? "ko-KR" : "en-IE", {
-    style: "currency", currency: spec.currency, maximumFractionDigits: spec.currency === "KRW" ? 0 : 2,
+    style: "currency", currency: spec.currency, minimumFractionDigits: 0, maximumFractionDigits: 0,
   }).format(price);
   return `${t.starts} ${amount}`;
 }
