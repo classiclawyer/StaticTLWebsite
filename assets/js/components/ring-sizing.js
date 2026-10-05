@@ -6,7 +6,7 @@ function ringSizing(n, index, selected = "consult", showDialog = true) {
   const t = ringCopy[lang], id = index === undefined ? `ring-size-${n}` : `cart-ring-size-${index}`;
   return `<div class="ring-sizing">
       <div class="ring-size-heading">
-        ${index === undefined ? `<label for="${id}">${t.label}</label>` : ""}<button
+        <label for="${id}">${index === undefined ? t.label : t.variant}</label><button
           type="button"
           data-size-guide
           aria-label="${t.guide}"

@@ -4781,3 +4781,8 @@ html[lang="ko"] .product-wishlist-action > span { font-size:22px; font-weight:60
 .ring-size-dialog.is-closing::backdrop { animation:ring-backdrop-exit 160ms ease-in forwards; }
 @media (max-width:600px) { .cart-page.container { padding-top:32px; } }
 @media (prefers-reduced-motion:reduce) { .ring-size-dialog[open], .ring-size-dialog[open]::backdrop { animation:none; } }
+
+.cart-item .ring-sizing { grid-template-columns:auto minmax(0,200px) 32px; align-items:center; }
+.cart-item .ring-size-heading label { grid-column:1; grid-row:1; margin:0; font-size:12px; letter-spacing:0; text-transform:none; }
+.cart-item [data-cart-ring-size] { grid-column:2; }
+.cart-item [data-size-guide] { grid-column:3; }
