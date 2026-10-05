@@ -22,7 +22,7 @@ function cartPage() {
               return `<article class="cart-item">
             <a href="#piece-${item.n}"><img src="${product.image}" alt="${product.name}"></a>
             <div><h3><a href="#piece-${item.n}">${product.name}</a></h3><p>${item.origin === "natural" ? jewelryOptions[lang].natural : item.origin === "lab-grown" ? jewelryOptions[lang].lab : t.confirm} ${lang === "ko" ? "다이아몬드" : "diamonds"}</p>
-            <p>${item.origin === "natural" ? t.quote : productPrice(product.spec)}</p>
+            <p>${productPrice(product.spec, item.origin)}</p>
             ${ringSizing(item.n, i, item.size ?? "consult", false)}
             <div class="cart-item-actions"><span>× ${item.qty}</span><button type="button" data-remove-cart="${i}">${t.remove}</button></div></div>
           </article>`;

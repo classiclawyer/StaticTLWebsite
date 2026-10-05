@@ -5,7 +5,7 @@ import { addCart, readCart, writeCart, cartVariant } from "../features/cart.js";
 import { ringIds } from "../content/catalog.js";
 import { setLanguage, lang } from "./language.js";
 import { cartText } from "../content/cart.js";
-import { productRecord } from "../components/products.js";
+import { productRecord, productPrice } from "../components/products.js";
 import { submitInquiry } from "../features/inquiry.js";
 import { copy } from "../content/site.js";
 
@@ -78,6 +78,11 @@ function bindPageEvents({ route, pieceNumber, sharedParams, render }) {
     const n = Number(pieceNumber[1]),
       key = `atelier-piece-${n}`,
       names = ["diamond-origin", "diamond-color", "gold-color"];
+    const refreshPrice = () => {
+      const price = document.getElementById(`product-price-detail-${n}`);
+      const origin = document.querySelector(`input[name="diamond-origin-detail-${n}"]:checked`)?.value || "lab-grown";
+      if (price) price.textContent = productPrice(productRecord(n).spec, origin);
+    };
     try {
       const saved = JSON.parse(readLocal(key) || "null");
       if (sharedParams.has("o")) {
@@ -116,7 +121,9 @@ function bindPageEvents({ route, pieceNumber, sharedParams, render }) {
         if (premium) premium.hidden = saved["diamond-origin"] !== "natural";
       }
     } catch (_) {}
+    refreshPrice();
     const save = () => {
+      refreshPrice();
       const data = {};
       for (const name of names)
         data[name] = document.querySelector(`input[name="${name}-detail-${n}"]:checked`)?.value;

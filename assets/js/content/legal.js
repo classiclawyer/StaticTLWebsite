@@ -10,7 +10,7 @@ const legalCopy = {
     ],
     [
       "Images, materials & prices",
-      "Editorial images may be AI-assisted visualizations and can differ from the finished piece. Descriptions, carat and gold weights, stone counts, sizes, availability, and displayed “From” prices are estimates or starting indications. A selected natural or lab-grown option does not automatically recalculate the displayed price. The final stone origin, grading or certification if applicable, specifications, availability, delivery, shipping costs, duties, taxes, and price must be confirmed in a written proposal before you order.",
+      "Editorial images may be AI-assisted visualizations and can differ from the finished piece. Descriptions, carat and gold weights, stone counts, sizes, availability, and displayed “From” prices are estimates or starting indications. Displayed starting prices follow the selected natural or lab-grown diamond option. The final stone origin, grading or certification if applicable, specifications, availability, delivery, shipping costs, duties, taxes, and price must be confirmed in a written proposal before you order.",
     ],
     [
       "Advance payment protection",
@@ -56,7 +56,7 @@ const legalCopy = {
     ],
     [
       "이미지·소재·가격",
-      "연출 이미지에는 AI를 활용한 시각화가 포함될 수 있으며 실제 완성품과 차이가 있을 수 있습니다. 제품 설명, 캐럿 및 골드 중량, 보석 개수, 크기, 재고, ‘시작가’는 추정치 또는 안내용 기준입니다. 천연 혹은 랩그로운 선택만으로 표시된 시작가가 자동 변경되지는 않습니다. 주문 전 보석의 출처, 해당하는 경우 감정서 또는 등급, 최종 사양, 재고, 배송·관세·세금 및 확정 가격을 서면 제안으로 안내합니다.",
+      "연출 이미지에는 AI를 활용한 시각화가 포함될 수 있으며 실제 완성품과 차이가 있을 수 있습니다. 제품 설명, 캐럿 및 골드 중량, 보석 개수, 크기, 재고, ‘시작가’는 추정치 또는 안내용 기준입니다. 표시된 시작가는 선택하신 천연 혹은 랩그로운 다이아몬드 종류에 따라 바뀝니다. 주문 전 보석의 출처, 해당하는 경우 감정서 또는 등급, 최종 사양, 재고, 배송·관세·세금 및 확정 가격을 서면 제안으로 안내합니다.",
     ],
     [
       "선지급 결제 보호 선택",

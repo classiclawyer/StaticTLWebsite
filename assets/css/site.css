@@ -1205,7 +1205,7 @@ header nav a:focus-visible {
   padding-top: 16px;
 }
 .catalog-details .catalog-price {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 28px;
   line-height: 1.2;
   color: var(--violet);
@@ -4841,4 +4841,3 @@ body > main { flex:1 0 auto; }
 .product-detail-image::after,
 .cart-item > a::after,
 .wishlist-card > a::after { content:none; display:none; }
-
