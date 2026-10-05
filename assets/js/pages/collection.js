@@ -1,4 +1,3 @@
-import { copy, labels } from "../content/site.js";
 import { lang } from "../core/language.js";
 import { signatures, catalogLabels } from "../content/catalog.js";
 import { collectionCard } from "../components/products.js";
@@ -6,14 +5,7 @@ import { collectionCard } from "../components/products.js";
 import { products } from "../content/products.js";
 
 function collectionPage() {
-  const t = copy[lang],
-    l = labels[lang];
-  return `<section class="page-hero">
-      <h1>${l.collection}</h1>
-      <p>${t.collectionLead}</p>
-      <a class="stone-hero-link" href="#stones">${l.stones} ↗</a>
-    </section>
-    <section class="container signature-section">
+  return `<section class="container signature-section">
       <div class="signature-intro">
         <span class="eyebrow">Atelier Tamara de Launay</span>
         <h2>${signatures[lang].heading}</h2>
@@ -25,3 +17,4 @@ function collectionPage() {
 }
 
 export { collectionPage };
+
