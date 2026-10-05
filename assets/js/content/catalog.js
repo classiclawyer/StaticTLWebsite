@@ -3,21 +3,13 @@ import { products } from "./products.js";
 const signatures = {
   "en": {
     "heading": "Explore the opening collection",
-    "lead": "Nine diamond pieces, presented in warm and cool tones. The Ligne de Lumière tennis bracelet and both Céleste de l'Aunay rings are 14K gold; the remaining six pieces are 18K gold. Choose natural or lab-grown diamonds for any design. For availability or a private commission, DM us anytime.",
-    "groups": [
-      "Warm tones",
-      "Cool tones"
-    ],
+    "lead": "Nine diamond pieces. The Ligne de Lumière tennis bracelet and both Céleste de l'Aunay rings are 14K gold; the remaining six pieces are 18K gold. Choose natural or lab-grown diamonds for any design. For availability or a private commission, DM us anytime.",
     "inquire": "Enquire on Instagram",
     "concepts": "Explore the rest of the collection"
   },
   "ko": {
     "heading": "오프닝 컬렉션 둘러보기",
-    "lead": "다이아몬드 주얼리 아홉 점을 웜톤과 쿨톤으로 선보입니다. Ligne de Lumière 테니스 브레이슬릿과 Céleste de l'Aunay 링 두 점은 14K 골드, 나머지 여섯 점은 18K 골드입니다. 모든 디자인에 천연 혹은 랩그로운 다이아몬드를 선택하실 수 있습니다. 주문 가능 여부와 1:1 맞춤제작 상담은 언제든 인스타그램 DM으로 문의해 주세요.",
-    "groups": [
-      "웜톤",
-      "쿨톤"
-    ],
+    "lead": "다이아몬드 주얼리 아홉 점을 선보입니다. Ligne de Lumière 테니스 브레이슬릿과 Céleste de l'Aunay 링 두 점은 14K 골드, 나머지 여섯 점은 18K 골드입니다. 모든 디자인에 천연 혹은 랩그로운 다이아몬드를 선택하실 수 있습니다. 주문 가능 여부와 1:1 맞춤제작 상담은 언제든 인스타그램 DM으로 문의해 주세요.",
     "inquire": "인스타그램 DM 문의",
     "concepts": "컬렉션의 다른 작품"
   }
@@ -111,9 +103,6 @@ const jewelryOptions = {
     hint: "원하시는 조합을 선택해 주세요. 실제 제작 가능 여부와 최종 가격은 보석 수급, 디자인 검토 후 개별적으로 안내합니다.",
   },
 };
-const toneGroups = Object.fromEntries(
-  ["warm", "cool"].map((tone) => [tone, products.filter((product) => product.tone === tone).map((product) => product.id)]),
-);
 const productPageCopy = {
   "en": {
     "back": "Back to the collection",
@@ -182,7 +171,6 @@ export {
   signatures,
   catalogLabels,
   jewelryOptions,
-  toneGroups,
   productPageCopy,
   ringIds,
   ringCopy,

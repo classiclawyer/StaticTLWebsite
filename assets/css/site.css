@@ -4710,3 +4710,15 @@ footer .fine {
     height: 30px;
   }
 }
+
+/* Product hearts and compact collection pricing. */
+.product-price-row { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.product-price-row .catalog-price { margin:12px 0; }
+.wishlist-heart { display:inline-flex; align-items:center; justify-content:center; flex:none; width:44px; height:44px; padding:10px; border:0; background:transparent; color:var(--violet); cursor:pointer; }
+.wishlist-heart svg { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:1.5; }
+.wishlist-heart.is-saved svg { fill:currentColor; }
+.wishlist-heart:hover { opacity:.75; }
+.wishlist-heart:focus-visible { outline:2px solid currentColor; outline-offset:2px; }
+.product-purchase-actions { display:flex; align-items:center; gap:16px; }
+.product-specifications h3 { margin:0 0 12px; font-size:18px; }
+.product-specifications .card-specs { margin-bottom:24px; }

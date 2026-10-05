@@ -8,7 +8,6 @@ import {
 } from "../content/catalog.js";
 import { lang } from "../core/language.js";
 import { cartText } from "../content/cart.js";
-import { labels } from "../content/site.js";
 
 const MAX_CART_ENTRIES = 30;
 function readCart() {
@@ -88,7 +87,7 @@ function addCart(n, mode) {
   } else items.push(item);
   writeCart(items);
   const feedback = document.getElementById("cart-feedback");
-  feedback.innerHTML = `${cartText[lang].added} <a href="#cart">${labels[lang].cart} →</a>`;
+  feedback.innerHTML = `<a href="#cart">${lang === "ko" ? "체크아웃" : "Check out"}</a>`;
   feedback.hidden = false;
 }
 

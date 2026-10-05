@@ -6,7 +6,8 @@ const products = [
     "name": "Fleur de l'Aunay — Pendant",
     "image": "assets/images/collection/collection-1-editorial.webp",
     "euro": "",
-    "dollar": 3200,
+    "krw": "",
+    "temporary-usd": 3200,
     "description-en": "Pear-shaped diamonds form a flower pendant on a delicate gold chain.",
     "oneliner-en": "18K yellow-gold floral diamond necklace",
     "description-kr": "물방울 모양의 다이아몬드가 꽃을 이루는 펜던트 목걸이.",
@@ -21,14 +22,14 @@ const products = [
     "diamond-color": "white",
     "gold-color": "yellow",
     "kind": "necklace",
-    "tone": "warm"
   },
   {
     "id": 7,
     "name": "Fleur de l'Aunay — Ring",
     "image": "assets/images/collection/collection-7-editorial.webp",
     "euro": "",
-    "dollar": 3300,
+    "krw": "",
+    "temporary-usd": 3300,
     "description-en": "A sculptural flower of pear-shaped diamonds, paired with the pendant.",
     "oneliner-en": "18K yellow-gold floral diamond ring",
     "description-kr": "목걸이와 한 세트를 이루는 플라워 링.",
@@ -43,14 +44,14 @@ const products = [
     "diamond-color": "white",
     "gold-color": "yellow",
     "kind": "ring",
-    "tone": "warm"
   },
   {
     "id": 4,
     "name": "Éternelle de l'Aunay",
     "image": "assets/images/collection/collection-4-editorial.webp",
     "euro": "",
-    "dollar": 2500,
+    "krw": "",
+    "temporary-usd": 2500,
     "description-en": "A continuous circle of diamonds, made to be worn every day.",
     "oneliner-en": "18K yellow-gold diamond eternity ring",
     "description-kr": "다이아몬드가 끊임없이 이어지는 이터니티 링.",
@@ -65,14 +66,14 @@ const products = [
     "diamond-color": "white",
     "gold-color": "yellow",
     "kind": "ring",
-    "tone": "warm"
   },
   {
     "id": 2,
     "name": "Onde de l'Aunay",
     "image": "assets/images/collection/collection-2-editorial.webp",
     "euro": "",
-    "dollar": 3900,
+    "krw": "",
+    "temporary-usd": 3900,
     "description-en": "A flowing sequence of pear-shaped diamonds in yellow gold.",
     "oneliner-en": "18K yellow-gold pear diamond bracelet",
     "description-kr": "물방울 모양 다이아몬드가 옐로 골드를 따라 흐르듯 이어지는 브레이슬릿.",
@@ -87,14 +88,14 @@ const products = [
     "diamond-color": "white",
     "gold-color": "yellow",
     "kind": "bracelet",
-    "tone": "warm"
   },
   {
     "id": 5,
     "name": "Céleste de l'Aunay — Radiant",
     "image": "assets/images/collection/collection-5-editorial.webp",
     "euro": "",
-    "dollar": 7600,
+    "krw": "",
+    "temporary-usd": 7600,
     "description-en": "A radiant-cut center framed by a halo of diamonds.",
     "oneliner-en": "14K gold radiant halo diamond ring",
     "description-kr": "래디언트 컷 중심석을 다이아몬드 헤일로가 감싸는 링.",
@@ -109,14 +110,14 @@ const products = [
     "diamond-color": "white",
     "gold-color": "yellow",
     "kind": "ring",
-    "tone": "warm"
   },
   {
     "id": 8,
     "name": "L’Amour de Tamara — Pear",
     "image": "assets/images/collection/collection-8-editorial.webp",
     "euro": "",
-    "dollar": 5400,
+    "krw": "",
+    "temporary-usd": 5400,
     "description-en": "A pear-shaped pink diamond framed by a sweep of white diamonds.",
     "oneliner-en": "18K gold pink pear diamond ring",
     "description-kr": "핑크빛 물방울 모양 다이아몬드를 화이트 다이아몬드가 감싸는 링.",
@@ -131,14 +132,14 @@ const products = [
     "diamond-color": "pink",
     "gold-color": "pictured",
     "kind": "ring",
-    "tone": "cool"
   },
   {
     "id": 9,
     "name": "L’Amour de Tamara — Radiant",
     "image": "assets/images/collection/collection-9-editorial.webp",
     "euro": "",
-    "dollar": 4600,
+    "krw": "",
+    "temporary-usd": 4600,
     "description-en": "A pink radiant-cut diamond, flanked by white diamonds.",
     "oneliner-en": "18K gold pink radiant diamond ring",
     "description-kr": "핑크빛 래디언트 컷 다이아몬드와 화이트 다이아몬드가 어우러진 링.",
@@ -153,14 +154,14 @@ const products = [
     "diamond-color": "pink",
     "gold-color": "pictured",
     "kind": "ring",
-    "tone": "cool"
   },
   {
     "id": 3,
     "name": "Ligne de Lumière",
     "image": "assets/images/collection/collection-3-editorial.webp",
     "euro": "",
-    "dollar": 3900,
+    "krw": "",
+    "temporary-usd": 3900,
     "description-en": "A clean line of white diamonds with a cool, even brilliance.",
     "oneliner-en": "14K white-gold diamond tennis bracelet",
     "description-kr": "화이트 다이아몬드가 가지런히 이어지는 테니스 브레이슬릿.",
@@ -175,14 +176,14 @@ const products = [
     "diamond-color": "white",
     "gold-color": "white",
     "kind": "bracelet",
-    "tone": "cool"
   },
   {
     "id": 6,
     "name": "Céleste de l'Aunay — Round",
     "image": "assets/images/collection/collection-6-editorial.webp",
     "euro": "",
-    "dollar": 3800,
+    "krw": "",
+    "temporary-usd": 3800,
     "description-en": "A round center framed by a halo of diamonds.",
     "oneliner-en": "14K gold round halo diamond ring",
     "description-kr": "라운드 중심석을 다이아몬드 헤일로가 감싸는 링.",
@@ -197,7 +198,6 @@ const products = [
     "diamond-color": "white",
     "gold-color": "white",
     "kind": "ring",
-    "tone": "cool"
   }
 ];
 

@@ -25,11 +25,11 @@ Serve the repository root with a static server, for example `python3 -m http.ser
 
 ## Editing
 
-All nine product records live in the exported `products` array in `assets/js/content/products.js`. Keep the existing numeric IDs: product links, saved bag selections and wishlists use them. The array order determines the listing order within each `tone` group. Images remain in `assets/images/collection/`; each record stores its image path.
+All nine product records live in the exported `products` array in `assets/js/content/products.js`. Keep the existing numeric IDs: product links, saved bag selections and wishlists use them. The array order determines the listing order across the collection. Images remain in `assets/images/collection/`; each record stores its image path.
 
-Required fields are `id`, `name`, `image`, `euro`, `dollar`, `description-en`, `oneliner-en`, `description-kr`, `oneliner-kr`, `stone`, `gold`, and `count`. Prices are numeric starting prices. `stone` is the supplied total diamond weight in ct, `gold` is the gold weight in g, and `count` is the supplied number of stones. An empty string means the information is missing; all euro prices are currently empty. Do not infer exchange rates, missing weights, or stone counts.
+Required fields are `id`, `name`, `image`, `euro`, `krw`, `description-en`, `oneliner-en`, `description-kr`, `oneliner-kr`, `stone`, `gold`, and `count`. Prices are numeric starting prices. `temporary-usd` contains explicitly temporary USD catalog values requested for the preview. The renderer uses the language-specific EUR or KRW price when supplied, otherwise this clearly labeled USD placeholder. Remove the placeholder when real prices are entered. `stone` is the supplied total diamond weight in ct, `gold` is the gold weight in g, and `count` is the supplied number of stones. An empty string means the information is missing; EUR and KRW prices are currently empty. Do not infer exchange rates, missing weights, or stone counts.
 
-Additional fields preserve existing information: `name-kr`, `gold-purity`, `center-stone`, `melee-stone`, `diamond-color`, `gold-color`, `kind`, and `tone`. Center and melee weights remain separate when no total was supplied. `kind` controls ring sizing. Product-specific copy and specifications should be edited only here; `content/catalog.js` retains shared interface copy and derives its product lookup lists from this array. `components/products.js` renders the records for the collection, detail pages, bag and wishlist.
+Additional fields preserve existing information: `name-kr`, `gold-purity`, `center-stone`, `melee-stone`, `diamond-color`, `gold-color`, and `kind`. Center and melee weights remain separate when no total was supplied. `kind` identifies the jewelry type. Product-specific copy and specifications should be edited only here; `content/catalog.js` retains shared interface copy and derives its product lookup lists from this array. `components/products.js` renders the records for the collection, detail pages, bag and wishlist.
 
 Keep filenames and references in sync when adding images. Edit general text in `content/en.js` and `content/ko.js`; keep their keys aligned. Feature-specific translations live beside the related data in `content/catalog.js`, `legal.js`, `cart.js`, `sharing.js` and `stones.js`. Shared editorial labels and source links live in `content/site.js`. Some short labels remain in their page or component templates.
 
@@ -39,7 +39,7 @@ No secrets or private customer data belong in this repository. The contact and c
 
 ## Refactor checks
 
-Check every navigation route and all nine product pages in both languages. Verify language persistence, ring sizing, product choices after reload, cart add/remove, wishlist toggling, shared links and the mobile menu. Compare desktop and mobile layouts against the base branch. Keep CSS rules in order: later rules currently override earlier styles.
+Check every navigation route and all nine product pages in both languages. Verify language persistence, diamond origin after reload, cart add/remove, wishlist toggling, shared links and the mobile menu. Compare desktop and mobile layouts against the base branch. Keep CSS rules in order: later rules currently override earlier styles.
 
 Use mocked responses for routine form regression checks so they do not send real inquiries. A mocked success confirms browser behavior, not email delivery.
 

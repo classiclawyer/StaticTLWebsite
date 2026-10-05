@@ -1,7 +1,7 @@
 import { cartText } from "../content/cart.js";
 import { lang } from "../core/language.js";
 import { readCart, cartVariant } from "../features/cart.js";
-import { productRecord } from "../components/products.js";
+import { productRecord, productPrice } from "../components/products.js";
 import { sharePanel } from "../features/sharing.js";
 
 function cartPage() {
@@ -25,7 +25,7 @@ function cartPage() {
               return `<article class="cart-item">
             <a href="#piece-${item.n}"><img src="${product.image}" alt="${product.name}"></a>
             <div><h3><a href="#piece-${item.n}">${product.name}</a></h3><p>${cartVariant(item)}</p>
-            <p>${item.origin === "natural" ? t.quote : product.spec.price ? `${t.from} USD ${product.spec.price.toLocaleString("en-US")}` : t.quote}</p>
+            <p>${item.origin === "natural" ? t.quote : productPrice(product.spec)}</p>
             <div class="cart-item-actions"><span>× ${item.qty}</span><button type="button" data-remove-cart="${i}">${t.remove}</button></div></div>
           </article>`;
             })
