@@ -6,7 +6,8 @@ import { cartText } from "../content/cart.js";
 
 function contactPage(selectedInquiry) {
   const t = copy[lang],
-    l = labels[lang];
+    l = labels[lang],
+    piece = selectedInquiry ? productRecord(selectedInquiry.n) : null;
   return `<section class="page-hero">
       <span class="eyebrow">Paris, Seoul</span>
       <h1>${l.contact}</h1>
@@ -22,7 +23,7 @@ function contactPage(selectedInquiry) {
         </div>
         ${
           selectedInquiry
-            ? `<div class="selection-summary"><strong>${lang === "ko" ? "선택한 작품" : "Selected piece"}</strong><span>${productRecord(selectedInquiry.n).name}</span><input type="hidden" name="selected_piece" value="${productRecord(selectedInquiry.n).name}">${[
+            ? `<div class="selection-summary"><div class="selection-summary-copy"><strong>${lang === "ko" ? "선택한 작품" : "Selected piece"}</strong><span>${piece.name}</span></div><img class="selection-summary-image" src="${piece.image}" alt="${piece.name}"><input type="hidden" name="selected_piece" value="${piece.name}">${[
                 "diamond-origin",
                 "diamond-color",
                 "gold-color",
