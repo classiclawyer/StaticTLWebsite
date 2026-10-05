@@ -4767,3 +4767,17 @@ html[lang="ko"] .product-wishlist-action > span { font-size:22px; font-weight:60
 .cart-item [data-cart-ring-size] { grid-column:1; grid-row:2; width:100%; }
 .cart-item [data-size-guide] { grid-column:2; grid-row:2; align-self:center; }
 .cart-item .ring-size-note { grid-column:1 / -1; }
+
+.cart-page.container { padding-top:48px; }
+.cart-item .ring-sizing { grid-template-columns:minmax(0,200px) 32px; }
+.cart-item [data-cart-ring-size], .cart-item [data-size-guide] { grid-row:1; }
+@keyframes ring-guide-enter { from { opacity:0; transform:translateY(8px) scale(.98); } to { opacity:1; transform:none; } }
+@keyframes ring-guide-exit { to { opacity:0; transform:translateY(5px) scale(.98); } }
+@keyframes ring-backdrop-enter { from { background:#1d132300; } to { background:#1d1323a8; } }
+@keyframes ring-backdrop-exit { to { background:#1d132300; } }
+.ring-size-dialog[open] { animation:ring-guide-enter 160ms ease-out; }
+.ring-size-dialog[open]::backdrop { animation:ring-backdrop-enter 160ms ease-out; }
+.ring-size-dialog.is-closing { animation:ring-guide-exit 160ms ease-in forwards; }
+.ring-size-dialog.is-closing::backdrop { animation:ring-backdrop-exit 160ms ease-in forwards; }
+@media (max-width:600px) { .cart-page.container { padding-top:32px; } }
+@media (prefers-reduced-motion:reduce) { .ring-size-dialog[open], .ring-size-dialog[open]::backdrop { animation:none; } }

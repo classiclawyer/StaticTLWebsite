@@ -9,12 +9,7 @@ import { ringIds, jewelryOptions } from "../content/catalog.js";
 function cartPage() {
   const t = cartText[lang],
     items = readCart();
-  return `<section class="page-hero">
-      <span class="eyebrow">Atelier Tamara de Launay</span>
-      <h1>${t.title}</h1>
-      <p>${t.lead}</p>
-    </section>
-    <section class="container cart-page">
+  return `<section class="container cart-page">
       ${
         items.length
           ? `

@@ -6,8 +6,7 @@ function ringSizing(n, index, selected = "consult", showDialog = true) {
   const t = ringCopy[lang], id = index === undefined ? `ring-size-${n}` : `cart-ring-size-${index}`;
   return `<div class="ring-sizing">
       <div class="ring-size-heading">
-        <label for="${id}">${t.label}</label
-        ><button
+        ${index === undefined ? `<label for="${id}">${t.label}</label>` : ""}<button
           type="button"
           data-size-guide
           aria-label="${t.guide}"
@@ -17,13 +16,13 @@ function ringSizing(n, index, selected = "consult", showDialog = true) {
           ${index === undefined ? `${t.guide} ↗` : "?"}
         </button>
       </div>
-      <select id="${id}" name="${id}" ${index === undefined ? "" : `data-cart-ring-size="${index}"`}>
+      <select id="${id}" name="${id}" aria-label="${t.variant}" ${index === undefined ? "" : `data-cart-ring-size="${index}"`}>
         <option value="consult" ${selected === "consult" ? "selected" : ""}>${t.unsure}</option>
         ${Array.from({ length: 29 }, (_, i) => 44 + i)
           .map((mm) => `<option value="${mm}" ${selected === mm ? "selected" : ""}>${mm} mm</option>`)
           .join("")}
       </select>
-      <p class="ring-size-note">${t.note}</p>
+      ${index === undefined ? `<p class="ring-size-note">${t.note}</p>` : ""}
     </div>
     ${showDialog ? ringSizeDialog() : ""}`;
 }
