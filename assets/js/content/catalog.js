@@ -23,12 +23,12 @@ const catalogLabels = {
     center: "Center diamond",
     melee: "Mêlée diamonds",
     goldWeight: "Gold weight",
-    pieces: "Diamonds",
+    pieces: "Mêlée diamond count",
     origin: "Choose your diamond origin",
     choose: "Select an option",
     lab: "Lab-grown diamonds",
     natural: "Natural diamonds",
-    note: "All carat weights, piece counts, gold weights, and starting prices are approximate. Starting prices vary with diamond origin, size, and final specifications; your selection does not change the displayed minimum price.",
+    note: "All carat weights, piece counts, gold weights, and starting prices are approximate. Displayed starting prices follow your selected diamond origin; final prices depend on size and confirmed specifications.",
   },
   fr: {
     starts: "À partir de",
@@ -38,7 +38,7 @@ const catalogLabels = {
     center: "Diamant central",
     melee: "Diamants de mêlée",
     goldWeight: "Poids de l’or",
-    pieces: "Diamants",
+    pieces: "Nombre de diamants de mêlée",
     origin: "Choisissez l’origine des diamants",
     choose: "Choisir",
     lab: "Diamants de laboratoire",
@@ -53,12 +53,12 @@ const catalogLabels = {
     center: "중심 다이아몬드",
     melee: "주변 다이아몬드",
     goldWeight: "골드 중량",
-    pieces: "다이아몬드 개수",
+    pieces: "주변 다이아몬드 개수",
     origin: "다이아몬드 종류 선택",
     choose: "선택해 주세요",
     lab: "랩그로운 다이아몬드",
     natural: "천연 다이아몬드",
-    note: "캐럿 중량과 다이아몬드 개수, 골드 중량, 시작 가격은 모두 대략적인 수치입니다. 최종 가격은 다이아몬드의 종류와 크기, 확정된 사양에 따라 달라집니다.",
+    note: "캐럿 중량과 다이아몬드 개수, 골드 중량, 시작 가격은 모두 대략적인 수치입니다. 표시되는 시작 가격은 선택하신 다이아몬드 종류에 따라 바뀌며, 최종 가격은 크기와 확정된 사양에 따라 달라집니다.",
   },
 };
 const jewelryOptions = {
@@ -121,7 +121,7 @@ const productPageCopy = {
     "note": "연출 이미지는 작품의 분위기를 보여줍니다. 사양과 시작 가격은 대략적인 안내이며, 최종 조건은 선택하신 다이아몬드와 사양에 따라 개별적으로 확정됩니다."
   }
 };
-const ringIds = new Set(products.filter((product) => product.kind === "ring").map((product) => product.id));
+const ringIds = new Set(products.filter((product) => product.category === "ring").map((product) => product.id));
 const ringCopy = {
   en: {
     label: "Ring size · finger circumference",

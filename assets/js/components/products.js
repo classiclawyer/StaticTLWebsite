@@ -18,13 +18,14 @@ function choiceGroup(name, label, options, id, selected) {
     </div>
   </fieldset>`;
 }
-function productPrice(spec) {
+function productPrice(spec, origin = "lab-grown") {
   const t = catalogLabels[lang];
-  if (!spec.price) return t.request;
+  const price = origin === "natural" ? spec.naturalPrice : origin === "lab-grown" ? spec.price : "";
+  if (price === "" || price === undefined || price === null) return t.request;
   const amount = new Intl.NumberFormat(lang === "ko" ? "ko-KR" : "en-IE", {
     style: "currency", currency: spec.currency, maximumFractionDigits: spec.currency === "KRW" ? 0 : 2,
-  }).format(spec.price);
-  return `${t.starts} ${amount}${spec.currency === "USD" ? (lang === "ko" ? " · 임시 USD 가격" : " · Temporary USD price") : ""}`;
+  }).format(price);
+  return `${t.starts} ${amount}`;
 }
 function wishlistHeart(n) {
   const wished = readWishlist().includes(n);
@@ -37,27 +38,29 @@ function catalogDetails(spec, id) {
     <section class="product-specifications"><h3>${lang === "ko" ? "제품 사양" : "Specifications"}</h3>${collectionCardSpecs(spec)}</section>
     <div class="jewelry-choices">
       ${choiceGroup("diamond-origin", o.origin, [["lab-grown", o.lab], ["natural", o.natural]], id, "lab-grown")}
-      <p class="natural-premium" id="natural-premium-${id}" hidden>${lang === "ko" ? "천연 다이아몬드는 추가 비용이 발생합니다. 정확한 가격은 문의해 주세요." : "Natural diamonds incur an additional cost. Please inquire for an individual quote."}</p>
     </div>
-    <p class="catalog-price">${productPrice(spec)}</p>
+    <p class="catalog-price" id="product-price-${id}" aria-live="polite">${productPrice(spec)}</p>
   </div>`;
 }
 function productRecord(n) {
   const product = products.find((item) => item.id === n);
   if (!product) return null;
-  const language = lang === "ko" ? "kr" : "en";
+  const korean = lang === "ko";
   const currency = lang === "ko" ? "KRW" : "EUR";
-  const price = product[lang === "ko" ? "krw" : "euro"];
-  const spec = { price: price || product["temporary-usd"], currency: price ? currency : "USD", gold: product["gold-purity"] };
-  for (const [key, field] of [["total", "stone"], ["goldWeight", "gold"], ["pieces", "count"], ["center", "center-stone"], ["melee", "melee-stone"]]) {
-    if (product[field] !== "") spec[key] = product[field];
+  const price = product[korean ? "Lab-krw" : "Lab-eur"];
+  const naturalPrice = product[korean ? "Nat-krw" : "Nat-eur"];
+  const spec = { price, naturalPrice, currency, gold: product["gold-purity"] };
+  for (const [key, field] of [["goldWeight", "gold"], ["pieces", "melee-count"], ["center", "center-stone"], ["melee", "melee-stone"]]) {
+    if (product[field] !== "" && product[field] !== undefined && product[field] !== null) {
+      spec[key] = key === "pieces" ? product[field] : `${product[field]} ${key === "goldWeight" ? "g" : "ct"}`;
+    }
   }
   return {
     n: product.id,
-    name: language === "kr" ? product["name-kr"] || product.name : product.name,
+    name: korean ? product["name kr"] || product.Product : product.Product,
     image: product.image,
-    type: product[`oneliner-${language}`],
-    description: product[`description-${language}`],
+    type: product[korean ? "one liner kr" : "one liner"],
+    description: product[korean ? "description kr" : "description"],
     spec,
   };
 }
