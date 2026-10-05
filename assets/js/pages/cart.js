@@ -43,7 +43,7 @@ function cartPage() {
           <p id="cart-response" class="success" role="status" aria-live="polite" hidden></p>
         </div>
       </form>
-      <p class="alternate-contact">${t.instagram} <a href="https://www.instagram.com/atelier_tamara_de_launay/" target="_blank" rel="noopener noreferrer">@atelier_tamara_de_launay ↗</a></p>
+      <p class="alternate-contact">${lang === "ko" ? "직접 연락하고 싶으신가요? 인스타그램에서 아뜰리에 타마라 드 로네에 DM을 보내셔도 좋습니다." : "Prefer to contact us directly? You can also DM l'Atelier Tamara de Launay on Instagram."} <a class="contact-instagram-link" href="https://www.instagram.com/tamara_de_launay/" target="_blank" rel="noopener noreferrer">@tamara_de_launay</a></p>
     `
           : `<div class="cart-empty"><p>${t.empty}</p><a class="button fill" href="#collection">${t.browse}</a></div>`
       }

@@ -4819,9 +4819,9 @@ html[lang="ko"] .product-wishlist-action > span { font-size:22px; font-weight:60
 @media (max-width:600px) { .selection-summary { gap:12px; } .selection-summary-image { width:70px; height:86px; } }
 
 .form-wrap.container { padding-top:48px; }
-.form-wrap .alternate-contact .contact-instagram-link { display:inline-block; margin-left:6px; padding:2px 0; color:var(--violet); border-bottom:1px solid var(--gold); text-decoration:none; transition:color 160ms ease, border-color 160ms ease; }
-.form-wrap .alternate-contact .contact-instagram-link:hover { color:#735b90; border-color:currentColor; }
-.form-wrap .alternate-contact .contact-instagram-link:focus-visible { outline:2px solid var(--violet); outline-offset:4px; }
+.alternate-contact .contact-instagram-link { display:inline-block; margin-left:6px; padding:2px 0; color:var(--violet); border-bottom:1px solid var(--gold); text-decoration:none; transition:color 160ms ease, border-color 160ms ease; }
+.alternate-contact .contact-instagram-link:hover { color:#735b90; border-color:currentColor; }
+.alternate-contact .contact-instagram-link:focus-visible { outline:2px solid var(--violet); outline-offset:4px; }
 @media (max-width:600px) { .form-wrap.container { padding-top:32px; } }
 
 /* Fill short pages while keeping the footer in normal document flow. */
@@ -4829,9 +4829,8 @@ body { min-height:100vh; min-height:100dvh; display:flex; flex-direction:column;
 body > header, body > footer { flex-shrink:0; }
 body > main { flex:1 0 auto; }
 
-.form-wrap .alternate-contact .contact-instagram-link { position:relative; border-bottom:0; }
-.form-wrap .alternate-contact .contact-instagram-link::after { content:""; position:absolute; left:0; right:0; bottom:0; height:1px; background:var(--gold); transform-origin:left; }
-.form-wrap .alternate-contact .contact-instagram-link:hover::after,
-.form-wrap .alternate-contact .contact-instagram-link:focus-visible::after { animation:discuss-underline 280ms ease-out; }
-@media (prefers-reduced-motion:reduce) { .form-wrap .alternate-contact .contact-instagram-link:hover::after, .form-wrap .alternate-contact .contact-instagram-link:focus-visible::after { animation:none; } }
-
+.alternate-contact .contact-instagram-link { position:relative; border-bottom:0; }
+.alternate-contact .contact-instagram-link::after { content:""; position:absolute; left:0; right:0; bottom:0; height:1px; background:var(--gold); transform-origin:left; }
+.alternate-contact .contact-instagram-link:hover::after,
+.alternate-contact .contact-instagram-link:focus-visible::after { animation:discuss-underline 280ms ease-out; }
+@media (prefers-reduced-motion:reduce) { .alternate-contact .contact-instagram-link:hover::after, .alternate-contact .contact-instagram-link:focus-visible::after { animation:none; } }
