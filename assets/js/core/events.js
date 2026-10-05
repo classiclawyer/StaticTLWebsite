@@ -17,8 +17,15 @@ function bindPageEvents({ route, pieceNumber, sharedParams, render }) {
       (b.onclick = () => {
         const n = Number(b.dataset.wish),
           items = readWishlist();
+        const checkout = document.querySelector(".checkout-button")?.cloneNode(true);
         writeWishlist(items.includes(n) ? items.filter((x) => x !== n) : [...items, n]);
         render();
+        if (checkout) document.querySelector("[data-add-to-cart]")?.replaceWith(checkout);
+        const heart = document.querySelector(`.wishlist-heart[data-wish="${n}"]`);
+        if (heart) {
+          heart.classList.add("wish-clicked");
+          heart.focus({ preventScroll: true });
+        }
       }),
   );
   document
@@ -101,6 +108,7 @@ function bindPageEvents({ route, pieceNumber, sharedParams, render }) {
           "natural-premium-" + r.name.slice("diamond-origin-".length),
         );
         if (box) box.hidden = r.value !== "natural";
+        if (document.querySelector(".checkout-button")) render();
       }),
   );
   document.querySelectorAll("[data-inquire-piece]").forEach(
@@ -180,3 +188,4 @@ function bindPageEvents({ route, pieceNumber, sharedParams, render }) {
 }
 
 export { bindPageEvents };
+

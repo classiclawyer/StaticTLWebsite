@@ -63,7 +63,7 @@ const catalogLabels = {
 };
 const jewelryOptions = {
   en: {
-    origin: "Diamond origin",
+    origin: "Diamond origin selection",
     colors: "Diamond color",
     metals: "Gold color",
     lab: "Lab-grown",
@@ -83,7 +83,7 @@ const jewelryOptions = {
     hint: "Select your preferences. Every combination is subject to stone availability, design feasibility, and an individual quote.",
   },
   ko: {
-    origin: "다이아몬드 종류",
+    origin: "다이아몬드 종류 선택",
     colors: "다이아몬드 색상",
     metals: "골드 색상",
     lab: "랩그로운",

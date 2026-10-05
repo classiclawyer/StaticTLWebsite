@@ -7,7 +7,7 @@ import {
   productPageCopy,
 } from "../content/catalog.js";
 import { lang } from "../core/language.js";
-import { photoLabels, editorialNote } from "../content/site.js";
+import { photoLabels } from "../content/site.js";
 import { readWishlist } from "../features/wishlist.js";
 
 function choiceGroup(name, label, options, id, selected) {
@@ -86,7 +86,6 @@ function collectionCard(n) {
       ><div class="signature-main">
         <img src="${photo}" alt="${piece.name}, ${photoLabels[lang]}" loading="lazy" /></div
     ></a>
-    <p class="editorial-note">${editorialNote[lang]}</p>
     <h3><a href="#piece-${n}">${piece.name}</a></h3>
     <div class="meta">${piece.type}</div>
     <p>${piece.description}</p>

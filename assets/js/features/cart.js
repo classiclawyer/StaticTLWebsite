@@ -87,7 +87,23 @@ function addCart(n, mode) {
   } else items.push(item);
   writeCart(items);
   const feedback = document.getElementById("cart-feedback");
-  feedback.innerHTML = `<a href="#cart">${lang === "ko" ? "체크아웃" : "Check out"}</a>`;
+  const button = document.querySelector(`[data-add-to-cart][data-piece="${n}"]`);
+  if (button) {
+    button.disabled = true;
+    button.classList.add("bag-added");
+    const checkout = document.createElement("a");
+    checkout.href = "#cart";
+    checkout.className = "button fill checkout-button";
+    checkout.textContent = lang === "ko" ? "체크아웃" : "Check out";
+    setTimeout(() => {
+      if (!button.isConnected) return;
+      const focused = document.activeElement === button;
+      button.replaceWith(checkout);
+      if (focused) checkout.focus();
+    }, window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 280);
+  }
+  feedback.textContent = lang === "ko" ? "쇼핑백에 담았습니다." : "Added to the bag.";
+  feedback.classList.add("visually-hidden");
   feedback.hidden = false;
 }
 
