@@ -4810,3 +4810,6 @@ html[lang="ko"] .product-wishlist-action > span { font-size:22px; font-weight:60
 .product-detail-content > .text-link:focus-visible::after { animation:discuss-underline 280ms ease-out; }
 @media (prefers-reduced-motion:reduce) { .product-detail-content > .text-link:hover::after, .product-detail-content > .text-link:focus-visible::after { animation:none; } }
 
+.signature-card .product-price-row { margin-top:auto; }
+.signature-card .signature-inquire { margin-top:0; }
+
