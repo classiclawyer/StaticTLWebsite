@@ -1,8 +1,10 @@
 import { cartText } from "../content/cart.js";
 import { lang } from "../core/language.js";
-import { readCart, cartVariant } from "../features/cart.js";
+import { readCart } from "../features/cart.js";
 import { productRecord, productPrice } from "../components/products.js";
 import { sharePanel } from "../features/sharing.js";
+import { ringSizing, ringSizeDialog } from "../components/ring-sizing.js";
+import { ringIds, jewelryOptions } from "../content/catalog.js";
 
 function cartPage() {
   const t = cartText[lang],
@@ -24,8 +26,9 @@ function cartPage() {
               const product = productRecord(item.n);
               return `<article class="cart-item">
             <a href="#piece-${item.n}"><img src="${product.image}" alt="${product.name}"></a>
-            <div><h3><a href="#piece-${item.n}">${product.name}</a></h3><p>${cartVariant(item)}</p>
+            <div><h3><a href="#piece-${item.n}">${product.name}</a></h3><p>${item.origin === "natural" ? jewelryOptions[lang].natural : item.origin === "lab-grown" ? jewelryOptions[lang].lab : t.confirm} ${lang === "ko" ? "다이아몬드" : "diamonds"}</p>
             <p>${item.origin === "natural" ? t.quote : productPrice(product.spec)}</p>
+            ${ringSizing(item.n, i, item.size ?? "consult", false)}
             <div class="cart-item-actions"><span>× ${item.qty}</span><button type="button" data-remove-cart="${i}">${t.remove}</button></div></div>
           </article>`;
             })
@@ -49,7 +52,7 @@ function cartPage() {
     `
           : `<div class="cart-empty"><p>${t.empty}</p><a class="button fill" href="#collection">${t.browse}</a></div>`
       }
-    </section>`;
+    </section>${items.some(item => ringIds.has(item.n)) ? ringSizeDialog() : ""}`;
 }
 
 export { cartPage };

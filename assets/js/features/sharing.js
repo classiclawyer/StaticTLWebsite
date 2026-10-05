@@ -12,7 +12,7 @@ function sharePanel(kind, n) {
     data-share-kind="${kind}"
     ${n ? `data-share-piece="${n}"` : ""}
   >
-    ${kind === "piece" ? "" : `<h3>${kind === "cart" ? t.shareCart : t.shareWish}</h3>`}
+    ${kind !== "wishlist" ? "" : `<h3>${kind === "cart" ? t.shareCart : t.shareWish}</h3>`}
     ${kind === "wishlist" ? `<p>${t.hint}</p>` : ""}
     <div class="share-actions">
       <button type="button" data-share="native">${t.native}</button

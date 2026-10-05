@@ -20,6 +20,13 @@ function bindPageEvents({ route, pieceNumber, sharedParams, render }) {
         const checkout = document.querySelector(".checkout-button")?.cloneNode(true);
         writeWishlist(items.includes(n) ? items.filter((x) => x !== n) : [...items, n]);
         render();
+        if (!items.includes(n)) {
+          const icon = document.querySelector('#header-actions a[href="#wishlist"]');
+          if (icon) {
+            icon.classList.add("bag-icon-added");
+            icon.addEventListener("animationend", () => icon.classList.remove("bag-icon-added"), { once: true });
+          }
+        }
         if (checkout) document.querySelector("[data-add-to-cart]")?.replaceWith(checkout);
         const heart = document.querySelector(`.wishlist-heart[data-wish="${n}"]`);
         if (heart) {
@@ -34,6 +41,16 @@ function bindPageEvents({ route, pieceNumber, sharedParams, render }) {
   document
     .querySelectorAll("[data-close-size-guide]")
     .forEach((b) => (b.onclick = () => b.closest("dialog").close()));
+  document.querySelectorAll("[data-cart-ring-size]").forEach((select) => {
+    select.onchange = () => {
+      const items = readCart(), item = items[Number(select.dataset.cartRingSize)];
+      if (!item || !ringIds.has(item.n)) return;
+      const size = select.value === "consult" ? "consult" : Number(select.value);
+      if (size !== "consult" && (!Number.isInteger(size) || size < 44 || size > 72)) return;
+      item.size = size;
+      writeCart(items);
+    };
+  });
   if (pieceNumber) {
     const n = Number(pieceNumber[1]),
       key = `atelier-piece-${n}`,
@@ -188,4 +205,3 @@ function bindPageEvents({ route, pieceNumber, sharedParams, render }) {
 }
 
 export { bindPageEvents };
-
