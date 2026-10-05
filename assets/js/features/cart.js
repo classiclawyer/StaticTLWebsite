@@ -46,12 +46,9 @@ function writeCart(items) {
 function cartVariant(item) {
   const o = jewelryOptions[lang],
     t = cartText[lang];
-  const color = o.diamond.find(([k]) => k === item.color)?.[1] || item.color;
-  const gold =
-    item.gold === "pictured" ? t.pictured : o.gold.find(([k]) => k === item.gold)?.[1] || item.gold;
   const origin =
     item.origin === "confirm" ? t.confirm : item.origin === "natural" ? o.natural : o.lab;
-  return `${origin} · ${color} · ${gold}${ringIds.has(item.n) ? ` · ${ringCopy[lang].variant}: ${Number.isInteger(item.size) ? item.size + " mm" : ringCopy[lang].unsure}` : ""}`;
+  return `${origin}${ringIds.has(item.n) ? ` · ${ringCopy[lang].variant}: ${Number.isInteger(item.size) ? item.size + " mm" : ringCopy[lang].unsure}` : ""}`;
 }
 function addCart(n, mode) {
   const id = `detail-${n}`;

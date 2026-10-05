@@ -189,7 +189,7 @@ function bindPageEvents({ route, pieceNumber, sharedParams, render }) {
       const selection = items
         .map(
           (item, i) =>
-            `${i + 1}. ${productRecord(item.n).name} × ${item.qty} — ${cartVariant(item)}`,
+            `${i + 1}. #${item.n} ${productRecord(item.n).name} × ${item.qty} — ${cartVariant(item)} — ${productPrice(productRecord(item.n).spec, item.origin)}`,
         )
         .join("\n");
       submitInquiry(

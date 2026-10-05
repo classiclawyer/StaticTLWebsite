@@ -10,6 +10,7 @@ async function submitInquiry(form, status, messages, extra = {}) {
   try {
     const payload = new FormData(form);
     payload.set("language", lang === "ko" ? "Korean" : "English");
+    payload.set("currency", lang === "ko" ? "KRW" : "EUR");
     for (const [key, value] of Object.entries(extra)) payload.set(key, value);
     const response = await fetch(form.action, {
       method: "POST",

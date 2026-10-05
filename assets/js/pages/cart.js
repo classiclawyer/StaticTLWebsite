@@ -33,9 +33,10 @@ function cartPage() {
         </div>
         <div class="cart-checkout">
           <h2>${t.inquiryTitle}</h2>
-          <p class="inquiry-disclaimer">${t.notOrder}</p>
           <label for="cart-name">${t.name}</label><input id="cart-name" name="name" required autocomplete="name">
           <label for="cart-email">${t.email}</label><input id="cart-email" name="email" type="email" required autocomplete="email">
+          <label for="cart-phone">${t.phone}</label><input id="cart-phone" name="phone" type="tel" autocomplete="tel">
+          <label for="cart-address">${t.shippingAddress}</label><textarea id="cart-address" name="shipping_address" rows="3" autocomplete="street-address"></textarea>
           <label for="cart-message">${t.messageLabel}</label><textarea id="cart-message" name="message" rows="5" placeholder="${t.messagePlaceholder}"></textarea>
           <input type="hidden" name="inquiry_type" value="Cart inquiry">
           <div class="form-honeypot" aria-hidden="true"><label for="cart-gotcha">Leave this blank</label><input id="cart-gotcha" name="_gotcha" tabindex="-1" autocomplete="off"></div>
