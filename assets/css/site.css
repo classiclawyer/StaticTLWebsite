@@ -4750,3 +4750,9 @@ footer .fine {
 #header-actions .bag-icon-added { animation:bag-icon-added 420ms ease-out; }
 @media (prefers-reduced-motion:reduce) { #header-actions .bag-icon-added { animation:none; } }
 
+.product-detail.container { padding-top:48px; }
+.product-wishlist-action > span { font-family:var(--font-display); font-size:28px; line-height:1.2; color:var(--violet); }
+html[lang="ko"] .product-wishlist-action > span { font-size:22px; font-weight:600; }
+.product-detail .share-actions { justify-content:center; }
+.product-detail-content > .text-link { display:block; text-align:right; }
+@media (max-width:600px) { .product-detail.container { padding-top:32px; } }

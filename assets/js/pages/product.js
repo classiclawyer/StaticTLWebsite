@@ -7,13 +7,7 @@ import { sharePanel } from "../features/sharing.js";
 function productDetail(product) {
   const q = productPageCopy[lang],
     n = product.n;
-  return `<section class="page-hero product-page-heading">
-      <a class="return-link" href="#collection">← ${q.back}</a
-      ><span class="eyebrow">Atelier Tamara de Launay</span>
-      <h1>${product.name}</h1>
-      <p>${product.type}</p>
-    </section>
-    <article class="container product-detail">
+  return `<article class="container product-detail">
       <div class="product-detail-gallery">
         <figure class="product-detail-image">
           <img

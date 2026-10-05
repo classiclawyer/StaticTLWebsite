@@ -93,11 +93,13 @@ function render() {
     .join("");
   document.getElementById("languages").innerHTML = langs;
   const bagCount = readCart().reduce((count, item) => count + item.qty, 0);
+  const wishlistCount = readWishlist().length;
   document.getElementById("header-actions").innerHTML = `
     <a class="header-icon" href="#wishlist" aria-label="${l.wishlist}" title="${l.wishlist}"${route === "wishlist" ? ' aria-current="page"' : ""}>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
         <path d="M20.8 4.6a5.4 5.4 0 0 0-7.6 0L12 5.8l-1.2-1.2a5.4 5.4 0 0 0-7.6 7.6L12 21l8.8-8.8a5.4 5.4 0 0 0 0-7.6Z"/>
       </svg>
+      <span class="bag-count" id="wishlist-count" aria-live="polite" aria-atomic="true">${wishlistCount || ""}</span>
     </a>
     <a class="header-icon" href="#cart" aria-label="${l.cart}" title="${l.cart}"${route === "cart" ? ' aria-current="page"' : ""}>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
