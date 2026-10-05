@@ -78,7 +78,7 @@ const copyEN = {
     "As Buyer and CFO, Lionel draws on relationships built across countries to help source exceptional gemstones, considering each choice in light of quality, value, and the client’s vision. He also helped build this website. Together with Tamara, he brings the same quiet attention to detail to the experience of commissioning a piece as to the stones at its heart.",
   formLead: "Your next piece begins with a conversation.",
   formText:
-    "Tell us what you imagine using the form below, or begin a private conversation on Instagram.",
+    "Your next piece begins with a conversation, tell us what you imagine using the form below.",
   name: "Name",
   email: "Email",
   city: "City",

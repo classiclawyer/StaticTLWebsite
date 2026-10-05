@@ -4817,3 +4817,9 @@ html[lang="ko"] .product-wishlist-action > span { font-size:22px; font-weight:60
 .selection-summary-copy { display:flex; flex-direction:column; gap:7px; min-width:0; }
 .selection-summary-image { width:90px; height:110px; object-fit:cover; flex:none; }
 @media (max-width:600px) { .selection-summary { gap:12px; } .selection-summary-image { width:70px; height:86px; } }
+
+.form-wrap.container { padding-top:48px; }
+.form-wrap .alternate-contact .contact-instagram-link { display:inline-block; margin-left:6px; padding:2px 0; color:var(--violet); border-bottom:1px solid var(--gold); text-decoration:none; transition:color 160ms ease, border-color 160ms ease; }
+.form-wrap .alternate-contact .contact-instagram-link:hover { color:#735b90; border-color:currentColor; }
+.form-wrap .alternate-contact .contact-instagram-link:focus-visible { outline:2px solid var(--violet); outline-offset:4px; }
+@media (max-width:600px) { .form-wrap.container { padding-top:32px; } }

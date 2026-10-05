@@ -1,4 +1,4 @@
-import { copy, labels } from "../content/site.js";
+import { copy } from "../content/site.js";
 import { lang } from "../core/language.js";
 import { productRecord } from "../components/products.js";
 import { jewelryOptions, ringIds, ringCopy } from "../content/catalog.js";
@@ -6,14 +6,8 @@ import { cartText } from "../content/cart.js";
 
 function contactPage(selectedInquiry) {
   const t = copy[lang],
-    l = labels[lang],
     piece = selectedInquiry ? productRecord(selectedInquiry.n) : null;
-  return `<section class="page-hero">
-      <span class="eyebrow">Paris, Seoul</span>
-      <h1>${l.contact}</h1>
-      <p>${t.formLead}</p>
-    </section>
-    <section class="container form-wrap">
+  return `<section class="container form-wrap">
       <p>${t.formText}</p>
       <form id="request" action="https://formspree.io/f/mdekydbn" method="POST" autocomplete="on">
         <input type="hidden" name="inquiry_type" value="General inquiry" />
@@ -121,12 +115,13 @@ function contactPage(selectedInquiry) {
         <p id="response" class="success" hidden role="status" aria-live="polite"></p>
       </form>
       <p class="alternate-contact">
-        ${lang === "ko" ? "인스타그램 DM으로 편하게 이야기하셔도 좋습니다." : "Prefer to write directly? You can also DM Atelier Tamara de Launay on Instagram."}
+        ${lang === "ko" ? "직접 연락하고 싶으신가요? 인스타그램에서 아뜰리에 타마라 드 로네에 DM을 보내셔도 좋습니다." : "Prefer to contact us directly? You can also DM l'Atelier Tamara de Launay on Instagram."}
         <a
-          href="https://www.instagram.com/atelier_tamara_de_launay/"
+          class="contact-instagram-link"
+          href="https://www.instagram.com/tamara_de_launay/"
           target="_blank"
           rel="noopener noreferrer"
-          >@atelier_tamara_de_launay ↗</a
+          >@tamara_de_launay</a
         >
       </p>
     </section>`;
