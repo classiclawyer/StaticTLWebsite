@@ -4786,3 +4786,27 @@ html[lang="ko"] .product-wishlist-action > span { font-size:22px; font-weight:60
 .cart-item .ring-size-heading label { grid-column:1; grid-row:1; margin:0; font-size:12px; letter-spacing:0; text-transform:none; }
 .cart-item [data-cart-ring-size] { grid-column:2; }
 .cart-item [data-size-guide] { grid-column:3; }
+
+.product-detail-content > .text-link {
+  display:table;
+  width:fit-content;
+  margin-left:auto;
+  position:relative;
+  border-bottom:0;
+  text-decoration:none;
+}
+.product-detail-content > .text-link::after {
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:1px;
+  background:var(--gold);
+  transform-origin:left;
+}
+@keyframes discuss-underline { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+.product-detail-content > .text-link:hover::after,
+.product-detail-content > .text-link:focus-visible::after { animation:discuss-underline 280ms ease-out; }
+@media (prefers-reduced-motion:reduce) { .product-detail-content > .text-link:hover::after, .product-detail-content > .text-link:focus-visible::after { animation:none; } }
+
