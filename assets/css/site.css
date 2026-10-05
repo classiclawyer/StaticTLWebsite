@@ -862,6 +862,7 @@ header {
   object-fit: cover;
 }
 .signature-section {
+  padding-top: 48px;
   padding-bottom: 70px;
 }
 .signature-group {
@@ -902,6 +903,7 @@ header {
     grid-template-columns: 1fr;
   }
   .signature-section {
+    padding-top: 32px;
     padding-bottom: 55px;
   }
   .concept-section {
@@ -4747,3 +4749,4 @@ footer .fine {
 @keyframes bag-icon-added { 35% { transform:translateY(-3px) scale(1.14); } 70% { transform:translateY(1px) scale(.97); } }
 #header-actions .bag-icon-added { animation:bag-icon-added 420ms ease-out; }
 @media (prefers-reduced-motion:reduce) { #header-actions .bag-icon-added { animation:none; } }
+
