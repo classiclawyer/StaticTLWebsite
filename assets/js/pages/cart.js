@@ -23,7 +23,7 @@ function cartPage() {
             .map((item, i) => {
               const product = productRecord(item.n);
               return `<article class="cart-item">
-            <a href="#piece-${item.n}"><img src="assets/images/collection/collection-${item.n}-editorial.webp" alt="${product.name}"></a>
+            <a href="#piece-${item.n}"><img src="${product.image}" alt="${product.name}"></a>
             <div><h3><a href="#piece-${item.n}">${product.name}</a></h3><p>${cartVariant(item)}</p>
             <p>${item.origin === "natural" ? t.quote : product.spec.price ? `${t.from} USD ${product.spec.price.toLocaleString("en-US")}` : t.quote}</p>
             <div class="cart-item-actions"><span>× ${item.qty}</span><button type="button" data-remove-cart="${i}">${t.remove}</button></div></div>

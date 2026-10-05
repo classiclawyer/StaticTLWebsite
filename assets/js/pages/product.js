@@ -20,7 +20,7 @@ function productDetail(product) {
         <figure class="product-detail-image">
           <img
             id="detail-main"
-            src="assets/images/collection/collection-${n}-editorial.webp"
+            src="${product.image}"
             alt="${product.name}, ${photoLabels[lang]}"
           />
         </figure>

@@ -1,17 +1,14 @@
+import { products } from "../content/products.js";
 import {
   catalogLabels,
   jewelryOptions,
   picturedColor,
   picturedGold,
-  collectionIndex,
-  signatures,
-  catalogSpecs,
   productPageCopy,
-  editorialPhotos,
   toneGroups,
 } from "../content/catalog.js";
 import { lang } from "../core/language.js";
-import { copy, photoLabels, editorialNote, labels } from "../content/site.js";
+import { photoLabels, editorialNote, labels } from "../content/site.js";
 import { readWishlist } from "../features/wishlist.js";
 
 function choiceGroup(name, label, options, id, selected) {
@@ -60,21 +57,21 @@ function catalogDetails(spec, id) {
   </div>`;
 }
 function productRecord(n) {
-  const si = collectionIndex.signature.indexOf(n);
-  if (si >= 0) {
-    const [name, type, description] = signatures[lang].items[si];
-    return { name, type, description, spec: catalogSpecs.signature[si], n };
+  const product = products.find((item) => item.id === n);
+  if (!product) return null;
+  const language = lang === "ko" ? "kr" : "en";
+  const spec = { price: product.dollar, gold: product["gold-purity"] };
+  for (const [key, field] of [["total", "stone"], ["goldWeight", "gold"], ["pieces", "count"], ["center", "center-stone"], ["melee", "melee-stone"]]) {
+    if (product[field] !== "") spec[key] = product[field];
   }
-  const ci = collectionIndex.more.indexOf(n);
-  if (ci >= 0)
-    return {
-      name: copy[lang].productNames[ci],
-      type: copy[lang].productTypes[ci],
-      description: productPageCopy[lang].moreDescriptions[ci],
-      spec: catalogSpecs.concept[ci],
-      n,
-    };
-  return null;
+  return {
+    n: product.id,
+    name: language === "kr" ? product["name-kr"] || product.name : product.name,
+    image: product.image,
+    type: product[`oneliner-${language}`],
+    description: product[`description-${language}`],
+    spec,
+  };
 }
 function collectionCardSpecs(spec) {
   const t = catalogLabels[lang];
@@ -95,9 +92,7 @@ function collectionCardSpecs(spec) {
 function collectionCard(n) {
   const piece = productRecord(n),
     q = productPageCopy[lang],
-    si = collectionIndex.signature.indexOf(n),
-    photo =
-      si >= 0 ? editorialPhotos[si] : `assets/images/collection/collection-${n}-editorial.webp`,
+    photo = piece.image,
     wished = readWishlist().includes(n);
   return `<article class="signature-card">
     <a class="product-card-image-link" href="#piece-${n}" aria-label="${q.view}: ${piece.name}"
