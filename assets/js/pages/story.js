@@ -1,30 +1,25 @@
-import { copy, labels, brandStoryText, sourceLinks } from "../content/site.js";
+import { copy, brandStoryText, sourceLinks } from "../content/site.js";
 import { lang } from "../core/language.js";
 
 function storyPage() {
-  const t = copy[lang],
-    l = labels[lang];
-  return `<section class="page-hero story-hero">
-      <div class="story-hero-copy">
-        <span class="eyebrow">Atelier Tamara de Launay</span>
-        <h1>${l.story}</h1>
-        <p>${t.storyLead}</p>
-      </div>
-      <figure class="story-hero-photo">
-        <img
-          src="assets/images/portraits/tamara-story-portrait.jpg"
-          alt="${lang === "ko" ? "주얼리를 착용한 김태희 대표" : "Tamara wearing fine jewelry at afternoon tea"}"
-          loading="eager"
-        />
-      </figure>
-    </section>
-    <article class="brand-story">
-      <div class="container narrow story story-opening">
-        <span class="eyebrow">Atelier Tamara de Launay</span>${t.storyP
-          .slice(0, 2)
-          .map((p) => `<p>${p}</p>`)
-          .join("")}
-      </div>
+  const t = copy[lang];
+  return `<article class="brand-story">
+      <section class="container story-opening">
+        <div class="story story-opening-copy">
+          <span class="eyebrow">${lang === "ko" ? "브랜드 소개" : "Our Story"}</span>
+          <h2>${lang === "ko" ? "창립자의 글" : "Founder's note"}</h2>${t.storyP
+            .slice(0, 2)
+            .map((p) => `<p>${p}</p>`)
+            .join("")}
+        </div>
+        <figure class="story-opening-photo">
+          <img
+            src="assets/images/portraits/tamara-story-portrait.jpg"
+            alt="${lang === "ko" ? "주얼리를 착용한 김태희 대표" : "Tamara wearing fine jewelry at afternoon tea"}"
+            loading="eager"
+          />
+        </figure>
+      </section>
       <section
         class="story-visual-essay"
         aria-label="${lang === "ko" ? "보석을 고르는 과정" : "The art of selecting a stone"}"
@@ -43,59 +38,22 @@ function storyPage() {
           </p>
         </div>
       </section>
-      <figure class="story-wide-image">
-        <img
-          src="assets/images/collection/collection-full-editorial.webp"
-          alt="${lang === "ko" ? "오프닝 컬렉션 아홉 작품의 연출 이미지" : "Editorial visualization of the nine-piece opening collection"}"
-          loading="lazy"
-        />
-      </figure>
-      <div class="container narrow story story-middle">
-        ${t.storyP
-          .slice(2, 4)
-          .map((p) => `<p>${p}</p>`)
-          .join("")}
-      </div>
-      <section
-        class="story-editorial-portraits"
-        aria-label="${lang === "ko" ? "비스포크 주얼리 연출 사진" : "Bespoke jewelry editorial portraits"}"
-      >
-        <figure class="story-editorial-wide">
-          <img
-            src="assets/images/bespoke/custom-portrait.webp"
-            alt="${lang === "ko" ? "블루와 핑크 보석 반지를 착용한 비스포크 주얼리 연출 사진" : "Editorial portrait wearing blue and pink gemstone rings"}"
-            loading="lazy"
-          />
-        </figure>
-        <figure class="story-editorial-tall">
-          <img
-            src="assets/images/bespoke/custom-paraiba-portrait.webp"
+      <section class="container story-reflections">
+        <div class="story story-reflections-copy">
+          ${t.storyP.slice(2, 4).map((p) => `<p>${p}</p>`).join("")}
+        </div>
+        <figure class="story-reflections-photo">
+          <img src="assets/images/bespoke/custom-paraiba-portrait.webp"
             alt="${lang === "ko" ? "청록색 보석 반지를 착용한 비스포크 주얼리 연출 사진" : "Editorial portrait wearing turquoise gemstone rings"}"
-            loading="lazy"
-          />
+            loading="lazy">
         </figure>
-        <p>
-          ${lang === "ko" ? "1:1 맞춤제작 주얼리의 가능성을 담은 연출 이미지" : "Editorial visions of what a private commission can become"}
-        </p>
       </section>
-      <div class="story-image-pair container">
-        <figure>
-          <img
-            src="assets/images/collection/collection-7-editorial.webp"
-            alt="${lang === "ko" ? "꽃 형태의 다이아몬드 링 연출 이미지" : "Editorial visualization of the floral diamond ring"}"
-            loading="lazy"
-          />
-          <figcaption>${brandStoryText[lang].floral}</figcaption>
-        </figure>
-        <figure>
-          <img
-            src="assets/images/collection/collection-8-editorial.webp"
-            alt="${lang === "ko" ? "핑크 페어 다이아몬드 링 연출 이미지" : "Editorial visualization of the pink pear diamond ring"}"
-            loading="lazy"
-          />
-          <figcaption>${brandStoryText[lang].pink}</figcaption>
-        </figure>
-      </div>
+      <figure class="container story-full-portrait">
+        <img src="assets/images/bespoke/custom-portrait.webp"
+          alt="${lang === "ko" ? "블루와 핑크 보석 반지를 착용한 비스포크 주얼리 연출 사진" : "Editorial portrait wearing blue and pink gemstone rings"}"
+          loading="lazy">
+        <figcaption class="editorial-note">${lang === "ko" ? "1:1 맞춤제작 주얼리의 가능성을 담은 연출 이미지" : "Editorial visions of what a private commission can become"}</figcaption>
+      </figure>
       <div class="container narrow story story-closing">
         <p>${t.storyP[4]}</p>
         <p class="quote">${t.statement}</p>
