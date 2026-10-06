@@ -7,7 +7,7 @@ import { products } from "../content/products.js";
 function collectionPage() {
   return `<section class="container signature-section">
       <div class="signature-intro">
-        <span class="eyebrow">Atelier Tamara de Launay</span>
+        <span class="eyebrow">Made-to-order fine jewelry</span>
         <h2>${signatures[lang].heading}</h2>
         <p>${signatures[lang].lead}</p>
         <p class="catalog-fineprint">${catalogLabels[lang].note}</p>
