@@ -4866,3 +4866,19 @@ html[lang] .signature-intro .collection-eyebrow {
 .signature-section > .catalog-fineprint {
   max-width: none;
 }
+
+/* Founder note: portrait beside the opening text, then below on phones. */
+.brand-story .story-opening {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: start;
+  max-width: 1400px;
+  padding-top: 48px;
+}
+.story-opening-photo { margin: 0; }
+.story-opening-photo img { display: block; width: 100%; height: auto; }
+.story-opening-copy p:first-of-type { margin-top: 20px; }
+@media (max-width: 700px) {
+  .brand-story .story-opening { grid-template-columns: minmax(0, 1fr); padding-top: 32px; }
+}

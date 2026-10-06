@@ -1,30 +1,24 @@
-import { copy, labels, brandStoryText, sourceLinks } from "../content/site.js";
+import { copy, brandStoryText, sourceLinks } from "../content/site.js";
 import { lang } from "../core/language.js";
 
 function storyPage() {
-  const t = copy[lang],
-    l = labels[lang];
-  return `<section class="page-hero story-hero">
-      <div class="story-hero-copy">
-        <span class="eyebrow">Atelier Tamara de Launay</span>
-        <h1>${l.story}</h1>
-        <p>${t.storyLead}</p>
-      </div>
-      <figure class="story-hero-photo">
-        <img
-          src="assets/images/portraits/tamara-story-portrait.jpg"
-          alt="${lang === "ko" ? "주얼리를 착용한 김태희 대표" : "Tamara wearing fine jewelry at afternoon tea"}"
-          loading="eager"
-        />
-      </figure>
-    </section>
-    <article class="brand-story">
-      <div class="container narrow story story-opening">
-        <span class="eyebrow">Atelier Tamara de Launay</span>${t.storyP
-          .slice(0, 2)
-          .map((p) => `<p>${p}</p>`)
-          .join("")}
-      </div>
+  const t = copy[lang];
+  return `<article class="brand-story">
+      <section class="container story-opening">
+        <div class="story story-opening-copy">
+          <span class="eyebrow">${lang === "ko" ? "창립자의 글" : "founder's note"}</span>${t.storyP
+            .slice(0, 2)
+            .map((p) => `<p>${p}</p>`)
+            .join("")}
+        </div>
+        <figure class="story-opening-photo">
+          <img
+            src="assets/images/portraits/tamara-story-portrait.jpg"
+            alt="${lang === "ko" ? "주얼리를 착용한 김태희 대표" : "Tamara wearing fine jewelry at afternoon tea"}"
+            loading="eager"
+          />
+        </figure>
+      </section>
       <section
         class="story-visual-essay"
         aria-label="${lang === "ko" ? "보석을 고르는 과정" : "The art of selecting a stone"}"
