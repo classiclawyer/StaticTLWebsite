@@ -4882,3 +4882,25 @@ html[lang] .signature-intro .collection-eyebrow {
 @media (max-width: 700px) {
   .brand-story .story-opening { grid-template-columns: minmax(0, 1fr); padding-top: 32px; }
 }
+
+/* High Jewelry opening follows the founder-note layout. */
+.high-jewelry-opening,
+.high-jewelry-invitation {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: center;
+  max-width: 1400px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+.high-jewelry-invitation { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.high-jewelry-photo { margin: 0; }
+.high-jewelry-photo img { display: block; width: 100%; height: auto; }
+.high-jewelry-opening .eyebrow { display: block; margin-bottom: 22px; }
+.high-jewelry-editorial { margin: 0 auto 48px; }
+.high-jewelry-editorial .editorial-note { margin-top: 12px; }
+@media (max-width: 700px) {
+  .high-jewelry-opening,
+  .high-jewelry-invitation { grid-template-columns: minmax(0, 1fr); padding-top: 32px; padding-bottom: 32px; }
+}
