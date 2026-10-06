@@ -40,10 +40,6 @@ const sourceLinks = [
     "https://rapaport.com/news/diamond-market-cautious-at-start-of-year/",
   ],
   [
-    "Tiffany & Co., Form 10-K for fiscal year ended January 31, 2020, SEC",
-    "https://www.sec.gov/Archives/edgar/data/98246/000009824620000042/tif-2020131x10k.htm",
-  ],
-  [
     "Reuters, gold share of luxury jewelry sales, October 2025",
     "https://www.reuters.com/business/soaring-gold-prices-bring-new-headache-tiffany-owner-lvmh-2025-10-13/",
   ],
