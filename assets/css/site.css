@@ -4904,3 +4904,22 @@ html[lang] .signature-intro .collection-eyebrow {
   .high-jewelry-opening,
   .high-jewelry-invitation { grid-template-columns: minmax(0, 1fr); padding-top: 32px; padding-bottom: 32px; }
 }
+
+/* Story reflections and separate full-width editorial portrait. */
+.story-reflections {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: start;
+  max-width: 1400px;
+  padding-bottom: 48px;
+}
+.story-reflections-photo { margin: 0; }
+.story-reflections-photo img,
+.story-full-portrait img { display: block; width: 100%; height: auto; }
+.story-reflections-copy > p:first-child { margin-top: 0; }
+.story-full-portrait { margin: 0 auto; max-width: 1400px; }
+.story-full-portrait .editorial-note { margin-top: 12px; }
+@media (max-width: 700px) {
+  .story-reflections { grid-template-columns: minmax(0, 1fr); padding-bottom: 32px; }
+}

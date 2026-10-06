@@ -38,41 +38,22 @@ function storyPage() {
           </p>
         </div>
       </section>
-      <figure class="story-wide-image">
-        <img
-          src="assets/images/collection/collection-full-editorial.webp"
-          alt="${lang === "ko" ? "오프닝 컬렉션 아홉 작품의 연출 이미지" : "Editorial visualization of the nine-piece opening collection"}"
-          loading="lazy"
-        />
-      </figure>
-      <div class="container narrow story story-middle">
-        ${t.storyP
-          .slice(2, 4)
-          .map((p) => `<p>${p}</p>`)
-          .join("")}
-      </div>
-      <section
-        class="story-editorial-portraits"
-        aria-label="${lang === "ko" ? "비스포크 주얼리 연출 사진" : "Bespoke jewelry editorial portraits"}"
-      >
-        <figure class="story-editorial-wide">
-          <img
-            src="assets/images/bespoke/custom-portrait.webp"
-            alt="${lang === "ko" ? "블루와 핑크 보석 반지를 착용한 비스포크 주얼리 연출 사진" : "Editorial portrait wearing blue and pink gemstone rings"}"
-            loading="lazy"
-          />
-        </figure>
-        <figure class="story-editorial-tall">
-          <img
-            src="assets/images/bespoke/custom-paraiba-portrait.webp"
+      <section class="container story-reflections">
+        <div class="story story-reflections-copy">
+          ${t.storyP.slice(2, 4).map((p) => `<p>${p}</p>`).join("")}
+        </div>
+        <figure class="story-reflections-photo">
+          <img src="assets/images/bespoke/custom-paraiba-portrait.webp"
             alt="${lang === "ko" ? "청록색 보석 반지를 착용한 비스포크 주얼리 연출 사진" : "Editorial portrait wearing turquoise gemstone rings"}"
-            loading="lazy"
-          />
+            loading="lazy">
         </figure>
-        <p>
-          ${lang === "ko" ? "1:1 맞춤제작 주얼리의 가능성을 담은 연출 이미지" : "Editorial visions of what a private commission can become"}
-        </p>
       </section>
+      <figure class="container story-full-portrait">
+        <img src="assets/images/bespoke/custom-portrait.webp"
+          alt="${lang === "ko" ? "블루와 핑크 보석 반지를 착용한 비스포크 주얼리 연출 사진" : "Editorial portrait wearing blue and pink gemstone rings"}"
+          loading="lazy">
+        <figcaption class="editorial-note">${lang === "ko" ? "1:1 맞춤제작 주얼리의 가능성을 담은 연출 이미지" : "Editorial visions of what a private commission can become"}</figcaption>
+      </figure>
       <div class="container narrow story story-closing">
         <p>${t.storyP[4]}</p>
         <p class="quote">${t.statement}</p>
