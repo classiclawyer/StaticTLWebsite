@@ -39,7 +39,7 @@ const copyEN = {
   collectionText:
     "Nine diamond pieces: the white-gold tennis bracelet and both halo rings are 14K gold; the remaining six pieces are 18K gold. Choose natural or lab-grown diamonds for any design. Editorial images are visualizations; final details are confirmed in your individual proposal.",
   pricePending: "Price on request",
-  from: "Opening collection · From USD 2,500",
+  from: "Opening collection · from USD 2,500",
   bespokeLead: "Your imagination, brought to life.",
   bespokeInvitation:
     "You do not need a finished design. An image you cannot quite place or a feeling you want to capture is enough. Your story and imagination are where the bespoke design begins.",

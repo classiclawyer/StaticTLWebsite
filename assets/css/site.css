@@ -806,7 +806,7 @@ header {
 }
 
 .signature-intro {
-  max-width: 750px;
+  max-width: none;
   margin-bottom: 38px;
 }
 .signature-grid {
@@ -4842,3 +4842,27 @@ body > main { flex:1 0 auto; }
 .cart-item > a::after,
 .wishlist-card > a::after { content:none; display:none; }
 
+
+/* These homepage photographs already contain the brand logo. */
+.hero-image::before,
+.home-image-branded::after,
+.home-image-branded::before {
+  content: none;
+}
+
+/* Consistent collection label and spacing between homepage sections. */
+html[lang] .signature-intro .collection-eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+.home-feature {
+  margin-top: clamp(32px, 4vw, 56px);
+}
+
+.signature-section > .catalog-fineprint {
+  max-width: none;
+}

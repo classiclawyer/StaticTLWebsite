@@ -16,15 +16,12 @@ function homePage() {
       </div>
       <figure class="hero-image">
         <img
-          src="assets/images/collection/collection-full-editorial.webp"
+          src="assets/images/home/opening-collection.webp"
           alt="${lang === "ko" ? "아홉 작품으로 구성된 오프닝 컬렉션의 연출 이미지" : "Editorial visualization of the nine-piece opening collection"}"
           loading="eager"
         />
       </figure>
     </section>
-    <p class="hero-disclosure">
-      ${lang === "ko" ? "오프닝 컬렉션 · 연출 이미지" : "Opening collection · editorial visualization"}
-    </p>
     <section class="home-feature home-feature-story home-reveal">
       <div class="home-feature-copy">
         <span class="eyebrow">Atelier Tamara de Launay</span>
@@ -32,9 +29,9 @@ function homePage() {
         <p class="intro">${t.intro}</p>
         <div class="actions">${button("story", "story")}</div>
       </div>
-      <figure class="home-feature-image">
+      <figure class="home-feature-image home-image-branded">
         <img
-          src="assets/images/collection/collection-8-editorial.webp"
+          src="assets/images/home/pink-pear-ring.webp"
           alt="${lang === "ko" ? "핑크 페어 다이아몬드 반지 연출 이미지" : "Editorial visualization of the pink pear diamond ring"}"
           loading="lazy"
         />
