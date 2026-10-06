@@ -4923,3 +4923,16 @@ html[lang] .signature-intro .collection-eyebrow {
 @media (max-width: 700px) {
   .story-reflections { grid-template-columns: minmax(0, 1fr); padding-bottom: 32px; }
 }
+
+/* One shared gap between the opening story sections. */
+.brand-story { --story-section-gap: 85px; }
+.brand-story .story-opening { padding-bottom: var(--story-section-gap); }
+.brand-story .story-visual-essay { margin-bottom: var(--story-section-gap); }
+.brand-story .story-reflections {
+  padding-top: 0;
+  padding-bottom: var(--story-section-gap);
+}
+.brand-story .story-full-portrait { padding-top: 0; }
+@media (max-width: 700px) {
+  .brand-story { --story-section-gap: 55px; }
+}
