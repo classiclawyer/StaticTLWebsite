@@ -4842,3 +4842,10 @@ body > main { flex:1 0 auto; }
 .cart-item > a::after,
 .wishlist-card > a::after { content:none; display:none; }
 
+
+/* These homepage photographs already contain the brand logo. */
+.hero-image::before,
+.home-image-branded::after,
+.home-image-branded::before {
+  content: none;
+}
