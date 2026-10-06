@@ -4862,3 +4862,7 @@ html[lang] .signature-intro .collection-eyebrow {
 .home-feature {
   margin-top: clamp(32px, 4vw, 56px);
 }
+
+.signature-section > .catalog-fineprint {
+  max-width: none;
+}
