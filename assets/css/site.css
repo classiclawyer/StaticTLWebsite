@@ -806,7 +806,7 @@ header {
 }
 
 .signature-intro {
-  max-width: 750px;
+  max-width: none;
   margin-bottom: 38px;
 }
 .signature-grid {

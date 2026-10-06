@@ -10,9 +10,9 @@ function collectionPage() {
         <span class="eyebrow">Made-to-order fine jewelry</span>
         <h2>${signatures[lang].heading}</h2>
         <p>${signatures[lang].lead}</p>
-        <p class="catalog-fineprint">${catalogLabels[lang].note}</p>
       </div>
       <div class="signature-grid">${products.map((product) => collectionCard(product.id)).join("")}</div>
+      <p class="catalog-fineprint">${catalogLabels[lang].note}</p>
     </section>`;
 }
 
