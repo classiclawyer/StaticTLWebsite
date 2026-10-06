@@ -4849,3 +4849,16 @@ body > main { flex:1 0 auto; }
 .home-image-branded::before {
   content: none;
 }
+
+/* Consistent collection label and spacing between homepage sections. */
+html[lang] .signature-intro .collection-eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+.home-feature {
+  margin-top: clamp(32px, 4vw, 56px);
+}

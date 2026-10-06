@@ -22,9 +22,6 @@ function homePage() {
         />
       </figure>
     </section>
-    <p class="hero-disclosure">
-      ${lang === "ko" ? "오프닝 컬렉션 · 연출 이미지" : "Opening collection · editorial visualization"}
-    </p>
     <section class="home-feature home-feature-story home-reveal">
       <div class="home-feature-copy">
         <span class="eyebrow">Atelier Tamara de Launay</span>
