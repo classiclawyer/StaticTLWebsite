@@ -6,7 +6,8 @@ function storyPage() {
   return `<article class="brand-story">
       <section class="container story-opening">
         <div class="story story-opening-copy">
-          <span class="eyebrow">${lang === "ko" ? "창립자의 글" : "founder's note"}</span>${t.storyP
+          <span class="eyebrow">${lang === "ko" ? "브랜드 소개" : "Our Story"}</span>
+          <h2>${lang === "ko" ? "창립자의 글" : "Founder's note"}</h2>${t.storyP
             .slice(0, 2)
             .map((p) => `<p>${p}</p>`)
             .join("")}
