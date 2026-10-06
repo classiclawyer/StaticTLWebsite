@@ -16,7 +16,7 @@ const signatures = {
 };
 const catalogLabels = {
   en: {
-    starts: "From",
+    starts: "from",
     request: "Price on request",
     gold: "gold",
     diamond: "Diamond weight",

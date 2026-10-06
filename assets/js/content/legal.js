@@ -10,7 +10,7 @@ const legalCopy = {
     ],
     [
       "Images, materials & prices",
-      "Editorial images may be AI-assisted visualizations and can differ from the finished piece. Descriptions, carat and gold weights, stone counts, sizes, availability, and displayed “From” prices are estimates or starting indications. Displayed starting prices follow the selected natural or lab-grown diamond option. The final stone origin, grading or certification if applicable, specifications, availability, delivery, shipping costs, duties, taxes, and price must be confirmed in a written proposal before you order.",
+      "Editorial images may be AI-assisted visualizations and can differ from the finished piece. Descriptions, carat and gold weights, stone counts, sizes, availability, and displayed “from” prices are estimates or starting indications. Displayed starting prices follow the selected natural or lab-grown diamond option. The final stone origin, grading or certification if applicable, specifications, availability, delivery, shipping costs, duties, taxes, and price must be confirmed in a written proposal before you order.",
     ],
     [
       "Advance payment protection",
