@@ -72,24 +72,6 @@ function storyPage() {
           ${lang === "ko" ? "1:1 맞춤제작 주얼리의 가능성을 담은 연출 이미지" : "Editorial visions of what a private commission can become"}
         </p>
       </section>
-      <div class="story-image-pair container">
-        <figure>
-          <img
-            src="assets/images/collection/collection-7-editorial.webp"
-            alt="${lang === "ko" ? "꽃 형태의 다이아몬드 링 연출 이미지" : "Editorial visualization of the floral diamond ring"}"
-            loading="lazy"
-          />
-          <figcaption>${brandStoryText[lang].floral}</figcaption>
-        </figure>
-        <figure>
-          <img
-            src="assets/images/collection/collection-8-editorial.webp"
-            alt="${lang === "ko" ? "핑크 페어 다이아몬드 링 연출 이미지" : "Editorial visualization of the pink pear diamond ring"}"
-            loading="lazy"
-          />
-          <figcaption>${brandStoryText[lang].pink}</figcaption>
-        </figure>
-      </div>
       <div class="container narrow story story-closing">
         <p>${t.storyP[4]}</p>
         <p class="quote">${t.statement}</p>
