@@ -7,7 +7,7 @@ const creativeDirection = {
     "name": "Tamara T. H. Kim",
     "tagline": "A collector’s eye. A lawyer’s rigor.",
     "paragraphs": [
-      "The year was 2002. Tamara was watching Sweet Home Alabama with her mother when a man on screen had Tiffany’s opened for the woman he loved and invited her to choose any ring she wanted. The whole store, just for her.",
+      "The year was 2002. Tamara was watching <em>Sweet Home Alabama</em> with her mother when a man on screen had Tiffany’s opened in the middle of the night solely for the woman he loved, and invited her to choose any ring she wanted. The whole store, just for her.",
       "“Someday, I hope a man will do that for you,” her mother said.",
       "10-year-old Tamara turned to her, smiled, and said: “Someday, I hope to be able to do that for you.”",
       "Her mother still tells the story today.",
