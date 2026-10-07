@@ -5045,13 +5045,3 @@ html[lang] .story-closing .founder-note-sources p {
   display: block;
   line-height: inherit;
 }
-
-/* Balance Korean biographies by distributing the shorter column's spacing. */
-@media (min-width: 701px) {
-  html[lang="ko"] .brand-people .founders article {
-    display: flex;
-    flex-direction: column;
-  }
-  html[lang="ko"] .brand-people .founders article > p { margin-top: 0; }
-  html[lang="ko"] .brand-people .founders article:nth-child(2) > p { margin-top: auto; }
-}
