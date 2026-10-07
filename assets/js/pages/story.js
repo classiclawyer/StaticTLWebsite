@@ -1,10 +1,12 @@
-import { copy, brandStoryText, sourceLinks } from "../content/site.js";
+import { copy, brandStoryText } from "../content/site.js";
 import { founderNote } from "../content/founder-note.js";
+import { founderNoteKO } from "../content/founder-note-ko.js";
 import { creativeDirection } from "../content/creative-direction.js";
 import { lang } from "../core/language.js";
 
 function storyPage() {
   const t = copy[lang];
+  const note = lang === "ko" ? founderNoteKO : founderNote;
   const visualEssay = `      <section class="container story-legacy-container"><div
         class="story-visual-essay"
         aria-label="${lang === "ko" ? "보석을 고르는 과정" : "The art of selecting a stone"}"
@@ -19,18 +21,18 @@ function storyPage() {
         <div class="story-visual-copy">
           <span class="eyebrow">Atelier Tamara de Launay</span>
           <p>
-            ${lang === "ko" ? "한 알의 보석에서 시작해, 오래도록 간직할 작품으로 완성합니다." : `<strong>${founderNote.legacy}</strong>`}
+            <strong>${note.legacy}</strong>
           </p>
         </div>
       </div></section>
 `;
-  const opening = lang === "en" ? founderNote.opening : t.storyP.slice(0, 2);
-  const reflections = lang === "en" ? founderNote.reflections : t.storyP.slice(2, 4);
+  const opening = note.opening;
+  const reflections = note.reflections;
   return `<article class="brand-story">
       <section class="container story-opening">
         <div class="story story-opening-copy">
           <span class="eyebrow">${lang === "ko" ? "브랜드 소개" : "Our Story"}</span>
-          <h2>${lang === "ko" ? "창립자의 글" : founderNote.title}</h2>${opening
+          <h2>${note.title}</h2>${opening
             .map((p) => `<p>${p}</p>`)
             .join("")}
         </div>
@@ -42,7 +44,6 @@ function storyPage() {
           />
         </figure>
       </section>
-      ${lang === "ko" ? visualEssay : ""}
       <section class="container story-reflections">
         <div class="story story-reflections-copy">
           ${reflections.map((p) => `<p>${p}</p>`).join("")}
@@ -53,7 +54,7 @@ function storyPage() {
             loading="lazy">
         </figure>
       </section>
-      ${lang === "en" ? visualEssay : ""}
+      ${visualEssay}
       <figure class="container story-full-portrait">
         <img src="assets/images/bespoke/custom-portrait.webp"
           alt="${lang === "ko" ? "블루와 핑크 보석 반지를 착용한 비스포크 주얼리 연출 사진" : "Editorial portrait wearing blue and pink gemstone rings"}"
@@ -61,19 +62,10 @@ function storyPage() {
         <figcaption class="editorial-note">${lang === "ko" ? "1:1 맞춤제작 주얼리의 가능성을 담은 연출 이미지" : "Editorial visions of what a private commission can become"}</figcaption>
       </figure>
       <div class="container narrow story story-closing">
-        ${lang === "en" ? `
-          ${founderNote.closing.map((p) => `<p>${p}</p>`).join("")}
-          <div class="sources founder-note-sources">
-            ${founderNote.footnotes.map((note) => `<p><small>${note.number} ${note.text} ${note.links.length === 1 ? "Source:" : "Sources:"} ${note.links.map(([label, url]) => `<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`).join(", ")}.</small></p>`).join("")}
-          </div>` : `
-        <p>${t.storyP[4]}</p>
-        <p class="quote">${t.statement}</p>
-        <div class="sources">
-          <strong>${t.sourceTitle}</strong>
-          <ol>
-            ${sourceLinks.map(([name, url]) => `<li><a href="${url}" target="_blank" rel="noopener noreferrer">${name}</a></li>`).join("")}
-          </ol>
-        </div>`}
+        ${note.closing.map((p) => `<p>${p}</p>`).join("")}
+        <div class="sources founder-note-sources">
+          ${note.footnotes.map((footnote) => `<p><small>${footnote.number} ${footnote.text} ${lang === "ko" ? "출처:" : footnote.links.length === 1 ? "Source:" : "Sources:"} ${footnote.links.map(([label, url]) => `<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`).join(", ")}.</small></p>`).join("")}
+        </div>
 
       </div>
       <section class="brand-people" id="people">
