@@ -1,5 +1,5 @@
 const founderNote = {
-  "title": "FOUNDER’S NOTE",
+  "title": "Founder’s note",
   "opening": [
     "If you need loud logos to signify luxury, Tamara de Launay is not for you.",
     "I grew up surrounded by luxury. Designer pieces were part of the landscape of my childhood home, and what my family wore was often a gift from someone we loved. Before I understood labels, I understood the pleasure of wearing something beautiful and the affection behind a gift chosen just for me.",
@@ -9,12 +9,12 @@ const founderNote = {
   "reflections": [
     "The disillusionment deepens when supply chains are laid bare. As investigations into luxury houses show that assembling a €2,600 bag costs a mere €53 in outsourced labor, the question becomes unavoidable: how much of that premium pays for artistry, and how much for the name alone?⁴",
     "Design, heritage, and fine craftsmanship command real value. Unchecked brand vanity does not.",
-    "I remain a lifelong lover of diamonds and a collector of luxury pieces. The beauty, imagination, and artistry of the great houses still move me. But so does the belief that we can expect more from the things we choose to treasure. Admiration and discernment belong together."
+    "I remain a lifelong lover of diamonds and a collector of luxury pieces. The beauty, imagination, and artistry of the great houses still move me. But so does the belief that we can expect more from the things we choose to treasure. Admiration and discernment belong together.",
+    "I founded Tamara de Launay for those who share that conviction: people of unmistakable presence, assured in their taste, independent in their judgment, and exacting in what they choose. A discerning few who expect extraordinary beauty, uncompromising craftsmanship, and integrity in equal measure.",
+    "True luxury does not rely on a logo to command a room. It is felt in the character of a hand-selected stone, the graceful balance of a setting, and the quiet assurance of a piece made to be worn for generations."
   ],
   "legacy": "From the character of a stone to the beginning of your legacy.",
   "closing": [
-    "I founded Tamara de Launay for those who share that conviction: people of unmistakable presence, assured in their taste, independent in their judgment, and exacting in what they choose. A discerning few who expect extraordinary beauty, uncompromising craftsmanship, and integrity in equal measure.",
-    "True luxury does not rely on a logo to command a room. It is felt in the character of a hand-selected stone, the graceful balance of a setting, and the quiet assurance of a piece made to be worn for generations.",
     "Here, your vision is the starting point. We work with natural and lab-grown diamonds and colored gemstones, considering every detail from the proportions of your piece to the way it sits against your skin. Our care extends through its design, its making, and the service that accompanies it. Every stone is selected with intention. Every price is one we can explain with confidence.",
     "The piece you have long imagined may become your signature—the beginning of a collection that could only be yours. A bracelet to mark a promotion, a necklace for a new beginning, a ring to celebrate an ambition fulfilled. Over the years, these pieces become part of how you are remembered. One day, someone you love may wear them, carrying something of you wherever life takes them.",
     "This is the world I invite you into. A place to give your taste its fullest expression, and your own heritage its beginning.",
