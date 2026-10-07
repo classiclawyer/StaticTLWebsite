@@ -4937,14 +4937,26 @@ html[lang] .signature-intro .collection-eyebrow {
   .brand-story { --story-section-gap: 55px; }
 }
 
-/* Opening portraits left, founder-note text right on larger screens. */
+/* Opening text left; Paraiba portrait left and cropped to its adjacent text. */
 @media (min-width: 701px) {
-  .brand-story .story-opening,
   .brand-story .story-reflections {
     grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+    align-items: stretch;
   }
-  .story-opening-photo,
-  .story-reflections-photo { grid-column: 1; grid-row: 1; }
-  .story-opening-copy,
+  .story-reflections-photo {
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    overflow: hidden;
+    min-height: 0;
+  }
+  .story-reflections-photo img {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
   .story-reflections-copy { grid-column: 2; grid-row: 1; }
+  .story-reflections-copy > p:last-child { margin-bottom: 0; }
 }
