@@ -1,5 +1,6 @@
 import { copy, brandStoryText, sourceLinks } from "../content/site.js";
 import { founderNote } from "../content/founder-note.js";
+import { creativeDirection } from "../content/creative-direction.js";
 import { lang } from "../core/language.js";
 
 function storyPage() {
@@ -78,9 +79,9 @@ function storyPage() {
       <section class="brand-people" id="people">
         <div class="container">
           <div class="brand-people-heading">
-            <span class="eyebrow">Atelier Tamara de Launay</span>
-            <h2>${brandStoryText[lang].people}</h2>
-            <p>${brandStoryText[lang].peopleLead}</p>
+            <span class="eyebrow">${lang === "en" ? creativeDirection.eyebrow : "Atelier Tamara de Launay"}</span>
+            <h2>${lang === "en" ? creativeDirection.title : brandStoryText[lang].people}</h2>
+            <p>${lang === "en" ? creativeDirection.lead : brandStoryText[lang].peopleLead}</p>
           </div>
           <div class="founders">
             <article>
@@ -91,11 +92,9 @@ function storyPage() {
                   loading="lazy"
                 />
               </figure>
-              <span class="eyebrow">${t.tamaraRole}</span>
+              <span class="eyebrow">${lang === "en" ? creativeDirection.tamara.role : t.tamaraRole}</span>
               <h3>${lang === "ko" ? "김태희 대표" : "Tamara T. H. Kim"}</h3>
-              <p>${t.tamara}</p>
-              <p>${t.tamaraCareer}</p>
-              <p>${t.tamaraVision}</p>
+              ${lang === "en" ? `<p class="founder-tagline"><strong>${creativeDirection.tamara.tagline}</strong></p>${creativeDirection.tamara.paragraphs.map((p) => `<p>${p}</p>`).join("")}` : `<p>${t.tamara}</p><p>${t.tamaraCareer}</p><p>${t.tamaraVision}</p>`}
             </article>
             <article>
               <figure class="founder-photo lionel">
@@ -105,12 +104,12 @@ function storyPage() {
                   loading="lazy"
                 />
               </figure>
-              <span class="eyebrow">${t.lionelRole}</span>
+              <span class="eyebrow">${lang === "en" ? creativeDirection.lionel.role : t.lionelRole}</span>
               <h3>Lionel Paul Philippe Delaunay</h3>
-              <p>${t.lionel}</p>
-              <p>${t.lionelMore}</p>
+              ${lang === "en" ? `<p class="founder-tagline"><strong>${creativeDirection.lionel.tagline}</strong></p>${creativeDirection.lionel.paragraphs.map((p) => `<p>${p}</p>`).join("")}` : `<p>${t.lionel}</p><p>${t.lionelMore}</p>`}
             </article>
           </div>
+          <div class="actions creative-direction-cta"><a class="button fill" href="#contact">${lang === "ko" ? "비스포크 상담 시작하기" : "Begin your bespoke consultation"}</a></div>
         </div>
       </section>
     </article>`;
