@@ -4992,3 +4992,16 @@ html[lang] .signature-intro .collection-eyebrow {
   .brand-story .story-legacy-container .story-visual-essay { grid-template-columns: minmax(0, 1fr); }
   .story-legacy-container .story-selection-illustration img { height: auto; }
 }
+
+/* Preserve the original illustration height; crop its left edge only. */
+.story-legacy-container .story-selection-illustration img {
+  height: min(41.6667vw, 600px);
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: right center;
+}
+@media (max-width: 800px) {
+  .story-legacy-container .story-selection-illustration img {
+    height: min(66.6667vw, 960px);
+  }
+}
