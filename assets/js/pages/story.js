@@ -4,7 +4,7 @@ import { lang } from "../core/language.js";
 
 function storyPage() {
   const t = copy[lang];
-  const visualEssay = `      <section
+  const visualEssay = `      <section class="container story-legacy-container"><div
         class="story-visual-essay"
         aria-label="${lang === "ko" ? "보석을 고르는 과정" : "The art of selecting a stone"}"
       >
@@ -21,7 +21,7 @@ function storyPage() {
             ${lang === "ko" ? "한 알의 보석에서 시작해, 오래도록 간직할 작품으로 완성합니다." : `<strong>${founderNote.legacy}</strong>`}
           </p>
         </div>
-      </section>
+      </div></section>
 `;
   const opening = lang === "en" ? founderNote.opening : t.storyP.slice(0, 2);
   const reflections = lang === "en" ? founderNote.reflections : t.storyP.slice(2, 4);

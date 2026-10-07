@@ -4967,3 +4967,28 @@ html[lang] .signature-intro .collection-eyebrow {
   max-width: 1232px;
 }
 .brand-story .story-selection-illustration img { object-position: right center; }
+
+/* Use the same container edges as the adjacent story text and portraits. */
+.brand-story .story-legacy-container {
+  max-width: 1400px;
+  padding-top: 0;
+  padding-bottom: var(--story-section-gap);
+}
+.brand-story .story-legacy-container .story-visual-essay {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: stretch;
+}
+.story-legacy-container .story-visual-copy { padding: clamp(24px, 3vw, 44px); }
+.story-legacy-container .story-selection-illustration { overflow: hidden; }
+.story-legacy-container .story-selection-illustration img {
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+}
+@media (max-width: 800px) {
+  .brand-story .story-legacy-container .story-visual-essay { grid-template-columns: minmax(0, 1fr); }
+  .story-legacy-container .story-selection-illustration img { height: auto; }
+}
