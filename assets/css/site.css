@@ -4960,3 +4960,10 @@ html[lang] .signature-intro .collection-eyebrow {
   .story-reflections-copy { grid-column: 2; grid-row: 1; }
   .story-reflections-copy > p:last-child { margin-bottom: 0; }
 }
+
+/* Align the legacy illustration with the other story sections. */
+.brand-story .story-visual-essay {
+  width: 88%;
+  max-width: 1232px;
+}
+.brand-story .story-selection-illustration img { object-position: right center; }
