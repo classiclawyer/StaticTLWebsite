@@ -25,7 +25,7 @@ const creativeDirection = {
   },
   "lionel": {
     "role": "Buyer & CFO",
-    "name": "Lionel Paul Philippe Delaunay",
+    "name": "Lionel Philippe Delaunay",
     "tagline": "Parisian discernment. An exacting eye.",
     "paragraphs": [
       "For Lionel, grandeur is not the opposite of elegance. It simply asks more of every detail.",

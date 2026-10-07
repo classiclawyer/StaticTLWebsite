@@ -100,12 +100,12 @@ function storyPage() {
               <figure class="founder-photo lionel">
                 <img
                   src="assets/images/portraits/lionel-portrait-2026.jpg"
-                  alt="Portrait of Lionel Paul Philippe Delaunay"
+                  alt="Portrait of Lionel Philippe Delaunay"
                   loading="lazy"
                 />
               </figure>
               <span class="eyebrow">${lang === "en" ? creativeDirection.lionel.role : t.lionelRole}</span>
-              <h3>Lionel Paul Philippe Delaunay</h3>
+              <h3 class="lionel-name">Lionel Philippe Delaunay</h3>
               ${lang === "en" ? `<p class="founder-tagline"><strong>${creativeDirection.lionel.tagline}</strong></p>${creativeDirection.lionel.paragraphs.map((p) => `<p>${p}</p>`).join("")}` : `<p>${t.lionel}</p><p>${t.lionelMore}</p>`}
             </article>
           </div>
