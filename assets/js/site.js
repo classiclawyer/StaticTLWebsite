@@ -56,6 +56,9 @@ backToTop.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 
 document.body.append(backToTop);
 function updateBackToTop() {
   backToTop.hidden = window.scrollY < 400;
+  const footer = document.querySelector("footer");
+  const footerOverlap = Math.max(0, Math.min(footer.offsetHeight, window.innerHeight - footer.getBoundingClientRect().top));
+  backToTop.style.bottom = `${Math.max(20, footerOverlap + 16)}px`;
   const label = uiText[document.documentElement.lang === "ko" ? "ko" : "en"].backToTop;
   backToTop.setAttribute("aria-label", label);
   backToTop.title = label;
@@ -65,6 +68,7 @@ backToTop.onclick = () => {
   window.scrollTo({ top: 0, behavior: reducedMotion ? "instant" : "smooth" });
 };
 window.addEventListener("scroll", updateBackToTop, { passive: true });
+window.addEventListener("resize", updateBackToTop);
 new MutationObserver(updateBackToTop).observe(document.documentElement, {
   attributes: true, attributeFilter: ["lang"],
 });
