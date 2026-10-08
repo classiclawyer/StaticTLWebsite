@@ -1,3 +1,4 @@
+import { routePath } from "../core/urls.js";
 import { shareText } from "../content/sharing.js";
 import { lang } from "../core/language.js";
 import { readWishlist } from "./wishlist.js";
@@ -34,20 +35,20 @@ function decodeShare(raw) {
   }
 }
 function shareUrl(kind, n) {
-  const base = location.origin + location.pathname;
-  if (kind === "wishlist") return `${base}#wishlist?items=${readWishlist().join(",")}`;
+  const base = location.origin;
+  if (kind === "wishlist") return `${base}${routePath("wishlist", lang)}?items=${readWishlist().join(",")}`;
   if (kind === "cart") {
     const items = readCart()
       .slice(0, MAX_CART_ENTRIES)
       .map((x) => [x.n, x.origin, x.color, x.gold, x.size, x.qty]);
-    return `${base}#cart?items=${encodeShare(items)}`;
+    return `${base}${routePath("cart", lang)}?items=${encodeShare(items)}`;
   }
   const id = `detail-${n}`,
     val = (key) => document.querySelector(`input[name="${key}-${id}"]:checked`)?.value;
   const params = new URLSearchParams({
     o: val("diamond-origin") || "lab-grown",
   });
-  return `${base}#piece-${n}?${params}`;
+  return `${base}${routePath(`piece-${n}`, lang)}?${params}`;
 }
 async function copyShare(url) {
   try {

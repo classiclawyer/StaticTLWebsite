@@ -1,10 +1,15 @@
 # Atelier Tamara de Launay static website
 
-A build-free static website. `index.html` is the entry point; CSS and JavaScript are separate so the page remains easy to edit and deploy.
+A static website generated from shared English and Korean content modules. Public pages contain their text, navigation, and metadata in the initial HTML; JavaScript adds saved selections, language switching, sharing, animations, and inquiries.
 
 ## Structure
 
-- `index.html` — document shell, navigation and mount point
+- `index.html` — shared document template
+- `scripts/build.mjs` — renders existing page modules to `dist/en/` and `dist/ko/`
+- `scripts/check-build.mjs` — validates generated content, links, metadata, schema and sitemap
+- `assets/js/content/seo.js` — canonical production origin and page descriptions
+- `assets/js/core/urls.js`, `metadata.js` — shared localized URL and metadata helpers
+- `vercel.json` — builds and serves `dist/`
 - `assets/css/site.css` — formatted visual styles, kept in their original cascade order
 - `assets/js/site.js` — startup and navigation listeners
 - `assets/js/content/en.js`, `ko.js` — general page copy and navigation labels
@@ -21,7 +26,15 @@ A build-free static website. `index.html` is the entry point; CSS and JavaScript
 
 ## Local preview
 
-Serve the repository root with a static server, for example `python3 -m http.server 8000`, and open `http://localhost:8000`. Use HTTP rather than opening `index.html` directly: browser JavaScript modules require it. Hash routes work without server rewrites. Vercel can deploy the repository root as a static site with no build command or backend.
+Use Node.js 22 or later. No third-party build dependencies are required.
+
+```sh
+npm run build
+npm test
+python3 -m http.server 8000 --directory dist
+```
+
+Open `http://localhost:8000/en/` or `/ko/`. Rebuild after changing source content. Vercel uses `npm run build` and serves `dist/`, with directory URLs ending in `/`. The source `index.html` is a template; preview the generated output rather than the repository root.
 
 ## Editing
 
@@ -46,3 +59,15 @@ Use mocked responses for routine form regression checks so they do not send real
 ## Form smoke test
 
 On a preview branch, submit one clearly marked test inquiry from each form in both languages. Confirm the success message appears only after Formspree accepts it, the submitted fields appear in Formspree, and notification email arrives at the verified target address. Test a simulated network failure to confirm the form preserves typed content and shows an error. The site does not take orders or payment.
+
+## Discoverability
+
+The build uses the same page functions and content records as the browser, with empty visitor state. It does not copy customer bags, wishlists, or inquiries into generated HTML. Keep copy in the existing content modules; do not edit generated files. There are no French pages.
+
+Canonical routes are `/en/` and `/ko/`, followed by `story/`, `collection/`, `bespoke/`, `stones/`, `contact/`, `legal/`, or stable `piece-1/` through `piece-9/`. Language links retain the current page. Direct localized URLs determine the language even when a different language was saved previously. Old `#collection`, `#piece-1?o=natural`, and shared bag/wishlist URLs still open through the compatibility router. Root visitors get crawlable English HTML and JavaScript restores their saved language.
+
+Set the production origin in `assets/js/content/seo.js` when the custom domain is ready. Titles, descriptions, canonical links, reciprocal EN/KO hreflang links, Open Graph, Twitter cards, and JSON-LD are generated per page and updated during browser navigation. Product schema describes catalog pieces without inventing stock, reviews, or checkout offers. Bags and wishlists use `noindex,follow` and stay outside the sitemap. `robots.txt` permits crawling and points to the generated sitemap.
+
+The static build checks all 32 public pages, language alternates, product schema, and utility-page indexing rules. Also verify the Vercel preview at direct localized URLs with JavaScript disabled and confirm navigation, language switching, natural/lab pricing, saved selections, and mocked forms with JavaScript enabled. After merging, check the actual production responses, then submit the sitemap in Search Console as part of launch.
+
+References: [Google localized-page guidance](https://developers.google.com/search/docs/specialty/international/localized-versions), [Vercel project configuration](https://vercel.com/docs/project-configuration).
