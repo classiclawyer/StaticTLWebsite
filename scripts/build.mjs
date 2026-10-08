@@ -25,15 +25,14 @@ globalThis.document = {
 };
 const { render } = await import("../assets/js/core/router.js");
 const { setLanguage } = await import("../assets/js/core/language.js");
-const { routePath, routes } = await import("../assets/js/core/urls.js");
+const { routePath, routes, rootAssetPaths } = await import("../assets/js/core/urls.js");
 const { metadataHtml } = await import("../assets/js/core/metadata.js");
 const { siteOrigin } = await import("../assets/js/content/seo.js");
 const shell = await readFile(path.join(root, "index.html"), "utf8");
 const pageRoutes = [...routes, ...Array.from({length:9}, (_,i) => `piece-${i+1}`)];
 const publicRoutes = pageRoutes.filter(route => !["cart", "wishlist"].includes(route));
 function links(html, language) {
-  return html.replace(/href="#([a-z]+(?:-[1-9])?)(?:\?([^" ]*))?"/g, (match, route, query) => pageRoutes.includes(route) ? `data-route="${route}" href="${routePath(route, language)}${query ? "?" + query : ""}"` : match)
-    .replace(/((?:src|href)=["'])assets\//g, "$1/assets/")
+  return rootAssetPaths(html.replace(/href="#([a-z]+(?:-[1-9])?)(?:\?([^" ]*))?"/g, (match, route, query) => pageRoutes.includes(route) ? `data-route="${route}" href="${routePath(route, language)}${query ? "?" + query : ""}"` : match))
     .replace(/class="([^"]*\bhome-reveal\b[^"]*)"/g, 'class="$1 is-visible"');
 }
 for (const language of ["en", "ko"]) {

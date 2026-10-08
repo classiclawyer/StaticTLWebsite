@@ -1,4 +1,4 @@
-import { locationRoute, routePath, rewriteLinks } from "./urls.js";
+import { locationRoute, routePath, rewriteLinks, rootAssetPaths } from "./urls.js";
 import { updateMetadata } from "./metadata.js";
 import { writeWishlist, readWishlist } from "../features/wishlist.js";
 import { decodeShare } from "../features/sharing.js";
@@ -142,17 +142,19 @@ function render() {
     )
       selectedInquiry = candidate;
   } catch (_) {}
-  let app = document.getElementById("app");
-  if (route === "home") app.innerHTML = homePage();
-  else if (route === "story") app.innerHTML = storyPage();
-  else if (route === "collection") app.innerHTML = collectionPage();
-  else if (route === "wishlist") app.innerHTML = wishlistPage();
-  else if (route === "cart") app.innerHTML = cartPage();
-  else if (pieceNumber) app.innerHTML = productDetail(productRecord(Number(pieceNumber[1])));
-  else if (route === "stones") app.innerHTML = stonePage();
-  else if (route === "bespoke") app.innerHTML = bespokePage();
-  else if (route === "contact") app.innerHTML = contactPage(selectedInquiry);
-  else app.innerHTML = legalPage();
+  const app = document.getElementById("app");
+  let markup;
+  if (route === "home") markup = homePage();
+  else if (route === "story") markup = storyPage();
+  else if (route === "collection") markup = collectionPage();
+  else if (route === "wishlist") markup = wishlistPage();
+  else if (route === "cart") markup = cartPage();
+  else if (pieceNumber) markup = productDetail(productRecord(Number(pieceNumber[1])));
+  else if (route === "stones") markup = stonePage();
+  else if (route === "bespoke") markup = bespokePage();
+  else if (route === "contact") markup = contactPage(selectedInquiry);
+  else markup = legalPage();
+  app.innerHTML = rootAssetPaths(markup);
   bindPageEvents({ route, pieceNumber, sharedParams, render });
   rewriteLinks(document, lang);
   updateMetadata(route, lang);

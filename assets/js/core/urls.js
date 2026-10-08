@@ -24,4 +24,7 @@ function rewriteLinks(root, language) {
     anchor.href = routePath(route, language) + (query ? `?${query}` : "");
   });
 }
-export { languages, routes, validRoute, routePath, locationRoute, rewriteLinks };
+function rootAssetPaths(html) {
+  return html.replace(/((?:src|href|poster)=["'])assets\//g, "$1/assets/");
+}
+export { languages, routes, validRoute, routePath, locationRoute, rewriteLinks, rootAssetPaths };
