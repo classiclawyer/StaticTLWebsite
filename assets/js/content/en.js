@@ -14,18 +14,30 @@ const labelsEN = {
   wishlist: "Wishlist",
 };
 const copyEN = {
-  heroTitle: "Fine jewelry and bespoke pieces, unburdened by arbitrary markups.",
+  homeCollectionText: "Nine pieces open the collection. Choose your favorite from the opening collection, or commission a piece made for you alone—with diamonds and colored gemstones, natural or lab-grown, set in your choice of 14k or 18k gold.",
+  homeDiscover: "Discover the opening collection",
+  homeCommission: "Commission a bespoke creation",
+  homeCommitmentLabel: "Our commitment",
+  homeCommitmentSecond: "Every stone is hand-selected. Every price is one we can explain with confidence.",
+  homeCommitmentThird: "Our pieces are made to accompany you through life and become part of how you are remembered.",
+  homeStoryLink: "Read the story",
+  homeStorySuffix: "behind the brand",
+  homeStandardLink: "The Tamara de Launay standard",
+  homeBespokeLabel: "Bespoke consultation",
+  homeBespokeSecond: "Together, we choose the stones and consider every detail of how the piece will look and feel when worn. Your vision, budget, and timeline shape the proposal, with room to explore before you decide.",
+  homeBespokeThird: "Imagine the moment you put it on: the stone you chose, the details you helped shape, a piece made for you and you alone.",
+  heroTitle: "Jewelry of unmistakable presence.",
   heroStatement:
-    "The dream jewelry you have longed for may one day become your signature stack—and perhaps, a legacy to pass on. Atelier Tamara de Launay creates the piece of your dreams with natural or lab-grown diamonds and colored gemstones, for you and you alone. From Paris to Seoul, made just for you.",
+    "For those who trust their own taste. Stones chosen one at a time for their color and character, set with careful attention to proportion. The piece you reach for every morning and one day pass into the hands of someone you love.",
   statement:
     "The dream jewelry you have longed for may one day become your signature stack—and perhaps, a legacy to pass on. Atelier Tamara de Launay creates the piece of your dreams with natural or lab-grown diamonds and colored gemstones, for you and you alone. From Paris to Seoul, made just for you.",
-  homeEyebrow: "FROM PARIS TO SEOUL<br>SHIPS WORLDWIDE",
-  introTitle: "Heritage for the next century starts here: yours and ours.",
+  homeEyebrow: "FROM PARIS TO SEOUL · SHIPS WORLDWIDE",
+  introTitle: "Heritage for the next century begins here.",
   intro:
-    "We were raised to believe that a piece should speak through its materials and craftsmanship. We work with both natural and lab-grown diamonds and colored gemstones, always choosing quality in the stones, design, making, and service. Every stone is hand-picked; every piece is made to be worn for a lifetime and, one day, passed on.",
-  homeBespoke: "A truly bespoke commission, at your pace and budget.",
+    "Tamara de Launay brings together a collector’s passion, a lawyer’s rigor, and an exacting Parisian eye. We believe that a jewel should speak through the character of its stones, the elegance of its proportions, and the quality of its making.",
+  homeBespoke: "Let us bring your imagination to life.",
   homeBespokeText:
-    "From private commissions starting in the thousands to extraordinary high jewelry valued in the millions, every proposal is shaped around your vision, budget, and timeline. Share your most ambitious jewelry dream—we will bring it to life.",
+    "Every commission begins with a private conversation. You need not arrive with a finished design. An occasion to remember, an achievement to celebrate, or simply a feeling you hope to capture is enough to begin.",
   storyLead: "Founder’s Note",
   storyP: [
     "I grew up surrounded by luxury. Designer pieces were part of the landscape of my childhood home, and the jewelry my family wore was usually a gift from someone we loved. I learned to see a piece as a playful part of our family style before I ever thought of it as a label.",
