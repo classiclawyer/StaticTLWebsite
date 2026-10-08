@@ -1,3 +1,5 @@
+import { locationRoute, routePath, rewriteLinks } from "./urls.js";
+import { updateMetadata } from "./metadata.js";
 import { writeWishlist, readWishlist } from "../features/wishlist.js";
 import { decodeShare } from "../features/sharing.js";
 import { MAX_CART_ENTRIES, writeCart, readCart } from "../features/cart.js";
@@ -19,28 +21,29 @@ import { bindPageEvents } from "./events.js";
 const routes = ["home", "story", "collection", "bespoke", "stones", "contact", "wishlist", "cart"];
 const menuRoutes = ["story", "collection", "bespoke", "stones", "contact"];
 function render() {
-  let [route, sharedQuery = ""] = (location.hash.slice(1) || "home").split("?");
+  let { route, query: sharedQuery } = locationRoute(location);
   const sharedParams = new URLSearchParams(sharedQuery);
   if (
     route === "wishlist" &&
     sharedParams.has("items") &&
-    window.__importedShareLink !== location.hash
+    window.__importedShareLink !== location.href
   ) {
-    window.__importedShareLink = location.hash;
+    window.__importedShareLink = location.href;
     const imported = sharedParams
       .get("items")
       .split(",")
       .map(Number)
       .filter((n) => Number.isInteger(n) && n >= 1 && n <= 9);
     writeWishlist([...new Set([...readWishlist(), ...imported])]);
-    window.history?.replaceState(null, "", "#wishlist");
+    window.history?.replaceState(null, "", routePath("wishlist", lang));
+    sharedQuery = "";
   }
   if (
     route === "cart" &&
     sharedParams.has("items") &&
-    window.__importedShareLink !== location.hash
+    window.__importedShareLink !== location.href
   ) {
-    window.__importedShareLink = location.hash;
+    window.__importedShareLink = location.href;
     const tuples = decodeShare(sharedParams.get("items"));
     if (Array.isArray(tuples)) {
       const imported = tuples
@@ -60,7 +63,8 @@ function render() {
           x.qty <= 10,
       );
       writeCart([...readCart(), ...valid].slice(0, MAX_CART_ENTRIES));
-      window.history?.replaceState(null, "", "#cart");
+      window.history?.replaceState(null, "", routePath("cart", lang));
+      sharedQuery = "";
     }
   }
   if (route === "privacy" || route === "terms") route = "legal";
@@ -82,13 +86,13 @@ function render() {
   let langs = Object.keys(copy)
     .map(
       (x) =>
-        `<button
+        `<a href="${routePath(route, x)}${sharedQuery ? `?${sharedQuery}` : ""}"
           class="lang ${lang === x ? "active" : ""}"
           data-lang="${x}"
           aria-label="${{ en: "English", fr: "Français", ko: "한국어" }[x]}"
         >
           ${x.toUpperCase()}
-        </button>`,
+        </a>`,
     )
     .join("");
   document.getElementById("languages").innerHTML = langs;
@@ -150,6 +154,9 @@ function render() {
   else if (route === "contact") app.innerHTML = contactPage(selectedInquiry);
   else app.innerHTML = legalPage();
   bindPageEvents({ route, pieceNumber, sharedParams, render });
+  rewriteLinks(document, lang);
+  updateMetadata(route, lang);
+  if (location.hash || location.pathname === "/") window.history.replaceState(null, "", routePath(route, lang) + (sharedQuery ? `?${sharedQuery}` : ""));
   document.getElementById("nav").classList.remove("open");
   document.getElementById("menu").setAttribute("aria-expanded", "false");
 }

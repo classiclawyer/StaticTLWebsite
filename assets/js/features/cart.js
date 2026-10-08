@@ -1,3 +1,4 @@
+import { routePath } from "../core/urls.js";
 import { readLocal, writeLocal } from "../core/storage.js";
 import {
   ringIds,
@@ -83,7 +84,7 @@ function addCart(n, mode) {
     return;
   } else items.push(item);
   writeCart(items);
-  const bagIcon = document.querySelector('#header-actions a[href="#cart"]');
+  const bagIcon = document.querySelector('#header-actions a[data-route="cart"]');
   if (bagIcon) {
     bagIcon.classList.remove("bag-icon-added");
     void bagIcon.offsetWidth;
@@ -96,7 +97,7 @@ function addCart(n, mode) {
     button.disabled = true;
     button.classList.add("bag-added");
     const checkout = document.createElement("a");
-    checkout.href = "#cart";
+    checkout.href = routePath("cart", lang);
     checkout.className = "button fill checkout-button";
     checkout.textContent = lang === "ko" ? "체크아웃" : "Check out";
     setTimeout(() => {

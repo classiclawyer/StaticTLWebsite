@@ -1,3 +1,4 @@
+import { locationRoute, routePath } from "./urls.js";
 import { handleShare } from "../features/sharing.js";
 import { readWishlist, writeWishlist } from "../features/wishlist.js";
 import { readLocal, writeLocal } from "./storage.js";
@@ -21,7 +22,7 @@ function bindPageEvents({ route, pieceNumber, sharedParams, render }) {
         writeWishlist(items.includes(n) ? items.filter((x) => x !== n) : [...items, n]);
         render();
         if (!items.includes(n)) {
-          const icon = document.querySelector('#header-actions a[href="#wishlist"]');
+          const icon = document.querySelector('#header-actions a[data-route="wishlist"]');
           if (icon) {
             icon.classList.add("bag-icon-added");
             icon.addEventListener("animationend", () => icon.classList.remove("bag-icon-added"), { once: true });
@@ -175,8 +176,11 @@ function bindPageEvents({ route, pieceNumber, sharedParams, render }) {
   );
   document.querySelectorAll("[data-lang]").forEach(
     (b) =>
-      (b.onclick = () => {
+      (b.onclick = (event) => {
+        event.preventDefault();
+        const current = locationRoute(location);
         setLanguage(b.dataset.lang);
+        window.history.pushState(null, "", routePath(current.route, b.dataset.lang) + (current.query ? `?${current.query}` : ""));
         render();
       }),
   );

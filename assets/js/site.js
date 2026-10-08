@@ -1,3 +1,5 @@
+import { locationRoute, validRoute } from "./core/urls.js";
+import { setLanguage } from "./core/language.js";
 import { render } from "./core/router.js";
 
 document.getElementById("menu").onclick = () => {
@@ -6,6 +8,24 @@ document.getElementById("menu").onclick = () => {
   document.getElementById("menu").setAttribute("aria-expanded", n.classList.contains("open"));
 };
 window.addEventListener("hashchange", () => {
+  render();
+  window.scrollTo(0, 0);
+});
+window.addEventListener("popstate", () => {
+  setLanguage(locationRoute(location).language || "en");
+  render();
+  window.scrollTo(0, 0);
+});
+document.addEventListener("click", event => {
+  const anchor = event.target.closest("a[href]");
+  if (!anchor || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || anchor.target || anchor.hasAttribute("download")) return;
+  const url = new URL(anchor.href, location.href);
+  if (url.origin !== location.origin || !/^\/(en|ko)\//.test(url.pathname)) return;
+  const route = locationRoute(url);
+  if (!validRoute(url.pathname.split("/")[2] || "home")) return;
+  event.preventDefault();
+  window.history.pushState(null, "", url.pathname + url.search);
+  setLanguage(route.language);
   render();
   window.scrollTo(0, 0);
 });
