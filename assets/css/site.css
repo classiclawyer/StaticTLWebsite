@@ -4898,11 +4898,15 @@ html[lang] .signature-intro .collection-eyebrow {
 .high-jewelry-photo { margin: 0; }
 .high-jewelry-photo img { display: block; width: 100%; height: auto; }
 .high-jewelry-opening .eyebrow { display: block; margin-bottom: 22px; }
-.high-jewelry-editorial { margin: 0 auto 48px; }
+.high-jewelry-editorial { margin: 0 auto; padding-top: 48px; padding-bottom: 48px; }
+.high-jewelry-process { padding-top: 48px; }
+.high-jewelry-process-title { margin-top: 0; text-align: center; }
 .high-jewelry-editorial .editorial-note { margin-top: 12px; }
 @media (max-width: 700px) {
   .high-jewelry-opening,
   .high-jewelry-invitation { grid-template-columns: minmax(0, 1fr); padding-top: 32px; padding-bottom: 32px; }
+  .high-jewelry-editorial { padding-top: 32px; padding-bottom: 32px; }
+  .high-jewelry-process { padding-top: 32px; }
 }
 
 /* Story reflections and separate full-width editorial portrait. */
@@ -5045,3 +5049,7 @@ html[lang] .story-closing .founder-note-sources p {
   display: block;
   line-height: inherit;
 }
+
+/* Separate the design introduction while keeping it beside the opening portrait. */
+.high-jewelry-design-intro { margin-top: clamp(32px, 3vw, 44px); }
+.high-jewelry-design-intro h3 { margin-top: 0; }
