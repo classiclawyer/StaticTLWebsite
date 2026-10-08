@@ -40,28 +40,34 @@ const copyEN = {
     "Nine diamond pieces: the white-gold tennis bracelet and both halo rings are 14K gold; the remaining six pieces are 18K gold. Choose natural or lab-grown diamonds for any design. Editorial images are visualizations; final details are confirmed in your individual proposal.",
   pricePending: "Price on request",
   from: "Opening collection · from USD 2,500",
+  bespokeInvitationTitle: "You do not need a finished design.",
+  bespokeEditorial: "The pieces shown here are editorial visualizations of designs available to commission. They offer a starting point for your own piece.",
+  bespokeMeaning: "You do not need to know exactly how it will look to know what it should mean. Your bespoke design begins with your story and imagination.",
+  bespokeProcessTitle: "The commission process",
+  bespokeStandardsSecond: "Your preferences guide our selection. We seek out exceptional stones within your budget and timeline, then ensure that the design and craftsmanship do them justice.",
+  bespokeCTA: "Begin your bespoke commission",
   bespokeLead: "Your imagination, brought to life.",
   bespokeInvitation:
-    "You do not need a finished design. An image you cannot quite place or a feeling you want to capture is enough. Your story and imagination are where the bespoke design begins.",
+    "Even a hazy image in your mind is enough. So is a feeling you want to hold on to, a moment you want to remember, or an achievement you want to celebrate. You may not know exactly which stone you want, only how you hope the finished piece will make you feel. We begin there and work with you to give the idea form.",
   bespokeText:
-    "Every bespoke piece begins with a private, one-to-one consultation. We listen to your ideas, how you wish to wear the piece, your budget, and your timeline, then create jewelry for you alone. Commissions can begin at USD 3,000 and exceed USD 1 million. Together we consider the stones, design, and craftsmanship; each proposal is developed individually and priced on request.",
+    "Every bespoke piece begins with a private, one-to-one conversation. Tell us what you have in mind, how you imagine wearing it, and the budget and timeline you are working with. Together, we choose the stones, refine the proportions, and develop a design proposal that reflects your vision in every detail.",
   steps: [
-    [
-      "Conversation",
-      "Tell us what you imagine, how you wish to wear it, and when you would like it.",
-    ],
-    [
-      "Stone & design",
-      "We explore natural and lab-grown diamonds and colored gemstones, proportions, settings, and a considered proposal.",
-    ],
-    [
-      "Creation",
-      "Your piece takes shape with care. We share the process and discuss the timing with you.",
-    ],
+  [
+    "1. Conversation",
+    "We begin with your vision, your preferences, and how you imagine wearing the piece. We discuss your budget and timeline, then explore the possibilities together."
   ],
-  diamondTitle: "The stones are your choice",
+  [
+    "2. Stones & design",
+    "We present stones chosen to suit your vision, budget, and timeline, then refine the proportions, setting, and details with you. Your design proposal brings these choices together, with a clear breakdown of the price."
+  ],
+  [
+    "3. Creation",
+    "Once you approve the proposal, our artisans begin making your piece. We share updates as it takes shape and keep you informed through to delivery."
+  ]
+],
+  diamondTitle: "Your choice of stone. Our exacting standards.",
   diamondText:
-    "We work with both natural and lab-grown diamonds and colored gemstones. We disclose each stone’s origin, discuss its individual qualities, and select for the highest quality your budget and timeline allow.",
+    "We work with natural and lab-grown diamonds, as well as natural and lab-grown colored gemstones. We have no preference between them and will not steer you toward one. For each stone we present, we explain exactly what it is, what sets it apart, and how it will complement your design.",
   por: "Price on request",
   tamaraRole: "Founder / CEO",
   lionelRole: "Buyer / CFO",
