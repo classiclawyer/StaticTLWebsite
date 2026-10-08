@@ -5083,3 +5083,6 @@ html[lang] .story-closing .founder-note-sources p {
     margin-left: -4%;
   }
 }
+
+/* Separate the direct-contact option from the contact form. */
+.form-wrap > .alternate-contact { margin-top: clamp(36px, 4vw, 52px); }
