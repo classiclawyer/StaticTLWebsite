@@ -1,7 +1,7 @@
+import { uiText } from "../content/ui.js";
 import { ringIds, ringCopy } from "../content/catalog.js";
-import { lang } from "../core/language.js";
 
-function ringSizing(n, index, selected = "consult", showDialog = true) {
+function ringSizing(n, index, selected = "consult", showDialog = true, lang = "en") {
   if (!ringIds.has(n)) return "";
   const t = ringCopy[lang], id = index === undefined ? `ring-size-${n}` : `cart-ring-size-${index}`;
   return `<div class="ring-sizing">
@@ -24,10 +24,10 @@ function ringSizing(n, index, selected = "consult", showDialog = true) {
       </select>
       ${index === undefined ? `<p class="ring-size-note">${t.note}</p>` : ""}
     </div>
-    ${showDialog ? ringSizeDialog() : ""}`;
+    ${showDialog ? ringSizeDialog(lang) : ""}`;
 }
 
-function ringSizeDialog() {
+function ringSizeDialog(lang = "en") {
   const t = ringCopy[lang],
     chart = Array.from({ length: 13 }, (_, i) => 44 + i * 2).map((mm) => `<tr><td>${mm} mm</td><td>${(mm / Math.PI).toFixed(1)} mm</td></tr>`).join("");
   return `    <dialog class="ring-size-dialog" id="ring-size-dialog" aria-labelledby="ring-size-title">
@@ -40,7 +40,7 @@ function ringSizeDialog() {
         ><img
           class="ring-diagram-photo"
           src="assets/images/guides/ring-measure-guide.webp"
-          alt="${lang === "ko" ? "손 전체와 종이 띠, 자를 이용해 손가락 둘레를 재는 두 단계 그림" : "A full hand with a paper strip around the ring finger, then the strip measured against a ruler"}"
+          alt="${uiText[lang].ringGuideAlt}"
           loading="lazy"
       /></span>
       <ol>

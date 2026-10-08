@@ -1,0 +1,15 @@
+[
+  "styles/fonts.css",
+  "styles/foundation.css",
+  "styles/editorial-layout.css",
+  "styles/collection-specifications.css",
+  "styles/brand-typography.css",
+  "styles/home-products.css",
+  "styles/story-commerce.css",
+  "styles/guides-options.css",
+  "styles/page-layouts.css",
+  "styles/navigation-forms.css",
+  "styles/catalog-interactions.css",
+  "styles/editorial-pages.css",
+  "styles/accessibility.css"
+]

@@ -1,0 +1,651 @@
+/* Bespoke steps */
+.steps {
+  gap: clamp(16px, 2.3vw, 32px);
+}
+.step {
+  padding-top: 15px;
+}
+.step-illustration {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.05;
+  object-fit: cover;
+  margin: 6px 0 17px;
+  border: 1px solid #e5dece;
+  background: #f5f0e7;
+}
+.step h3 {
+  font-size: clamp(29px, 2.5vw, 37px);
+  margin-top: 3px;
+}
+.step p {
+  font-size: 16px;
+  line-height: 1.65;
+}
+@media (max-width: 700px) {
+  .steps {
+    gap: 38px;
+  }
+  .step-illustration {
+    aspect-ratio: 1.3;
+    max-height: 350px;
+  }
+  .step {
+    max-width: 540px;
+    margin: auto;
+  }
+}
+
+/* Stone guide */
+.stone-hero {
+  padding-bottom: 84px;
+}
+.stone-hero h1 {
+  max-width: 1050px;
+  margin: 18px auto 25px;
+}
+.stone-hero p {
+  max-width: 820px;
+  font-size: 18px;
+  line-height: 1.65;
+}
+.stone-guide {
+  padding-top: 75px;
+}
+.stone-guide :is(h1, h2) {
+  font-size: clamp(38px, 4vw, 60px);
+  margin: 12px 0 20px;
+}
+.stone-guide p {
+  font-size: 17px;
+  line-height: 1.8;
+}
+.stone-index {
+  color: var(--violet);
+  font:
+    600 13px/1.5 Georgia,
+    serif;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.stone-intro-grid,
+.stone-species {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(25px, 6vw, 85px);
+  margin-bottom: 80px;
+}
+.stone-intro-grid section,
+.stone-species section {
+  border-top: 1px solid #b8a6c6;
+  padding-top: 22px;
+}
+.origin-diagram {
+  background: #f3eef5;
+  border: 1px solid #d9cadc;
+  text-align: center;
+  padding: 55px clamp(20px, 6vw, 85px);
+  margin: 0 0 95px;
+}
+.origin-diagram :is(h1, h2) {
+  margin: 0 0 35px;
+}
+.origin-paths {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.origin-paths > div {
+  background: #fffdfa;
+  border: 1px solid #e7dfe9;
+  padding: 28px 15px 25px;
+}
+.origin-paths h3 {
+  font-size: 31px;
+}
+.origin-paths p {
+  font-size: 15px;
+  margin: 4px auto;
+  max-width: 240px;
+}
+.origin-dot {
+  display: block;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  margin: auto;
+  background: #c9b894;
+  border: 5px solid #f0e7d5;
+  box-shadow: 0 0 0 1px #b19456;
+}
+.origin-dot.atelier {
+  background: #7d669d;
+  border-color: #e9dff1;
+  box-shadow: 0 0 0 1px #715294;
+}
+.origin-join {
+  height: 42px;
+  max-width: 50%;
+  margin: auto;
+  border-left: 1px solid #9f87b1;
+  border-right: 1px solid #9f87b1;
+  border-bottom: 1px solid #9f87b1;
+  border-radius: 0 0 80px 80px;
+}
+.origin-result {
+  display: inline-block;
+  margin: 0 !important;
+  padding: 11px 25px;
+  background: var(--violet);
+  color: white;
+  font-size: 16px !important;
+}
+.stone-compare {
+  margin: 85px 0;
+}
+.stone-table-wrap {
+  overflow-x: auto;
+  border-top: 2px solid var(--violet);
+}
+.stone-compare table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 610px;
+}
+.stone-compare th,
+.stone-compare td {
+  text-align: left;
+  vertical-align: top;
+  padding: 17px 20px;
+  border-bottom: 1px solid #ddd2e2;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.stone-compare thead th {
+  background: #eee8f2;
+  color: #3a2851;
+}
+.stone-compare tbody th {
+  width: 24%;
+  font-weight: 600;
+}
+.stone-simulant {
+  padding: 35px clamp(25px, 5vw, 65px);
+  border-left: 3px solid var(--gold);
+  background: #f8f3e8;
+  margin: 0 0 90px;
+}
+.stone-choice {
+  border-top: 1px solid #b8a6c6;
+  padding-top: 24px;
+}
+.stone-choice > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+.stone-choice p {
+  background: #f3eef5;
+  padding: 27px;
+}
+.stone-choice strong {
+  color: var(--violet);
+  font-size: 22px;
+}
+.stone-final {
+  max-width: 780px;
+  margin: 90px auto 70px;
+  text-align: center;
+}
+.stone-final .button {
+  margin-top: 15px;
+}
+.stone-sources {
+  border-top: 1px solid #d9cadc;
+  padding-top: 25px;
+}
+.stone-sources h3 {
+  font-size: 30px;
+}
+.stone-sources ol {
+  padding-left: 22px;
+}
+.stone-sources li {
+  margin: 8px 0;
+}
+.stone-sources a {
+  color: #4f3a72;
+}
+.stone-text-link {
+  display: inline-block;
+  margin: 24px 0 0;
+  color: var(--violet);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+.stone-hero-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+@media (max-width: 700px) {
+  .stone-intro-grid,
+  .stone-species,
+  .stone-choice > div {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .stone-intro-grid,
+  .stone-species {
+    margin-bottom: 60px;
+  }
+  .origin-diagram {
+    padding: 36px 17px;
+    margin-bottom: 65px;
+  }
+  .origin-paths {
+    gap: 10px;
+  }
+  .origin-paths > div {
+    padding: 19px 9px;
+  }
+  .origin-paths h3 {
+    font-size: 25px;
+  }
+  .origin-paths p {
+    font-size: 13px;
+  }
+  .stone-compare {
+    margin: 65px 0;
+  }
+  .stone-simulant {
+    margin-bottom: 60px;
+  }
+}
+@media (min-width: 1051px) and (max-width: 1450px) {
+  .top {
+    flex-wrap: wrap;
+  }
+  nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    padding: 8px 0;
+  }
+}
+.stone-identification {
+  margin: 10px 0 85px;
+}
+.identification-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.identification-grid > div {
+  border: 1px solid #d8cadf;
+  background: #fbf8fc;
+  padding: 24px;
+}
+.identification-number {
+  display: block;
+  color: #8b709f;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+}
+.identification-grid h3 {
+  font-size: 27px;
+  margin: 14px 0;
+}
+.identification-grid p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+@media (max-width: 700px) {
+  .identification-grid {
+    grid-template-columns: 1fr;
+  }
+  .stone-identification {
+    margin-bottom: 60px;
+  }
+}
+.fancy-diamond {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: clamp(30px, 6vw, 90px);
+  align-items: center;
+  background: #302248;
+  color: #faf8f4;
+  padding: clamp(32px, 5vw, 70px);
+  margin: 80px 0;
+}
+.fancy-diamond .stone-index {
+  color: #d8b35b;
+}
+.fancy-diamond :is(h1, h2) {
+  color: #fff;
+}
+.fancy-diamond p {
+  max-width: 770px;
+}
+.fancy-color-dots {
+  position: relative;
+  height: 220px;
+}
+.fancy-color-dots i {
+  position: absolute;
+  display: block;
+  width: 95px;
+  height: 95px;
+  transform: rotate(45deg);
+  border: 4px solid rgba(255, 255, 255, 0.75);
+  box-shadow:
+    inset 0 0 24px rgba(255, 255, 255, 0.65),
+    0 6px 20px #160e2b;
+}
+.fancy-color-dots i:nth-child(1) {
+  top: 16px;
+  left: 18px;
+  background: linear-gradient(135deg, #f9d5e0, #d15795, #692354);
+}
+.fancy-color-dots i:nth-child(2) {
+  top: 89px;
+  left: 110px;
+  background: linear-gradient(135deg, #a9d6f1, #3478be, #182a78);
+}
+.fancy-color-dots i:nth-child(3) {
+  top: 105px;
+  left: 4px;
+  background: linear-gradient(135deg, #fff2ba, #dfba51, #806132);
+}
+@media (max-width: 700px) {
+  .fancy-diamond {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .fancy-color-dots {
+    height: 100px;
+  }
+  .fancy-color-dots i {
+    width: 54px;
+    height: 54px;
+    border-width: 2px;
+  }
+  .fancy-color-dots i:nth-child(1) {
+    top: 5px;
+    left: 25px;
+  }
+  .fancy-color-dots i:nth-child(2) {
+    top: 23px;
+    left: 95px;
+  }
+  .fancy-color-dots i:nth-child(3) {
+    top: 35px;
+    left: 165px;
+  }
+}
+
+.stone-visual-compare {
+  margin: -20px 0 90px;
+  text-align: center;
+}
+.stone-visual-compare :is(h1, h2) {
+  max-width: 800px;
+  margin: 10px auto 15px;
+}
+.stone-visual-compare .visual-lead {
+  max-width: 760px;
+  margin: 0 auto 24px;
+}
+.stone-pair-photo {
+  position: relative;
+  margin: 0;
+  background: #32142a;
+  overflow: hidden;
+}
+.stone-pair-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.stone-pair-photo:after {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 24px;
+  width: 45px;
+  height: 45px;
+  background: url("../images/brand/variants/tl-monogram/gold-transparent.svg") center/contain no-repeat;
+  opacity: 0.9;
+  pointer-events: none;
+}
+.stone-pair-caption {
+  display: flex;
+  justify-content: center;
+  gap: clamp(45px, 15vw, 230px);
+  padding: 12px;
+  background: #f5f0f5;
+  color: #46315d;
+  font:
+    600 14px/1.4 Georgia,
+    serif;
+  letter-spacing: 0.16em;
+}
+.stone-pair-caption span {
+  min-width: 55px;
+}
+.stone-answer {
+  background: #3b2955;
+  color: #fff;
+  padding: 27px 25px 32px;
+}
+.stone-answer strong {
+  display: block;
+  font:
+    400 clamp(28px, 4vw, 48px)/1.2 "Cormorant Garamond",
+    Georgia,
+    serif;
+  margin: 4px auto;
+}
+.stone-answer small {
+  display: block;
+  color: #d8c9dc;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.stone-visual-note {
+  font-size: 13px !important;
+  color: #776b77;
+  line-height: 1.5 !important;
+  margin: 12px 0 0 !important;
+}
+.stone-illustration {
+  margin: 0 0 22px;
+  background: #f8f4ed;
+}
+.stone-illustration img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.stone-editorial-pair {
+  margin: 30px 0 90px;
+}
+.stone-editorial-pair :is(h1, h2) {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 30px;
+}
+.stone-editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.stone-editorial-grid figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: #eee5ef;
+}
+.stone-editorial-grid img {
+  display: block;
+  width: 100%;
+  height: clamp(270px, 37vw, 500px);
+  object-fit: cover;
+}
+.stone-editorial-grid figure:after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 38px;
+  height: 38px;
+  background: url("../images/brand/variants/tl-monogram/gold-transparent.svg") center/contain no-repeat;
+  pointer-events: none;
+}
+.stone-editorial-grid figure:first-child:after {
+  background-image: url("../images/brand/variants/tl-monogram/purple-transparent.svg");
+}
+.stone-editorial-grid figcaption {
+  background: #f5f1f5;
+  color: #544268;
+  padding: 14px 18px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.stone-editorial-pair > p {
+  text-align: center;
+  color: #776b77;
+  font-size: 13px;
+  max-width: 720px;
+  margin: 16px auto 0;
+}
+@media (max-width: 700px) {
+  .stone-visual-compare {
+    margin: -20px 0 65px;
+  }
+  .stone-pair-photo:after {
+    top: 10px;
+    left: 10px;
+    width: 26px;
+    height: 26px;
+  }
+  .stone-pair-caption {
+    gap: 24vw;
+  }
+  .stone-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+  .stone-editorial-grid img {
+    height: auto;
+    aspect-ratio: 1.35;
+    object-fit: cover;
+  }
+  .stone-editorial-pair {
+    margin-bottom: 65px;
+  }
+}
+
+.cart-consent {
+  margin: 22px 0 18px;
+  padding: 19px;
+  background: #fff;
+  border: 1px solid #c6b4d2;
+  border-left: 3px solid var(--gold);
+}
+.cart-consent h3 {
+  font:
+    400 27px/1.2 "Cormorant Garamond",
+    Georgia,
+    serif;
+  color: #3d2b57;
+  margin: 0 0 10px;
+}
+.cart-consent p {
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 9px 0;
+  color: #41364b;
+}
+.cart-consent .cart-consent-rights {
+  color: #5d4d67;
+}
+.cart-consent a {
+  color: #49366f;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.cart-consent-choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 16px 0 3px;
+  cursor: pointer;
+  color: #322742;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.cart-consent-choice input {
+  appearance: auto;
+  width: 21px;
+  height: 21px;
+  flex: none;
+  margin: 1px 0 0;
+  accent-color: #503570;
+}
+.cart-consent-choice span {
+  display: block;
+}
+.cart-consent-choice input:focus-visible {
+  outline: 2px solid #503570;
+  outline-offset: 3px;
+}
+.signature-card {
+  display: flex;
+  flex-direction: column;
+}
+.signature-inquire {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 15px 7px 0;
+  margin-top: auto;
+  padding-top: 12px;
+}
+.signature-inquire .button,
+.signature-inquire .wish-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  margin: 0;
+  padding: 11px 14px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.35;
+  white-space: normal;
+}
+.signature-inquire .wish-button {
+  border-color: #c8b9d1;
+  background: #faf7fb;
+}
+.signature-inquire .wish-button[aria-pressed="true"] {
+  background: #573663;
+  color: #fff;
+}
+@media (max-width: 700px) {
+  .signature-card {
+    padding-bottom: 20px;
+  }
+  .signature-inquire {
+    gap: 9px;
+  }
+  .signature-inquire .button,
+  .signature-inquire .wish-button {
+    min-height: 50px;
+  }
+}
+

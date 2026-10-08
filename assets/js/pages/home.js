@@ -1,7 +1,7 @@
+import { uiText } from "../content/ui.js";
 import { copy } from "../content/site.js";
-import { lang } from "../core/language.js";
 
-function homePage() {
+function homePage(lang) {
   const t = copy[lang];
   return `<section class="hero">
       <div class="hero-copy">
@@ -16,7 +16,7 @@ function homePage() {
       <figure class="hero-image">
         <img
           src="assets/images/home/opening-collection.webp"
-          alt="${lang === "ko" ? "아홉 작품으로 구성된 오프닝 컬렉션의 연출 이미지" : "Editorial visualization of the nine-piece opening collection"}"
+          alt="${uiText[lang].openingCollectionAlt}"
           loading="eager"
         />
       </figure>
@@ -33,7 +33,7 @@ function homePage() {
       <figure class="home-feature-image home-image-branded">
         <img
           src="assets/images/home/pink-pear-ring.webp"
-          alt="${lang === "ko" ? "핑크 페어 다이아몬드 반지 연출 이미지" : "Editorial visualization of the pink pear diamond ring"}"
+          alt="${uiText[lang].pinkRingAlt}"
           loading="lazy"
         />
       </figure>
@@ -42,7 +42,7 @@ function homePage() {
       <figure class="home-feature-image">
         <img
           src="assets/images/bespoke/custom-blue-rings.webp"
-          alt="${lang === "ko" ? "유색 보석 반지 세 점의 맞춤제작 연출 이미지" : "Editorial visualization of three bespoke gemstone rings"}"
+          alt="${uiText[lang].bespokeRingsAlt}"
           loading="lazy"
         />
       </figure>

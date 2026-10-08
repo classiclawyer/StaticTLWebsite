@@ -1,14 +1,11 @@
+import { uiText } from "../content/ui.js";
 import { products } from "../content/products.js";
 import {
   catalogLabels,
   jewelryOptions,
-  picturedColor,
-  picturedGold,
   productPageCopy,
 } from "../content/catalog.js";
-import { lang } from "../core/language.js";
 import { photoLabels } from "../content/site.js";
-import { readWishlist } from "../features/wishlist.js";
 
 function choiceGroup(name, label, options, id, selected) {
   return `<fieldset class="diamond-choice">
@@ -18,7 +15,7 @@ function choiceGroup(name, label, options, id, selected) {
     </div>
   </fieldset>`;
 }
-function productPrice(spec, origin = "lab-grown") {
+function productPrice(spec, origin = "lab-grown", lang = "en") {
   const t = catalogLabels[lang];
   const price = origin === "natural" ? spec.naturalPrice : origin === "lab-grown" ? spec.price : "";
   if (price === "" || price === undefined || price === null) return t.request;
@@ -27,22 +24,22 @@ function productPrice(spec, origin = "lab-grown") {
   }).format(price);
   return `${t.starts} ${amount}`;
 }
-function wishlistHeart(n) {
-  const wished = readWishlist().includes(n);
-  const title = lang === "ko" ? (wished ? "위시리스트에서 삭제" : "위시리스트에 담기") : (wished ? "Remove from wishlist" : "Add to wishlist");
+function wishlistHeart(n, lang = "en", wishlist = []) {
+  const wished = wishlist.includes(n);
+  const title = wished ? uiText[lang].removeWish : uiText[lang].addWish;
   return `<button type="button" class="wishlist-heart${wished ? " is-saved" : ""}" data-wish="${n}" aria-pressed="${wished}" aria-label="${title}" title="${title}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg></button>`;
 }
-function catalogDetails(spec, id) {
+function catalogDetails(spec, id, lang) {
   const o = jewelryOptions[lang];
   return `<div class="catalog-details">
-    <section class="product-specifications"><h3>${lang === "ko" ? "제품 사양" : "Specifications"}</h3>${collectionCardSpecs(spec)}</section>
+    <section class="product-specifications"><h3>${uiText[lang].specifications}</h3>${collectionCardSpecs(spec, lang)}</section>
     <div class="jewelry-choices">
       ${choiceGroup("diamond-origin", o.origin, [["lab-grown", o.lab], ["natural", o.natural]], id, "lab-grown")}
     </div>
-    <p class="catalog-price" id="product-price-${id}" aria-live="polite">${productPrice(spec)}</p>
+    <p class="catalog-price" id="product-price-${id}" aria-live="polite">${productPrice(spec, undefined, lang)}</p>
   </div>`;
 }
-function productRecord(n) {
+function productRecord(n, lang = "en") {
   const product = products.find((item) => item.id === n);
   if (!product) return null;
   const korean = lang === "ko";
@@ -64,7 +61,7 @@ function productRecord(n) {
     spec,
   };
 }
-function collectionCardSpecs(spec) {
+function collectionCardSpecs(spec, lang) {
   const t = catalogLabels[lang];
   const rows = [
     ["diamond", spec.total],
@@ -75,13 +72,13 @@ function collectionCardSpecs(spec) {
   ].filter(([, value]) => value !== undefined);
   return `<div class="card-specs">
     <div class="card-spec-row">
-      <span>${lang === "ko" ? "골드 함량" : "Gold purity"}</span><strong>${spec.gold}</strong>
+      <span>${uiText[lang].goldPurity}</span><strong>${spec.gold}</strong>
     </div>
-    ${rows.length ? rows.map(([key, value]) => `<div class="card-spec-row"><span>${t[key]}</span><strong>${value}</strong></div>`).join("") : `<p class="card-spec-pending">${lang === "ko" ? "캐럿·골드 중량은 개별 문의 시 안내" : "Carat and gold weights confirmed on inquiry"}</p>`}
+    ${rows.length ? rows.map(([key, value]) => `<div class="card-spec-row"><span>${t[key]}</span><strong>${value}</strong></div>`).join("") : `<p class="card-spec-pending">${uiText[lang].weightsPending}</p>`}
   </div>`;
 }
-function collectionCard(n) {
-  const piece = productRecord(n),
+function collectionCard(n, lang, wishlist = []) {
+  const piece = productRecord(n, lang),
     q = productPageCopy[lang],
     photo = piece.image;
   return `<article class="signature-card">
@@ -92,7 +89,7 @@ function collectionCard(n) {
     <h3><a href="#piece-${n}">${piece.name}</a></h3>
     <div class="meta">${piece.type}</div>
     <p>${piece.description}</p>
-    <div class="product-price-row"><p class="catalog-price">${productPrice(piece.spec)}</p>${wishlistHeart(n)}</div>
+    <div class="product-price-row"><p class="catalog-price">${productPrice(piece.spec, undefined, lang)}</p>${wishlistHeart(n, lang, wishlist)}</div>
     <div class="signature-inquire"><a class="button" href="#piece-${n}">${q.view}</a></div>
   </article>`;
 }

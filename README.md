@@ -10,12 +10,12 @@ A static website generated from shared English and Korean content modules. Publi
 - `assets/js/content/seo.js` — canonical production origin and page descriptions
 - `assets/js/core/urls.js`, `metadata.js` — shared localized URL and metadata helpers
 - `vercel.json` — builds and serves `dist/`
-- `assets/css/site.css` — formatted visual styles, kept in their original cascade order
+- `styles/` and `styles/order.json` — ordered source modules, bundled into one generated stylesheet
 - `assets/js/site.js` — startup and navigation listeners
 - `assets/js/content/en.js`, `ko.js` — general page copy and navigation labels
 - `assets/js/content/` — catalog, legal, cart, sharing and stone-guide content
 - `assets/js/pages/` — one rendering function per page
-- `assets/js/components/` — product cards, option groups, buttons and ring sizing
+- `assets/js/components/` — product cards, option groups, navigation, images, sharing panels and ring sizing
 - `assets/js/features/` — cart, wishlist, sharing and inquiry submission
 - `assets/js/core/` — routing, language, browser storage and event binding
 - `assets/images/brand/` — logo and favicon
@@ -44,9 +44,9 @@ Catalog keys mirror the Google Sheet: `Product`, `Lab-eur`, `Lab-krw`, `Nat-eur`
 
 Cards start with the lab price. Product details and bag items show the price for their selected diamond origin, in KRW for Korean and EUR otherwise. No temporary USD prices remain. Price formatting and translated display fields are adapted in `components/products.js`. Shared interface copy remains in `content/catalog.js`.
 
-Keep filenames and references in sync when adding images. Edit general text in `content/en.js` and `content/ko.js`; keep their keys aligned. Feature-specific translations live beside the related data in `content/catalog.js`, `legal.js`, `cart.js`, `sharing.js` and `stones.js`. Shared editorial labels and source links live in `content/site.js`. Some short labels remain in their page or component templates.
+Keep filenames and references in sync when adding images. Edit general text in `content/en.js` and `content/ko.js`; keep their keys aligned. Feature-specific translations live beside the related data in `content/catalog.js`, `legal.js`, `cart.js`, `sharing.js` and `stones.js`. Shared editorial labels, image descriptions and interface translations live in `content/ui.js`.
 
-Change page markup in `pages/` and reusable markup in `components/`. Interaction handlers are attached after each render in `core/events.js`. Use explicit imports rather than adding global variables. Language changes go through `setLanguage()`; storage helpers retain the existing saved cart and wishlist keys. Keep comments to brief explanations of non-obvious behavior.
+Change page markup in `pages/` and reusable markup in `components/`. Pure `core/render-page.js` functions receive language and visitor data explicitly and return HTML without browser globals. Browser interaction handlers live in feature modules, attached by `core/events.js`. Use explicit imports rather than adding global variables. Language changes go through `setLanguage()`; storage helpers retain the existing saved cart and wishlist keys. Keep comments to brief explanations of non-obvious behavior.
 
 No secrets or private customer data belong in this repository. The contact and cart inquiry forms submit to Formspree (`https://formspree.io/f/mdekydbn`) using `features/inquiry.js`. Formspree stores submissions and can email notifications to the account's verified target address. Instagram is an optional contact link. Keep the Formspree target email verified, monitor spam and submission limits, and never place API keys or private customer data in this repository. Review legal copy, product details and links before public launch.
 
@@ -71,3 +71,17 @@ Set the production origin in `assets/js/content/seo.js` when the custom domain i
 The static build checks all 32 public pages, language alternates, product schema, and utility-page indexing rules. Also verify the Vercel preview at direct localized URLs with JavaScript disabled and confirm navigation, language switching, natural/lab pricing, saved selections, and mocked forms with JavaScript enabled. After merging, check the actual production responses, then submit the sitemap in Search Console as part of launch.
 
 References: [Google localized-page guidance](https://developers.google.com/search/docs/specialty/international/localized-versions), [Vercel project configuration](https://vercel.com/docs/project-configuration).
+
+## Stage 5: production hardening
+
+All generated pages have one main heading, a bilingual skip-to-content link, descriptive image alternatives and intrinsic image dimensions. Navigation exposes the current page; keyboard navigation moves focus into the new content, language switching retains focus, and Escape closes the mobile menu. Ring-size help uses a native modal dialog. Reduced-motion settings suppress shared animations. Long headings wrap at narrow phone widths and source links stay visibly underlined.
+
+The original gemstone-selection PNG is preserved; pages use a WebP derivative (227,554 bytes versus 2,568,192 bytes, about 91% smaller). Existing catalog/editorial WebP images are retained. Main visuals have high fetch priority, other editorial images stay lazy-loaded, and font origins are preconnected. Dimensions live in content/images.js; update them when replacing images.
+
+Vercel response headers restrict scripts to this origin, allow the existing Google Fonts and Formspree dependencies, disallow framing and embedded objects, disable unused camera/microphone/location permissions, and prevent MIME sniffing. Vercel's existing HSTS remains unchanged. When adding a new external service or a future 3D viewer, review these allowlists. [CSP reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy).
+
+If a JavaScript enhancement fails to load, the static content and normal page links remain usable and the mobile menu still opens. Failed or timed-out inquiries preserve typed content and announce an error. Native required-field validation remains in place.
+
+Run npm run build then npm test: permanent checks cover all 36 pages, local links and assets, heading/alt/dimension checks, metadata, schema and independent rendering. Vercel runs these checks before publishing each deployment. Browser QA additionally covers enforced CSP, accessibility scans, six viewport widths in both languages, keyboard controls, ring sizing, forms with mocked errors/success, and startup failure. Automated accessibility checks are useful regression coverage; they do not replace a screen-reader review or testing on physical phones. No real inquiry is sent by automated tests.
+
+Before launch, check the merged production response headers and page flows, complete the real Formspree delivery smoke test, and confirm custom-domain redirects. Temporary migration, cleanup and local browser-audit scripts are not part of the published source.
