@@ -9,8 +9,10 @@ function bespokePage() {
         <span class="eyebrow">${lang === "ko" ? "비스포크 하이 주얼리" : "Bespoke High Jewelry"}</span>
         <h2>${t.bespokeLead}</h2>
         <p>${t.bespokeText}</p>
-        <h3>${t.bespokeInvitationTitle}</h3>
-        <p>${lang === "ko" ? t.bespokeInvitation : `<em>${t.bespokeInvitation}</em>`}</p>
+        <div class="high-jewelry-design-intro">
+          <h3><em>${t.bespokeInvitationTitle}</em></h3>
+          <p>${t.bespokeInvitation}</p>
+        </div>
       </div>
       <figure class="high-jewelry-photo">
         <img src="assets/images/bespoke/custom-paraiba-portrait.webp" alt="${lang === "ko" ? "청록색 보석 반지를 착용한 연출 사진" : "Editorial portrait with turquoise gemstone rings"}" loading="eager">

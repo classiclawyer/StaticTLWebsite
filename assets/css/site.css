@@ -5049,3 +5049,7 @@ html[lang] .story-closing .founder-note-sources p {
   display: block;
   line-height: inherit;
 }
+
+/* Separate the design introduction while keeping it beside the opening portrait. */
+.high-jewelry-design-intro { margin-top: clamp(32px, 3vw, 44px); }
+.high-jewelry-design-intro h3 { margin-top: 0; }
