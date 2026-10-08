@@ -1,17 +1,16 @@
-import { copy, labels } from "../content/site.js";
+import { copy } from "../content/site.js";
 import { lang } from "../core/language.js";
-import { button } from "../components/button.js";
 
 function homePage() {
-  const t = copy[lang],
-    l = labels[lang];
+  const t = copy[lang];
   return `<section class="hero">
       <div class="hero-copy">
         <div class="eyebrow">${t.homeEyebrow}</div>
         <h1>${t.heroTitle}</h1>
         <p class="hero-statement">${t.heroStatement}</p>
+        <p class="hero-statement">${t.homeCollectionText}</p>
         <div class="actions">
-          ${button("collection", "discover", true)}${button("bespoke", "begin")}
+          <a class="button fill" href="#collection">${t.homeDiscover}</a><a class="button" href="#bespoke">${t.homeCommission}</a>
         </div>
       </div>
       <figure class="hero-image">
@@ -24,10 +23,12 @@ function homePage() {
     </section>
     <section class="home-feature home-feature-story home-reveal">
       <div class="home-feature-copy">
-        <span class="eyebrow">Atelier Tamara de Launay</span>
+        <span class="eyebrow">${t.homeCommitmentLabel}</span>
         <h2>${t.introTitle}</h2>
         <p class="intro">${t.intro}</p>
-        <div class="actions">${button("story", "story")}</div>
+        <p>${t.homeCommitmentSecond}</p>
+        <p>${t.homeCommitmentThird}</p>
+        <div class="actions"><a class="button" href="#story">${t.homeStoryLink}</a>${t.homeStorySuffix ? `<span>${t.homeStorySuffix}</span>` : ""}<a class="button" href="#stones">${t.homeStandardLink}</a></div>
       </div>
       <figure class="home-feature-image home-image-branded">
         <img
@@ -47,11 +48,13 @@ function homePage() {
       </figure>
       <div class="home-feature-copy">
         <span class="eyebrow"
-          >${{ en: "Bespoke", fr: "Sur mesure", ko: "1:1 맞춤제작" }[lang]}</span
+          >${t.homeBespokeLabel}</span
         >
         <h2>${t.homeBespoke}</h2>
         <p>${t.homeBespokeText}</p>
-        <div class="actions">${button("bespoke", "bespoke")}</div>
+        <p>${t.homeBespokeSecond}</p>
+        <p>${t.homeBespokeThird}</p>
+        <div class="actions"><a class="button" href="#bespoke">${t.homeCommission}</a></div>
       </div>
     </section>`;
 }
