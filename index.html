@@ -12,9 +12,12 @@
     <link rel="icon" type="image/svg+xml" href="assets/images/brand/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/brand/favicon-32.png" />
     <link rel="shortcut icon" href="assets/images/brand/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="assets/css/site.css" />
   </head>
   <body>
+    <a class="skip-link" href="#app">Skip to content</a>
     <header>
       <div class="top">
         <a class="identity" href="#home" aria-label="Atelier Tamara de Launay home">
@@ -34,7 +37,7 @@
         <nav id="nav" aria-label="Main navigation"></nav>
       </div>
     </header>
-    <main id="app"></main>
+    <main id="app" tabindex="-1"></main>
     <footer>
       <div class="foot-inner">
         <a class="footer-identity" href="#home" aria-label="Atelier Tamara de Launay home">
@@ -52,12 +55,7 @@
         </div>
       </div>
     </footer>
-    <script type="module" src="assets/js/site.js"></script>
-    <noscript><style>
-      @media (max-width: 1099px) {
-        #nav { display: flex; flex-wrap: wrap; position: static; width: 100%; grid-column: 1 / -1; padding: 12px 0; }
-        #menu { display: none; }
-      }
-    </style></noscript>
+    <script type="module" src="assets/js/startup.js"></script>
+    <noscript><link rel="stylesheet" href="/assets/css/no-script.css" /></noscript>
   </body>
 </html>

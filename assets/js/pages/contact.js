@@ -1,13 +1,14 @@
+import { uiText } from "../content/ui.js";
 import { copy } from "../content/site.js";
-import { lang } from "../core/language.js";
 import { productRecord } from "../components/products.js";
 import { jewelryOptions, ringIds, ringCopy } from "../content/catalog.js";
 import { cartText } from "../content/cart.js";
 
-function contactPage(selectedInquiry) {
+function contactPage(selectedInquiry, lang) {
   const t = copy[lang],
-    piece = selectedInquiry ? productRecord(selectedInquiry.n) : null;
+    piece = selectedInquiry ? productRecord(selectedInquiry.n, lang) : null;
   return `<section class="container form-wrap">
+      <h1 class="visually-hidden">${uiText[lang].contactTitle}</h1>
       <p>${t.formText}</p>
       <form id="request" action="https://formspree.io/f/mdekydbn" method="POST" autocomplete="on">
         <input type="hidden" name="inquiry_type" value="General inquiry" />
@@ -17,7 +18,7 @@ function contactPage(selectedInquiry) {
         </div>
         ${
           selectedInquiry
-            ? `<div class="selection-summary"><div class="selection-summary-copy"><strong>${lang === "ko" ? "선택한 작품" : "Selected piece"}</strong><span>${piece.name}</span></div><img class="selection-summary-image" src="${piece.image}" alt="${piece.name}"><input type="hidden" name="selected_piece" value="${piece.name}">${[
+            ? `<div class="selection-summary"><div class="selection-summary-copy"><strong>${uiText[lang].selectedPiece}</strong><span>${piece.name}</span></div><img class="selection-summary-image" src="${piece.image}" alt="${piece.name}"><input type="hidden" name="selected_piece" value="${piece.name}">${[
                 "diamond-origin",
                 "diamond-color",
                 "gold-color",
@@ -52,11 +53,11 @@ function contactPage(selectedInquiry) {
         <div class="form-grid">
           <div class="field">
             <label for="name">${t.name}</label
-            ><input id="name" name="name" autocomplete="off" required />
+            ><input id="name" name="name" autocomplete="name" required />
           </div>
           <div class="field">
             <label for="email">${t.email}</label
-            ><input id="email" name="email" type="email" autocomplete="off" required />
+            ><input id="email" name="email" type="email" autocomplete="email" required />
           </div>
         </div>
         <div class="field">
@@ -64,8 +65,8 @@ function contactPage(selectedInquiry) {
           ><input
             id="location"
             name="location"
-            autocomplete="off"
-            placeholder="${lang === "ko" ? "예: 서울, 한국" : "e.g. Seoul, South Korea"}"
+            autocomplete="address-level2"
+            placeholder="${uiText[lang].locationPlaceholder}"
           />
         </div>
         <div class="field">
@@ -115,7 +116,7 @@ function contactPage(selectedInquiry) {
         <p id="response" class="success" hidden role="status" aria-live="polite"></p>
       </form>
       <p class="alternate-contact">
-        ${lang === "ko" ? "직접 연락하고 싶으신가요? 인스타그램에서 아뜰리에 타마라 드 로네에 DM을 보내셔도 좋습니다." : "Prefer to contact us directly? You can also DM l'Atelier Tamara de Launay on Instagram."}
+        ${uiText[lang].directContact}
         <a
           class="contact-instagram-link"
           href="https://www.instagram.com/tamara_de_launay/"

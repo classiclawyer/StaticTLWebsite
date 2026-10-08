@@ -1,14 +1,12 @@
+import { uiText } from "../content/ui.js";
 import { cartText } from "../content/cart.js";
-import { lang } from "../core/language.js";
-import { readCart } from "../features/cart.js";
 import { productRecord, productPrice } from "../components/products.js";
-import { sharePanel } from "../features/sharing.js";
+import { sharePanel } from "../components/sharing.js";
 import { ringSizing, ringSizeDialog } from "../components/ring-sizing.js";
 import { ringIds, jewelryOptions } from "../content/catalog.js";
 
-function cartPage() {
-  const t = cartText[lang],
-    items = readCart();
+function cartPage(lang, items = []) {
+  const t = cartText[lang];
   return `<section class="container cart-page">
       ${
         items.length
@@ -18,18 +16,18 @@ function cartPage() {
           <h2>${t.selectionTitle}</h2>
           ${items
             .map((item, i) => {
-              const product = productRecord(item.n);
+              const product = productRecord(item.n, lang);
               return `<article class="cart-item">
             <a href="#piece-${item.n}"><img src="${product.image}" alt="${product.name}"></a>
-            <div><h3><a href="#piece-${item.n}">${product.name}</a></h3><p>${item.origin === "natural" ? jewelryOptions[lang].natural : item.origin === "lab-grown" ? jewelryOptions[lang].lab : t.confirm} ${lang === "ko" ? "다이아몬드" : "diamonds"}</p>
-            <p>${productPrice(product.spec, item.origin)}</p>
-            ${ringSizing(item.n, i, item.size ?? "consult", false)}
+            <div><h3><a href="#piece-${item.n}">${product.name}</a></h3><p>${item.origin === "natural" ? jewelryOptions[lang].natural : item.origin === "lab-grown" ? jewelryOptions[lang].lab : t.confirm} ${uiText[lang].diamonds}</p>
+            <p>${productPrice(product.spec, item.origin, lang)}</p>
+            ${ringSizing(item.n, i, item.size ?? "consult", false, lang)}
             <div class="cart-item-actions"><span>× ${item.qty}</span><button type="button" data-remove-cart="${i}">${t.remove}</button></div></div>
           </article>`;
             })
             .join("")}
           <p class="notice">${t.notFinal}</p>
-          ${sharePanel("cart")}
+          ${sharePanel("cart", undefined, lang)}
         </div>
         <div class="cart-checkout">
           <h2>${t.inquiryTitle}</h2>
@@ -44,11 +42,11 @@ function cartPage() {
           <p id="cart-response" class="success" role="status" aria-live="polite" hidden></p>
         </div>
       </form>
-      <p class="alternate-contact">${lang === "ko" ? "직접 연락하고 싶으신가요? 인스타그램에서 아뜰리에 타마라 드 로네에 DM을 보내셔도 좋습니다." : "Prefer to contact us directly? You can also DM l'Atelier Tamara de Launay on Instagram."} <a class="contact-instagram-link" href="https://www.instagram.com/tamara_de_launay/" target="_blank" rel="noopener noreferrer">@tamara_de_launay</a></p>
+      <p class="alternate-contact">${uiText[lang].directContact} <a class="contact-instagram-link" href="https://www.instagram.com/tamara_de_launay/" target="_blank" rel="noopener noreferrer">@tamara_de_launay</a></p>
     `
           : `<div class="cart-empty"><p>${t.empty}</p><a class="button fill" href="#collection">${t.browse}</a></div>`
       }
-    </section>${items.some(item => ringIds.has(item.n)) ? ringSizeDialog() : ""}`;
+    </section>${items.some(item => ringIds.has(item.n)) ? ringSizeDialog(lang) : ""}`;
 }
 
 export { cartPage };

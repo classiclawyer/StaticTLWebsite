@@ -6,6 +6,7 @@ async function submitInquiry(form, status, messages, extra = {}) {
   button.disabled = true;
   status.hidden = false;
   status.classList.remove("error");
+  status.setAttribute("role", "status");
   status.textContent = messages.pending;
   try {
     const payload = new FormData(form);
@@ -16,12 +17,14 @@ async function submitInquiry(form, status, messages, extra = {}) {
       method: "POST",
       body: payload,
       headers: { Accept: "application/json" },
+      signal: AbortSignal.timeout(20000),
     });
     if (!response.ok) throw new Error("Form submission failed");
     status.textContent = messages.sent;
     form.reset();
   } catch (_) {
     status.classList.add("error");
+    status.setAttribute("role", "alert");
     status.textContent = messages.error;
   } finally {
     button.disabled = false;

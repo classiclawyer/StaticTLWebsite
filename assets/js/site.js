@@ -1,3 +1,4 @@
+import { uiText } from "./content/ui.js";
 import { locationRoute, validRoute } from "./core/urls.js";
 import { setLanguage } from "./core/language.js";
 import { render } from "./core/router.js";
@@ -8,13 +9,16 @@ document.getElementById("menu").onclick = () => {
   document.getElementById("menu").setAttribute("aria-expanded", n.classList.contains("open"));
 };
 window.addEventListener("hashchange", () => {
+  if (location.hash === "#app") return;
   render();
   window.scrollTo(0, 0);
+  document.getElementById("app").focus({ preventScroll: true });
 });
 window.addEventListener("popstate", () => {
   setLanguage(locationRoute(location).language || "en");
   render();
   window.scrollTo(0, 0);
+  document.getElementById("app").focus({ preventScroll: true });
 });
 document.addEventListener("click", event => {
   const anchor = event.target.closest("a[href]");
@@ -28,6 +32,18 @@ document.addEventListener("click", event => {
   setLanguage(route.language);
   render();
   window.scrollTo(0, 0);
+  document.getElementById("app").focus({ preventScroll: true });
+});
+document.querySelector(".skip-link").addEventListener("click", event => {
+  event.preventDefault();
+  document.getElementById("app").focus();
+});
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && document.getElementById("nav").classList.contains("open")) {
+    document.getElementById("nav").classList.remove("open");
+    document.getElementById("menu").setAttribute("aria-expanded", "false");
+    document.getElementById("menu").focus();
+  }
 });
 render();
 
@@ -40,7 +56,7 @@ backToTop.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 
 document.body.append(backToTop);
 function updateBackToTop() {
   backToTop.hidden = window.scrollY < 400;
-  const label = document.documentElement.lang === "ko" ? "맨 위로" : "Back to top";
+  const label = uiText[document.documentElement.lang === "ko" ? "ko" : "en"].backToTop;
   backToTop.setAttribute("aria-label", label);
   backToTop.title = label;
 }

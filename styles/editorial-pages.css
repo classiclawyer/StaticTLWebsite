@@ -1,0 +1,221 @@
+/* Founder note: portrait beside the opening text, then below on phones. */
+.brand-story .story-opening {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: start;
+  max-width: 1400px;
+  padding-top: 48px;
+}
+.story-opening-photo { margin: 0; }
+.story-opening-photo img { display: block; width: 100%; height: auto; }
+.story-opening-copy p:first-of-type { margin-top: 20px; }
+@media (max-width: 700px) {
+  .brand-story .story-opening { grid-template-columns: minmax(0, 1fr); padding-top: 32px; }
+}
+
+/* High Jewelry opening follows the founder-note layout. */
+.high-jewelry-opening,
+.high-jewelry-invitation {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: center;
+  max-width: 1400px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+.high-jewelry-invitation { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.high-jewelry-photo { margin: 0; }
+.high-jewelry-photo img { display: block; width: 100%; height: auto; }
+.high-jewelry-opening .eyebrow { display: block; margin-bottom: 22px; }
+.high-jewelry-editorial { margin: 0 auto; padding-top: 48px; padding-bottom: 48px; }
+.high-jewelry-process { padding-top: 48px; }
+.high-jewelry-process-title { margin-top: 0; text-align: center; }
+.high-jewelry-editorial .editorial-note { margin-top: 12px; }
+@media (max-width: 700px) {
+  .high-jewelry-opening,
+  .high-jewelry-invitation { grid-template-columns: minmax(0, 1fr); padding-top: 32px; padding-bottom: 32px; }
+  .high-jewelry-editorial { padding-top: 32px; padding-bottom: 32px; }
+  .high-jewelry-process { padding-top: 32px; }
+}
+
+/* Story reflections and separate full-width editorial portrait. */
+.story-reflections {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: start;
+  max-width: 1400px;
+  padding-bottom: 48px;
+}
+.story-reflections-photo { margin: 0; }
+.story-reflections-photo img,
+.story-full-portrait img { display: block; width: 100%; height: auto; }
+.story-reflections-copy > p:first-child { margin-top: 0; }
+.story-full-portrait { margin: 0 auto; max-width: 1400px; }
+.story-full-portrait .editorial-note { margin-top: 12px; }
+@media (max-width: 700px) {
+  .story-reflections { grid-template-columns: minmax(0, 1fr); padding-bottom: 32px; }
+}
+
+/* One shared gap between the opening story sections. */
+.brand-story { --story-section-gap: 85px; }
+.brand-story .story-opening { padding-bottom: var(--story-section-gap); }
+.brand-story .story-visual-essay { margin-bottom: var(--story-section-gap); }
+.brand-story .story-reflections {
+  padding-top: 0;
+  padding-bottom: var(--story-section-gap);
+}
+.brand-story .story-full-portrait { padding-top: 0; }
+@media (max-width: 700px) {
+  .brand-story { --story-section-gap: 55px; }
+}
+
+/* Opening text left; Paraiba portrait left and cropped to its adjacent text. */
+@media (min-width: 701px) {
+  .brand-story .story-reflections {
+    grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+    align-items: stretch;
+  }
+  .story-reflections-photo {
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    overflow: hidden;
+    min-height: 0;
+  }
+  .story-reflections-photo img {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .story-reflections-copy { grid-column: 2; grid-row: 1; }
+  .story-reflections-copy > p:last-child { margin-bottom: 0; }
+}
+
+/* Align the legacy illustration with the other story sections. */
+.brand-story .story-visual-essay {
+  width: 88%;
+  max-width: 1232px;
+}
+.brand-story .story-selection-illustration img { object-position: right center; }
+
+/* Use the same container edges as the adjacent story text and portraits. */
+.brand-story .story-legacy-container {
+  max-width: 1400px;
+  padding-top: 0;
+  padding-bottom: var(--story-section-gap);
+}
+.brand-story .story-legacy-container .story-visual-essay {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  align-items: stretch;
+}
+.story-legacy-container .story-visual-copy { padding: clamp(24px, 3vw, 44px); }
+.story-legacy-container .story-selection-illustration { overflow: hidden; }
+.story-legacy-container .story-selection-illustration img {
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+}
+@media (max-width: 800px) {
+  .brand-story .story-legacy-container .story-visual-essay { grid-template-columns: minmax(0, 1fr); }
+  .story-legacy-container .story-selection-illustration img { height: auto; }
+}
+
+/* Preserve the original illustration height; crop its left edge only. */
+.story-legacy-container .story-selection-illustration img {
+  height: min(41.6667vw, 600px);
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: right center;
+}
+@media (max-width: 800px) {
+  .story-legacy-container .story-selection-illustration img {
+    height: min(66.6667vw, 960px);
+  }
+}
+
+/* Shared back-to-top control and creative direction call to action. */
+.back-to-top {
+  position: fixed;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: 1px solid var(--violet);
+  border-radius: 50%;
+  background: #fffaf2;
+  color: var(--violet);
+  cursor: pointer;
+  box-shadow: 0 2px 10px #251b3020;
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+.back-to-top[hidden] { display: none; }
+.back-to-top svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.back-to-top:hover { transform: translateY(-2px); background: #eee7ef; }
+.back-to-top:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.creative-direction-cta { justify-content: center; margin-top: 40px; }
+@media (prefers-reduced-motion: reduce) { .back-to-top { transition: none; } }
+
+@media (max-width: 700px) {
+  .founders .lionel-name { font-size: clamp(20px, 6vw, 28px); }
+}
+
+/* Compact footnotes in both founder letters. */
+html[lang] .story-closing .founder-note-sources p {
+  margin: 0 0 8px;
+  line-height: 1.4;
+}
+.story-closing .founder-note-sources small {
+  display: block;
+  line-height: inherit;
+}
+
+/* Separate the design introduction while keeping it beside the opening portrait. */
+.high-jewelry-design-intro { margin-top: clamp(32px, 3vw, 44px); }
+.high-jewelry-design-intro h3 { margin-top: 0; }
+
+/* Our Standard follows the shared editorial page width and rhythm. */
+.standard-guide { --standard-gap: 85px; max-width: 1400px; padding-top: 48px; }
+.standard-opening { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 64px); align-items: center; margin-bottom: var(--standard-gap); }
+.standard-opening .eyebrow { display: block; margin-bottom: 22px; }
+.standard-opening .standard-feature { margin: 0; }
+.standard-opening .standard-feature img { aspect-ratio: auto; }
+.standard-guide :is(h1, h2) { font-size: clamp(32px, 3.6vw, 50px); }
+.standard-guide .standard-selection { max-width: none; text-align: left; margin-bottom: var(--standard-gap); }
+.standard-guide .standard-selection p { max-width: none; margin: 0 0 20px; }
+.standard-guide .standard-selection-visual { max-width: none; }
+.standard-guide .standard-commitment { background: transparent; color: var(--ink); padding: 0; margin-bottom: var(--standard-gap); }
+.standard-guide .standard-cards { margin-top: 28px; }
+.standard-guide .standard-cards > div { border-color: #d9cadc; }
+.standard-guide .standard-cards h3 { font-size: clamp(23px, 2.3vw, 32px); }
+.standard-guide .standard-cards p { color: inherit; }
+.standard-guide .stone-final { margin: var(--standard-gap) auto 0; padding-top: 0; border-top: 0; }
+@media (max-width: 700px) {
+  .standard-guide { --standard-gap: 55px; padding-top: 32px; }
+  .standard-opening { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Enlarge the opening visual without changing its adjacent text column. */
+@media (min-width: 701px) {
+  .standard-opening .standard-feature img {
+    width: 108%;
+    max-width: none;
+    margin-left: -4%;
+  }
+}
+
+/* Separate the direct-contact option from the contact form. */
+.form-wrap > .alternate-contact { margin-top: clamp(36px, 4vw, 52px); }
+.languages a.lang { text-decoration: none; }
+.languages a.lang.active { text-decoration: underline; }

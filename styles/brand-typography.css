@@ -1,0 +1,274 @@
+/* Brand mark */
+header .mark,
+footer .mark {
+  object-fit: contain;
+  display: block;
+  filter: none;
+}
+.signature-main,
+.founder-photo,
+.story-hero-photo {
+  position: relative;
+}
+.signature-main::after,
+.product-image::before,
+.bespoke-editorials figure::after,
+.founder-photo::after,
+.story-hero-photo::after,
+.hero-image::before {
+  content: "";
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: clamp(28px, 3vw, 44px);
+  height: clamp(34px, 3.6vw, 53px);
+  background: url("../images/brand/variants/tl-monogram/gold-transparent.svg") center/contain no-repeat;
+  opacity: 0.82;
+  filter: drop-shadow(0 1px 3px rgba(24, 14, 33, 0.65));
+  z-index: 3;
+  pointer-events: none;
+}
+.hero-image::before {
+  width: 55px;
+  height: 67px;
+  right: 22px;
+  bottom: 22px;
+}
+@media (max-width: 700px) {
+  .signature-main::after,
+  .product-image::before,
+  .bespoke-editorials figure::after,
+  .founder-photo::after,
+  .story-hero-photo::after,
+  .hero-image::before {
+    right: 10px;
+    bottom: 10px;
+    width: 29px;
+    height: 36px;
+  }
+}
+
+/* Image mark contrast */
+header .mark {
+  width: 43px;
+  height: 43px;
+}
+footer .mark {
+  width: 46px;
+  height: 46px;
+}
+.signature-main::after,
+.product-image::before,
+.bespoke-editorials figure::after,
+.founder-photo::after,
+.story-hero-photo::after,
+.hero-image::before {
+  width: 42px;
+  height: 52px;
+  opacity: 1;
+  filter: none;
+  background-image: url("../images/brand/variants/tl-monogram/purple-transparent.svg");
+}
+.bespoke-editorials .wide-portrait::after,
+.bespoke-editorials .tall-portrait::after {
+  background-image: url("../images/brand/variants/tl-monogram/gold-transparent.svg");
+}
+.hero-image::before {
+  width: 48px;
+  height: 60px;
+}
+@media (max-width: 700px) {
+  .signature-main::after,
+  .product-image::before,
+  .bespoke-editorials figure::after,
+  .founder-photo::after,
+  .story-hero-photo::after,
+  .hero-image::before {
+    width: 34px;
+    height: 43px;
+  }
+  .identity .mark {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Home typography */
+.hero h1 {
+  font-size: clamp(48px, 5.15vw, 80px);
+  line-height: 1.04;
+}
+.hero-copy {
+  max-width: 720px;
+}
+.hero .eyebrow {
+  line-height: 1.6;
+}
+@media (max-width: 700px) {
+  .hero h1 {
+    font-size: clamp(46px, 11vw, 66px);
+  }
+}
+
+/* Korean typography */
+html[lang="ko"] body {
+  line-height: 1.85;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+html[lang="ko"] h1,
+html[lang="ko"] :is(h1, h2),
+html[lang="ko"] h3 {
+  font-weight: 500;
+  line-height: 1.38;
+  letter-spacing: -0.045em;
+  word-break: keep-all;
+}
+html[lang="ko"] .hero h1 {
+  font-size: clamp(37px, 3.7vw, 56px);
+  line-height: 1.32;
+  max-width: 650px;
+  margin: 24px 0;
+}
+html[lang="ko"] .hero-copy {
+  max-width: 750px;
+  padding-left: clamp(26px, 6vw, 90px);
+  padding-right: clamp(26px, 6vw, 90px);
+}
+html[lang="ko"] .hero p {
+  font-size: 17px;
+  line-height: 1.85;
+  max-width: 590px;
+}
+html[lang="ko"] :is(h1, h2) {
+  font-size: clamp(29px, 3.06vw, 44px);
+  line-height: 1.4;
+}
+html[lang="ko"] h3 {
+  font-size: clamp(24px, 2.15vw, 31px);
+  line-height: 1.45;
+}
+html[lang="ko"] .page-hero h1 {
+  font-size: clamp(37px, 4vw, 56px);
+  line-height: 1.34;
+}
+html[lang="ko"] .page-hero p {
+  font-size: 17px;
+  line-height: 1.8;
+  max-width: 750px;
+}
+html[lang="ko"] .intro {
+  font-size: clamp(20px, 1.9vw, 26px);
+  line-height: 1.85;
+  letter-spacing: -0.035em;
+}
+html[lang="ko"] .story p {
+  font-size: 17px;
+  line-height: 2;
+  letter-spacing: -0.02em;
+}
+html[lang="ko"] .story .quote {
+  font-size: clamp(20px, 2.1vw, 29px);
+  line-height: 1.75;
+}
+html[lang="ko"] .split {
+  gap: 6vw;
+}
+html[lang="ko"] .split p,
+html[lang="ko"] .step p,
+html[lang="ko"] .founders p {
+  line-height: 1.9;
+}
+html[lang="ko"] nav a {
+  font-size: 13px;
+  letter-spacing: -0.035em;
+  text-transform: none;
+}
+html[lang="ko"] .eyebrow,
+html[lang="ko"] .meta,
+html[lang="ko"] label {
+  letter-spacing: 0;
+  text-transform: none;
+}
+html[lang="ko"] .eyebrow {
+  font-size: 14px;
+  line-height: 1.6;
+}
+html[lang="ko"] .button {
+  font-size: 14px;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
+  text-transform: none;
+  min-height: 48px;
+}
+html[lang="ko"] .signature-card h3,
+html[lang="ko"] .product-card h3 {
+  font-size: 25px;
+  line-height: 1.5;
+}
+html[lang="ko"] .signature-card p {
+  line-height: 1.8;
+}
+html[lang="ko"] .signature-card .meta,
+html[lang="ko"] .product-card .meta {
+  font-size: 14px;
+  line-height: 1.6;
+}
+html[lang="ko"] .catalog-details .catalog-price {
+  font-size: 22px;
+  font-weight: 600;
+}
+html[lang="ko"] .catalog-details label,
+html[lang="ko"] .catalog-details li,
+html[lang="ko"] .catalog-details .catalog-metal {
+  font-size: 14px;
+  line-height: 1.65;
+  letter-spacing: 0;
+}
+html[lang="ko"] .catalog-fineprint,
+html[lang="ko"] .editorial-note,
+html[lang="ko"] .form-note {
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+html[lang="ko"] .hero-visual-note {
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+html[lang="ko"] .form-wrap label {
+  font-size: 14px;
+}
+@media (min-width: 701px) and (max-width: 1050px) {
+  html[lang="ko"] header nav {
+    flex-wrap: wrap;
+    row-gap: 0;
+  }
+}
+@media (max-width: 700px) {
+  html[lang="ko"] .hero h1 {
+    font-size: clamp(34px, 9vw, 43px);
+  }
+  html[lang="ko"] .hero-copy {
+    padding: 44px 7% 58px;
+  }
+  html[lang="ko"] .hero p {
+    font-size: 16px;
+  }
+  html[lang="ko"] .page-hero h1 {
+    font-size: clamp(34px, 8vw, 43px);
+  }
+  html[lang="ko"] :is(h1, h2) {
+    font-size: clamp(26px, 6.48vw, 33px);
+  }
+  html[lang="ko"] .intro {
+    font-size: 20px;
+  }
+  html[lang="ko"] .split {
+    gap: 28px;
+  }
+  html[lang="ko"] .story p {
+    font-size: 16px;
+    line-height: 1.95;
+  }
+}
+

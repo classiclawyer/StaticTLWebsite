@@ -6,24 +6,6 @@ import { readCart, MAX_CART_ENTRIES } from "./cart.js";
 import { productRecord } from "../components/products.js";
 import { cartText } from "../content/cart.js";
 
-function sharePanel(kind, n) {
-  const t = shareText[lang];
-  return `<div
-    class="share-panel"
-    data-share-kind="${kind}"
-    ${n ? `data-share-piece="${n}"` : ""}
-  >
-    ${kind !== "wishlist" ? "" : `<h3>${kind === "cart" ? t.shareCart : t.shareWish}</h3>`}
-    ${kind === "wishlist" ? `<p>${t.hint}</p>` : ""}
-    <div class="share-actions">
-      <button type="button" data-share="native">${t.native}</button
-      ><button type="button" data-share="copy">${t.copy}</button
-      ><button type="button" data-share="email">${t.email}</button
-      ><button type="button" data-share="kakao">${t.kakao}</button>
-    </div>
-    <p class="share-status" role="status" hidden></p>
-  </div>`;
-}
 function encodeShare(items) {
   return btoa(JSON.stringify(items)).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
 }
@@ -67,7 +49,7 @@ async function handleShare(button) {
     t = shareText[lang],
     name =
       kind === "piece"
-        ? productRecord(n).name
+        ? productRecord(n, lang).name
         : kind === "cart"
           ? cartText[lang].title
           : t.wishlist,
@@ -96,4 +78,4 @@ async function handleShare(button) {
   if (action === "kakao") window.open("https://talk.kakao.com/", "_blank", "noopener");
 }
 
-export { sharePanel, encodeShare, decodeShare, shareUrl, copyShare, handleShare };
+export { encodeShare, decodeShare, shareUrl, copyShare, handleShare };

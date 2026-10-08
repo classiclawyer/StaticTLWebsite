@@ -1,8 +1,8 @@
+import { uiText } from "../content/ui.js";
 import { copy, labels } from "../content/site.js";
-import { lang } from "../core/language.js";
 import { legalCopy } from "../content/legal.js";
 
-function legalPage() {
+function legalPage(lang) {
   const t = copy[lang],
     l = labels[lang];
   return `<section class="page-hero">
@@ -11,7 +11,7 @@ function legalPage() {
     </section>
     <article class="container legal">
       <p class="legal-date">
-        ${lang === "ko" ? "최종 수정: 2026년 9월 29일" : "Last updated: 29 September 2026"}
+        ${uiText[lang].legalDate}
       </p>
       <p class="legal-business">${legalCopy[lang][0][1]}</p>
       ${legalCopy[lang]

@@ -1,124 +1,82 @@
 const labelsEN = {
-  home: "Home",
-  story: "Our Story",
-  collection: "Fine Jewelry",
-  bespoke: "High Jewelry",
-  stones: "Our Standard",
-  contact: "Contact Us",
-  privacy: "Privacy policy",
-  terms: "Terms",
-  discover: "Discover the fine jewelry collection",
-  begin: "Begin a custom / bespoke commission",
-  legal: "Terms & Privacy",
-  cart: "Bag",
-  wishlist: "Wishlist",
+  "home": "Home",
+  "story": "Our Story",
+  "collection": "Fine Jewelry",
+  "bespoke": "High Jewelry",
+  "stones": "Our Standard",
+  "contact": "Contact Us",
+  "legal": "Terms & Privacy",
+  "cart": "Bag",
+  "wishlist": "Wishlist"
 };
 const copyEN = {
-  homeCollectionText: "Nine pieces open the collection. Choose your favorite from the opening collection, or commission a piece made for you alone—with diamonds and colored gemstones, natural or lab-grown, set in your choice of 14k or 18k gold.",
-  homeDiscover: "Discover the opening collection",
-  homeCommission: "Commission a bespoke creation",
-  homeCommitmentLabel: "Our commitment",
-  homeCommitmentSecond: "Every stone is hand-selected. Every price is one we can explain with confidence.",
-  homeCommitmentThird: "Our pieces are made to accompany you through life and become part of how you are remembered.",
-  homeStoryLink: "Read the story",
-  homeStorySuffix: "behind the brand",
-  homeStandardLink: "The Tamara de Launay standard",
-  homeBespokeLabel: "Bespoke consultation",
-  homeBespokeSecond: "Together, we choose the stones and consider every detail of how the piece will look and feel when worn. Your vision, budget, and timeline shape the proposal, with room to explore before you decide.",
-  homeBespokeThird: "Imagine the moment you put it on: the stone you chose, the details you helped shape, a piece made for you and you alone.",
-  heroTitle: "Jewelry of unmistakable presence.",
-  heroStatement:
-    "For those who trust their own taste. Stones chosen one at a time for their color and character, set with careful attention to proportion. The piece you reach for every morning and one day pass into the hands of someone you love.",
-  statement:
-    "The dream jewelry you have longed for may one day become your signature stack—and perhaps, a legacy to pass on. Atelier Tamara de Launay creates the piece of your dreams with natural or lab-grown diamonds and colored gemstones, for you and you alone. From Paris to Seoul, made just for you.",
-  homeEyebrow: "FROM PARIS TO SEOUL · SHIPS WORLDWIDE",
-  introTitle: "Heritage for the next century begins here.",
-  intro:
-    "Tamara de Launay brings together a collector’s passion, a lawyer’s rigor, and an exacting Parisian eye. We believe that a jewel should speak through the character of its stones, the elegance of its proportions, and the quality of its making.",
-  homeBespoke: "Let us bring your imagination to life.",
-  homeBespokeText:
-    "Every commission begins with a private conversation. You need not arrive with a finished design. An occasion to remember, an achievement to celebrate, or simply a feeling you hope to capture is enough to begin.",
-  storyLead: "Founder’s Note",
-  storyP: [
-    "I grew up surrounded by luxury. Designer pieces were part of the landscape of my childhood home, and the jewelry my family wore was usually a gift from someone we loved. I learned to see a piece as a playful part of our family style before I ever thought of it as a label.",
-    "Over time, I began to ask different questions. Signature motifs seemed to grow louder, and prices rose sharply. In 2025, gold and diamond prices generally moved in opposite directions. Prices for round, one-carat natural diamonds in the D–H color, SI clarity category fell 24.1% that year, and wholesale prices for lab-grown diamonds also declined. Yet a separate Korean price comparison in 2026 showed Tiffany & Co.’s diamond-set Knot pendant rising from KRW 11.7 million to KRW 13.2 million, an increase of 12.8%.",
-    "Analysts have also estimated that gold can represent as little as 5% of sales at the very high end of designer jewelry.² These figures make it even harder for me to accept the retail prices of established luxury houses, especially when diamond prices have, on average, fallen rather significantly. Yes, design, skill, and service have real value. But how much are we willing to pay for the name alone?",
-    "Then the 2024 Milan investigation into Dior handbag subcontractors brought another question into focus: Are luxury goods whose prices rise each year really made with the care and refinement those prices imply? Reuters reported a case in which a Dior handbag retailing for €2,600 was supplied to Dior for just €53. Dior was not criminally charged, but its Italian manufacturing subsidiary was placed under court administration.³ Dior may not be the only house whose supply chain deserves a closer look. The case left me wondering how widely the gap between the boutique and the workshop extends across luxury.",
-    "As a lifelong lover of diamonds and collector of luxury pieces, I remain drawn to the beauty, imagination, and enduring quality of the great houses. I also believe that the relationship between beauty and price should make sense. I founded Atelier Tamara de Launay for those who share that belief: a discerning modern royalty who value exceptional design without needing a logo to announce it. Together, we create pieces worthy of being kept and worn for a lifetime, distinguished by the choice of stone, the precision of their making, and the care that accompanies them. Every gemstone and material is selected with intention; every price is one we can explain with confidence.",
+  "homeCollectionText": "Nine pieces open the collection. Choose your favorite from the opening collection, or commission a piece made for you alone—with diamonds and colored gemstones, natural or lab-grown, set in your choice of 14k or 18k gold.",
+  "homeDiscover": "Discover the opening collection",
+  "homeCommission": "Commission a bespoke creation",
+  "homeCommitmentLabel": "Our commitment",
+  "homeCommitmentSecond": "Every stone is hand-selected. Every price is one we can explain with confidence.",
+  "homeCommitmentThird": "Our pieces are made to accompany you through life and become part of how you are remembered.",
+  "homeStoryLink": "Read the story",
+  "homeStorySuffix": "behind the brand",
+  "homeStandardLink": "The Tamara de Launay standard",
+  "homeBespokeLabel": "Bespoke consultation",
+  "homeBespokeSecond": "Together, we choose the stones and consider every detail of how the piece will look and feel when worn. Your vision, budget, and timeline shape the proposal, with room to explore before you decide.",
+  "homeBespokeThird": "Imagine the moment you put it on: the stone you chose, the details you helped shape, a piece made for you and you alone.",
+  "heroTitle": "Jewelry of unmistakable presence.",
+  "heroStatement": "For those who trust their own taste. Stones chosen one at a time for their color and character, set with careful attention to proportion. The piece you reach for every morning and one day pass into the hands of someone you love.",
+  "homeEyebrow": "FROM PARIS TO SEOUL · SHIPS WORLDWIDE",
+  "introTitle": "Heritage for the next century begins here.",
+  "intro": "Tamara de Launay brings together a collector’s passion, a lawyer’s rigor, and an exacting Parisian eye. We believe that a jewel should speak through the character of its stones, the elegance of its proportions, and the quality of its making.",
+  "homeBespoke": "Let us bring your imagination to life.",
+  "homeBespokeText": "Every commission begins with a private conversation. You need not arrive with a finished design. An occasion to remember, an achievement to celebrate, or simply a feeling you hope to capture is enough to begin.",
+  "bespokeInvitationTitle": "You do not need a finished design.",
+  "bespokeEditorial": "The pieces shown here are editorial visualizations of designs available to commission. They offer a starting point for your own piece.",
+  "bespokeMeaning": "You do not need to know exactly how it will look to know what it should mean. Your bespoke design begins with your story and imagination.",
+  "bespokeProcessTitle": "The commission process",
+  "bespokeStandardsSecond": "Your preferences guide our selection. We seek out exceptional stones within your budget and timeline, then ensure that the design and craftsmanship do them justice.",
+  "bespokeCTA": "Begin your bespoke commission",
+  "bespokeLead": "Your imagination, brought to life.",
+  "bespokeInvitation": "Even a hazy image in your mind is enough. So is a feeling you want to hold on to, a moment you want to remember, or an achievement you want to celebrate. You may not know exactly which stone you want, only how you hope the finished piece will make you feel. We begin there and work with you to give the idea form.",
+  "bespokeText": "Every bespoke piece begins with a private, one-to-one conversation. Tell us what you have in mind, how you imagine wearing it, and the budget and timeline you are working with. Together, we choose the stones, refine the proportions, and develop a design proposal that reflects your vision in every detail.",
+  "steps": [
+    [
+      "1. Conversation",
+      "We begin with your vision, your preferences, and how you imagine wearing the piece. We discuss your budget and timeline, then explore the possibilities together."
+    ],
+    [
+      "2. Stones & design",
+      "We present stones chosen to suit your vision, budget, and timeline, then refine the proportions, setting, and details with you. Your design proposal brings these choices together, with a clear breakdown of the price."
+    ],
+    [
+      "3. Creation",
+      "Once you approve the proposal, our artisans begin making your piece. We share updates as it takes shape and keep you informed through to delivery."
+    ]
   ],
-  sourceTitle: "Sources",
-  collectionLead: "Fine jewelry in natural and lab-grown diamonds and gemstones, chosen with care.",
-  collectionText:
-    "Nine diamond pieces: the white-gold tennis bracelet and both halo rings are 14K gold; the remaining six pieces are 18K gold. Choose natural or lab-grown diamonds for any design. Editorial images are visualizations; final details are confirmed in your individual proposal.",
-  pricePending: "Price on request",
-  from: "Opening collection · from USD 2,500",
-  bespokeInvitationTitle: "You do not need a finished design.",
-  bespokeEditorial: "The pieces shown here are editorial visualizations of designs available to commission. They offer a starting point for your own piece.",
-  bespokeMeaning: "You do not need to know exactly how it will look to know what it should mean. Your bespoke design begins with your story and imagination.",
-  bespokeProcessTitle: "The commission process",
-  bespokeStandardsSecond: "Your preferences guide our selection. We seek out exceptional stones within your budget and timeline, then ensure that the design and craftsmanship do them justice.",
-  bespokeCTA: "Begin your bespoke commission",
-  bespokeLead: "Your imagination, brought to life.",
-  bespokeInvitation:
-    "Even a hazy image in your mind is enough. So is a feeling you want to hold on to, a moment you want to remember, or an achievement you want to celebrate. You may not know exactly which stone you want, only how you hope the finished piece will make you feel. We begin there and work with you to give the idea form.",
-  bespokeText:
-    "Every bespoke piece begins with a private, one-to-one conversation. Tell us what you have in mind, how you imagine wearing it, and the budget and timeline you are working with. Together, we choose the stones, refine the proportions, and develop a design proposal that reflects your vision in every detail.",
-  steps: [
-  [
-    "1. Conversation",
-    "We begin with your vision, your preferences, and how you imagine wearing the piece. We discuss your budget and timeline, then explore the possibilities together."
+  "diamondTitle": "Your choice of stone. Our exacting standards.",
+  "diamondText": "We work with natural and lab-grown diamonds, as well as natural and lab-grown colored gemstones. We have no preference between them and will not steer you toward one. For each stone we present, we explain exactly what it is, what sets it apart, and how it will complement your design.",
+  "formText": "Your next piece begins with a conversation, tell us what you imagine using the form below.",
+  "name": "Name",
+  "email": "Email",
+  "interest": "Jewelry category",
+  "preference": "Diamond preference",
+  "gemPreference": "Colored gemstone preference",
+  "stoneOptions": [
+    "Lab-grown",
+    "Natural",
+    "Open to either",
+    "Not applicable"
   ],
-  [
-    "2. Stones & design",
-    "We present stones chosen to suit your vision, budget, and timeline, then refine the proportions, setting, and details with you. Your design proposal brings these choices together, with a clear breakdown of the price."
+  "categories": [
+    "Made-to-order Fine Jewelry",
+    "Bespoke High Jewelry"
   ],
-  [
-    "3. Creation",
-    "Once you approve the proposal, our artisans begin making your piece. We share updates as it takes shape and keep you informed through to delivery."
-  ]
-],
-  diamondTitle: "Your choice of stone. Our exacting standards.",
-  diamondText:
-    "We work with natural and lab-grown diamonds, as well as natural and lab-grown colored gemstones. We have no preference between them and will not steer you toward one. For each stone we present, we explain exactly what it is, what sets it apart, and how it will complement your design.",
-  por: "Price on request",
-  tamaraRole: "Founder / CEO",
-  lionelRole: "Buyer / CFO",
-  founderLead: "Two perspectives. One atelier.",
-  tamara:
-    "A lifelong diamond lover and collector, our founder Tamara T. H. Kim still delights in the beauty and imagination of the great jewelry houses. She also believes, however, that a piece should reward a closer look at its material, the quality of its making, and the logical justifiability of the price.",
-  tamaraCareer:
-    "Tamara is a Triple Hoya, with a B.A., J.D., and LL.M. from Georgetown. As a Washington D.C.-licensed attorney with a decade of experience, she built her career in corporate law and later took on cross-border legal and brand leadership roles. Her work has taken her from private practice in Washington, D.C. and Tokyo to executive responsibilities in Seoul. Fluent in Korean, English, and French, she brings a perspective shaped by several cities and cultures to the atelier.",
-  tamaraVision:
-    "At Atelier Tamara de Launay, Tamara pairs a collector’s eye with a lawyer’s habit of asking what lies behind the claim. She looks for distinctive stones, considered design, and craftsmanship that can stand the test of time. Her ambition is deeply personal: to create the kind of jewelry she would be proud to give someone she loves, with a relationship between beauty and price she can explain.",
-  lionel:
-    "Lionel Paul Philippe Delaunay brings a distinctly Parisian eye to the atelier. His family’s roots in the 16th arrondissement shaped an appreciation for discretion: fine materials, thoughtful details, and personal style carry more weight than a prominent logo. His years as a chef in kitchens around the world and a menu consultant sharpened his judgment of provenance, proportion, and finishing. Work as a model and developer broadened that visual and technical perspective.",
-  lionelMore:
-    "As Buyer and CFO, Lionel draws on relationships built across countries to help source exceptional gemstones, considering each choice in light of quality, value, and the client’s vision. He also helped build this website. Together with Tamara, he brings the same quiet attention to detail to the experience of commissioning a piece as to the stones at its heart.",
-  formLead: "Your next piece begins with a conversation.",
-  formText:
-    "Your next piece begins with a conversation, tell us what you imagine using the form below.",
-  name: "Name",
-  email: "Email",
-  city: "City",
-  country: "Country",
-  interest: "Jewelry category",
-  preference: "Diamond preference",
-  gemPreference: "Colored gemstone preference",
-  stoneOptions: ["Lab-grown", "Natural", "Open to either", "Not applicable"],
-  categories: ["Made-to-order Fine Jewelry", "Bespoke High Jewelry"],
-  budget: "Budget range",
-  message: "Your idea",
-  choose: "Select an option",
-  undecided: "Undecided",
-  submit: "Send inquiry",
-  formNote:
-    "This sends an inquiry to the atelier. It does not place an order, reserve a piece, or take payment. Please avoid sensitive personal information.",
-  success: "Thank you. Your inquiry has reached the atelier; we will be in touch by email.",
-  policy:
-    "The inquiry form sends the details you provide to Formspree, which stores submissions and forwards notifications to the atelier. We use them to respond to your inquiry. Please avoid sensitive personal information.",
-  termsText:
-    "Collection illustrations, descriptions, and prices are provisional. No purchase is completed on this website. Any bespoke scope, timing, material specifications, and price will be agreed individually before an order is placed.",
-  budgetOptions: [
+  "budget": "Budget range",
+  "message": "Your idea",
+  "choose": "Select an option",
+  "submit": "Send inquiry",
+  "formNote": "This sends an inquiry to the atelier. It does not place an order, reserve a piece, or take payment. Please avoid sensitive personal information.",
+  "success": "Thank you. Your inquiry has reached the atelier; we will be in touch by email.",
+  "budgetOptions": [
     "Under USD 1,000",
     "USD 1,000–2,999",
     "USD 3,000–4,999",
@@ -126,12 +84,12 @@ const copyEN = {
     "USD 7,000–9,999",
     "USD 10,000–99,999",
     "USD 100,000–999,999",
-    "USD 1,000,000+",
+    "USD 1,000,000+"
   ],
-  location: "Location",
-  optional: "Optional details",
-  messagePlaceholder: "Tell us what you dream of creating, or which piece caught your eye.",
-  legalLead: "Please read these details before making an inquiry or commissioning a piece.",
+  "location": "Location",
+  "optional": "Optional details",
+  "messagePlaceholder": "Tell us what you dream of creating, or which piece caught your eye.",
+  "legalLead": "Please read these details before making an inquiry or commissioning a piece."
 };
 
 export { labelsEN, copyEN };

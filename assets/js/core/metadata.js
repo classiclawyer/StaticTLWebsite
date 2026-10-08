@@ -5,7 +5,7 @@ import { productRecord } from "../components/products.js";
 const escape = value => String(value).replace(/[&<>"']/g, c => ({"&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"}[c]));
 function metadata(route, language) {
   const piece = /^piece-([1-9])$/.exec(route);
-  const product = piece ? productRecord(Number(piece[1])) : null;
+  const product = piece ? productRecord(Number(piece[1]), language) : null;
   const title = `${product ? product.name : route === "home" ? copy[language].heroTitle : labels[language][route]} | Tamara de Launay`;
   const description = product ? product.description || product.type : pageDescriptions[language][route];
   const url = siteOrigin + routePath(route, language);

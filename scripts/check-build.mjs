@@ -5,8 +5,8 @@ for (const language of ["en", "ko"]) {
   for (const route of routes) {
     const html = await readFile(new URL(`../dist/${language}/${route}index.html`,import.meta.url),"utf8");
     assert.ok(html.includes(`<html lang="${language}">`));
-    assert.match(html, /<main id="app">\s*<(section|article)/);
-    assert.ok(!html.includes('href="#'));
+    assert.match(html, /<main id="app"[^>]*>\s*<(section|article)/);
+    assert.ok(!html.replace('href="#app"','').includes('href="#'));
     assert.ok(!html.includes('src="assets/'));
     assert.ok(html.includes(`rel="canonical" href="https://tamarajewelry.vercel.app/${language}/${route}"`));
     for (const alternate of ["en", "ko", "x-default"]) assert.ok(html.includes(`hreflang="${alternate}"`));

@@ -2,6 +2,11 @@
   "name": "tamara-de-launay-website",
   "private": true,
   "type": "module",
-  "scripts": { "build": "node scripts/build.mjs", "test": "node scripts/check-build.mjs" },
-  "engines": { "node": ">=22" }
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/check-build.mjs && node scripts/check-hardening.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
 }

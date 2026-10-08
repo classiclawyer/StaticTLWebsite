@@ -1,10 +1,10 @@
+import { uiText } from "../content/ui.js";
 import { productPageCopy } from "../content/catalog.js";
-import { lang } from "../core/language.js";
 import { photoLabels } from "../content/site.js";
 import { catalogDetails, wishlistHeart } from "../components/products.js";
-import { sharePanel } from "../features/sharing.js";
+import { sharePanel } from "../components/sharing.js";
 
-function productDetail(product) {
+function productDetail(product, lang, wishlist = []) {
   const q = productPageCopy[lang],
     n = product.n;
   return `<article class="container product-detail">
@@ -23,15 +23,15 @@ function productDetail(product) {
         <h2>${product.name}</h2>
         <p class="product-detail-type">${product.type}</p>
         <p>${product.description}</p>
-        ${catalogDetails(product.spec, `detail-${n}`)}
+        ${catalogDetails(product.spec, `detail-${n}`, lang)}
         <div class="product-purchase-actions">
           <button type="button" class="button fill" data-add-to-cart="selected" data-piece="${n}">
-            ${lang === "ko" ? "쇼핑백에 담기" : "Add to the bag"}
+            ${uiText[lang].addBag}
           </button>
-          <div class="product-wishlist-action"><span>${lang === "ko" ? "위시리스트" : "Wishlist"}</span>${wishlistHeart(n)}</div>
+          <div class="product-wishlist-action"><span>${uiText[lang].wishlist}</span>${wishlistHeart(n, lang, wishlist)}</div>
         </div>
         <p class="cart-feedback" id="cart-feedback" role="status" hidden></p>
-        ${sharePanel("piece", n)}<a class="text-link" href="#contact" data-inquire-piece="${n}"
+        ${sharePanel("piece", n, lang)}<a class="text-link" href="#contact" data-inquire-piece="${n}"
           >${q.discuss}</a
         >
       </div>
