@@ -28,7 +28,7 @@ function homePage() {
         <p class="intro">${t.intro}</p>
         <p>${t.homeCommitmentSecond}</p>
         <p>${t.homeCommitmentThird}</p>
-        <div class="actions"><a class="button" href="#story">${t.homeStoryLink}</a>${t.homeStorySuffix ? `<span>${t.homeStorySuffix}</span>` : ""}<a class="button" href="#stones">${t.homeStandardLink}</a></div>
+        <div class="actions"><a class="button" href="#story">${t.homeStoryLink}${t.homeStorySuffix ? ` ${t.homeStorySuffix}` : ""}</a><a class="button" href="#stones">${t.homeStandardLink}</a></div>
       </div>
       <figure class="home-feature-image home-image-branded">
         <img
