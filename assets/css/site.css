@@ -5053,3 +5053,24 @@ html[lang] .story-closing .founder-note-sources p {
 /* Separate the design introduction while keeping it beside the opening portrait. */
 .high-jewelry-design-intro { margin-top: clamp(32px, 3vw, 44px); }
 .high-jewelry-design-intro h3 { margin-top: 0; }
+
+/* Our Standard follows the shared editorial page width and rhythm. */
+.standard-guide { --standard-gap: 85px; max-width: 1400px; padding-top: 48px; }
+.standard-opening { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 64px); align-items: center; margin-bottom: var(--standard-gap); }
+.standard-opening .eyebrow { display: block; margin-bottom: 22px; }
+.standard-opening .standard-feature { margin: 0; }
+.standard-opening .standard-feature img { aspect-ratio: auto; }
+.standard-guide h2 { font-size: clamp(32px, 3.6vw, 50px); }
+.standard-guide .standard-selection { max-width: none; text-align: left; margin-bottom: var(--standard-gap); }
+.standard-guide .standard-selection p { max-width: none; margin: 0 0 20px; }
+.standard-guide .standard-selection-visual { max-width: none; }
+.standard-guide .standard-commitment { background: transparent; color: var(--ink); padding: 0; margin-bottom: var(--standard-gap); }
+.standard-guide .standard-cards { margin-top: 28px; }
+.standard-guide .standard-cards > div { border-color: #d9cadc; }
+.standard-guide .standard-cards h3 { font-size: clamp(23px, 2.3vw, 32px); }
+.standard-guide .standard-cards p { color: inherit; }
+.standard-guide .stone-final { margin: var(--standard-gap) auto 0; padding-top: 0; border-top: 0; }
+@media (max-width: 700px) {
+  .standard-guide { --standard-gap: 55px; padding-top: 32px; }
+  .standard-opening { grid-template-columns: minmax(0, 1fr); }
+}
