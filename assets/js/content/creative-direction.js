@@ -7,7 +7,7 @@ const creativeDirection = {
     "name": "Tamara T. H. Kim",
     "tagline": "A collector’s eye. A lawyer’s rigor.",
     "paragraphs": [
-      "The year was 2002. Tamara was watching Sweet Home Alabama with her mother when a man on screen had Tiffany’s opened for the woman he loved and invited her to choose any ring she wanted. The whole store, just for her.",
+      "The year was 2002. Tamara was watching <em>Sweet Home Alabama</em> with her mother when a man on screen had Tiffany’s opened in the middle of the night solely for the woman he loved, and invited her to choose any ring she wanted. The whole store, just for her.",
       "“Someday, I hope a man will do that for you,” her mother said.",
       "10-year-old Tamara turned to her, smiled, and said: “Someday, I hope to be able to do that for you.”",
       "Her mother still tells the story today.",
@@ -37,8 +37,7 @@ const creativeDirection = {
       "As Buyer and CFO, Lionel draws on relationships built across countries to help source gemstones, weighing quality, value, and the client’s vision. He helps keep Tamara de Launay’s creative ambition grounded in thoughtful purchasing and financial discipline.",
       "Tamara brings a collector’s passion and a lawyer’s rigor. Lionel offers a discerning counterpoint: where she is captivated by the possibilities of a jewel, he asks what will make the finished piece worthy of that enthusiasm. A beautiful stone may catch his attention. The design and craftsmanship must earn the rest.",
       "Their partnership brings two distinct perspectives to a shared standard. Tamara imagines the jewelry she has always wanted to find; Lionel contributes an exacting second eye, questioning whether each element serves the beauty of the whole. His role is not to make her vision quieter. It is to help ensure that even its most extravagant expressions retain their elegance.",
-      "Regal in presence. Refined in every detail.",
-      "That is the spirit of Tamara de Launay."
+      "Regal in presence. Refined in every detail.<br>That is the spirit of Tamara de Launay."
     ]
   }
 };

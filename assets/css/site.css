@@ -5035,3 +5035,13 @@ html[lang] .signature-intro .collection-eyebrow {
 @media (max-width: 700px) {
   .founders .lionel-name { font-size: clamp(20px, 6vw, 28px); }
 }
+
+/* Compact footnotes in both founder letters. */
+html[lang] .story-closing .founder-note-sources p {
+  margin: 0 0 8px;
+  line-height: 1.4;
+}
+.story-closing .founder-note-sources small {
+  display: block;
+  line-height: inherit;
+}
