@@ -25,9 +25,9 @@ function homePage() {
       <div class="home-feature-copy">
         <span class="eyebrow">${t.homeCommitmentLabel}</span>
         <h2>${t.introTitle}</h2>
-        <p class="intro">${t.intro}</p>
-        <p>${t.homeCommitmentSecond}</p>
-        <p>${t.homeCommitmentThird}</p>
+        <p>${t.intro}</p>
+        <p><em>${t.homeCommitmentSecond}</em></p>
+        <p><em>${t.homeCommitmentThird}</em></p>
         <div class="actions"><a class="button" href="#story">${t.homeStoryLink}${t.homeStorySuffix ? ` ${t.homeStorySuffix}` : ""}</a><a class="button" href="#stones">${t.homeStandardLink}</a></div>
       </div>
       <figure class="home-feature-image home-image-branded">
