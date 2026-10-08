@@ -5074,3 +5074,12 @@ html[lang] .story-closing .founder-note-sources p {
   .standard-guide { --standard-gap: 55px; padding-top: 32px; }
   .standard-opening { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Enlarge the opening visual without changing its adjacent text column. */
+@media (min-width: 701px) {
+  .standard-opening .standard-feature img {
+    width: 108%;
+    max-width: none;
+    margin-left: -4%;
+  }
+}
