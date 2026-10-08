@@ -9,7 +9,7 @@ function bespokePage() {
         <span class="eyebrow">${lang === "ko" ? "비스포크 하이 주얼리" : "Bespoke High Jewelry"}</span>
         <h2>${t.bespokeLead}</h2>
         <p>${t.bespokeText}</p>
-        <h2>${t.bespokeInvitationTitle}</h2>
+        <h3>${t.bespokeInvitationTitle}</h3>
         <p>${lang === "ko" ? t.bespokeInvitation : `<em>${t.bespokeInvitation}</em>`}</p>
       </div>
       <figure class="high-jewelry-photo">
