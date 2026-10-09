@@ -71,10 +71,10 @@ const copyEN = {
     "Bespoke High Jewelry"
   ],
   "budget": "Budget range",
-  "message": "Your idea",
+  "message": "Tell us about your dream jewelry",
   "choose": "Select an option",
   "submit": "Send inquiry",
-  "formNote": "This sends an inquiry to the atelier. It does not place an order, reserve a piece, or take payment. Please avoid sensitive personal information.",
+  "formNote": "This sends your story to Tamara de Launay.",
   "success": "Thank you. Your inquiry has reached the atelier; we will be in touch by email.",
   "budgetOptions": [
     "Under USD 1,000",

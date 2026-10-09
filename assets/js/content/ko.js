@@ -71,10 +71,10 @@ const copyKO = {
     "비스포크 하이 주얼리"
   ],
   "budget": "예산 (USD)",
-  "message": "꿈꾸는 주얼리",
+  "message": "당신의 '드림 주얼리(dream jewelry)'에 대해서",
   "choose": "선택해 주세요",
   "submit": "문의 보내기",
-  "formNote": "문의 내용을 아뜰리에로 전송합니다. 이 단계에서 주문이나 예약이 확정되거나 결제가 이루어지지 않습니다. 민감한 개인정보는 적지 말아 주세요.",
+  "formNote": "당신의 이야기를 타마라 드 로네에 전달합니다.",
   "success": "문의가 아뜰리에에 전달되었습니다. 이메일로 답변드리겠습니다.",
   "budgetOptions": [
     "1,000달러 미만",
@@ -88,7 +88,7 @@ const copyKO = {
   ],
   "location": "지역",
   "optional": "추가 선택 사항",
-  "messagePlaceholder": "꿈꾸는 주얼리나 마음에 드는 작품을 편하게 들려주세요.",
+  "messagePlaceholder": "당신을 꿈꾸게 하는 주얼리는 무엇인가요? 당신의 이야기를 들려주세요",
   "legalLead": "문의 또는 주문 전에 아래 내용을 확인해 주세요."
 };
 
