@@ -234,6 +234,7 @@ header #cart-count {
 .cart-item img {
   display: block;
   width: 132px;
+  height: auto;
   aspect-ratio: 4/5;
   object-fit: cover;
 }
@@ -599,6 +600,7 @@ header #cart-count {
 }
 .wishlist-card img {
   width: 100%;
+  height: auto;
   aspect-ratio: 4/5;
   object-fit: cover;
 }
