@@ -58,15 +58,6 @@ function ringSizeDialog(lang = "en") {
         </tbody>
       </table>
       <p>${t.foot}</p>
-      <p class="guide-source">
-        ${t.source}
-        <a
-          href="https://www.gia.edu/quality-assurance-benchmark/accurate-determination-finger-ring-size"
-          target="_blank"
-          rel="noopener"
-          >GIA ↗</a
-        >
-      </p>
     </dialog>`;
 }
 
