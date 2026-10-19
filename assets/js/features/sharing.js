@@ -1,4 +1,5 @@
 import { routePath } from "../core/urls.js";
+import { siteOrigin } from "../content/seo.js";
 import { shareText } from "../content/sharing.js";
 import { lang } from "../core/language.js";
 import { readWishlist } from "./wishlist.js";
@@ -17,7 +18,7 @@ function decodeShare(raw) {
   }
 }
 function shareUrl(kind, n) {
-  const base = location.origin;
+  const base = siteOrigin;
   if (kind === "wishlist") return `${base}${routePath("wishlist", lang)}?items=${readWishlist().join(",")}`;
   if (kind === "cart") {
     const items = readCart()
