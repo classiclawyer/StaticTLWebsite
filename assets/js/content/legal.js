@@ -42,7 +42,7 @@ const legalCopy = {
     ],
     [
       "Your choices & contact",
-      "You may request access, correction, or deletion of information you have sent to the atelier by contacting @atelier_tamara_de_launay on Instagram or replying to our inquiry correspondence. We handle such requests subject to applicable legal obligations and retain inquiry correspondence only as reasonably needed for the inquiry, any subsequent relationship, and legal requirements. Formspree also stores submissions in the atelier’s account according to its plan and retention settings. If a transaction proceeds, a separate written order may provide further privacy and purchase information. This notice may be updated; the date at the top of this page shows the current version.",
+      "You may request access, correction, or deletion of information you have sent to the atelier by contacting @tamara_de_launay on Instagram or replying to our inquiry correspondence. We handle such requests subject to applicable legal obligations and retain inquiry correspondence only as reasonably needed for the inquiry, any subsequent relationship, and legal requirements. Formspree also stores submissions in the atelier’s account according to its plan and retention settings. If a transaction proceeds, a separate written order may provide further privacy and purchase information. This notice may be updated; the date at the top of this page shows the current version.",
     ],
   ],
   ko: [
@@ -88,7 +88,7 @@ const legalCopy = {
     ],
     [
       "열람·정정·삭제 요청",
-      "아뜰리에에 보내신 정보의 열람, 정정 또는 삭제를 원하시면 인스타그램 @atelier_tamara_de_launay로 연락하시거나 문의 답변 이메일에 회신해 주세요. 관련 법률상 의무를 고려해 요청을 처리하며, 문의 기록은 상담, 이후 거래 관계 및 법적 의무에 합리적으로 필요한 범위에서 보관합니다. Formspree 계정에도 요금제와 보관 설정에 따라 제출 내용이 남을 수 있습니다. 실제 주문이 진행될 경우 별도의 서면 주문 조건과 개인정보 안내를 제공할 수 있습니다. 이 안내의 최종 수정일은 페이지 상단에 표시되어 있으며, 이후 내용이 변경될 수 있습니다.",
+      "아뜰리에에 보내신 정보의 열람, 정정 또는 삭제를 원하시면 인스타그램 @tamara_de_launay로 연락하시거나 문의 답변 이메일에 회신해 주세요. 관련 법률상 의무를 고려해 요청을 처리하며, 문의 기록은 상담, 이후 거래 관계 및 법적 의무에 합리적으로 필요한 범위에서 보관합니다. Formspree 계정에도 요금제와 보관 설정에 따라 제출 내용이 남을 수 있습니다. 실제 주문이 진행될 경우 별도의 서면 주문 조건과 개인정보 안내를 제공할 수 있습니다. 이 안내의 최종 수정일은 페이지 상단에 표시되어 있으며, 이후 내용이 변경될 수 있습니다.",
     ],
   ],
 };

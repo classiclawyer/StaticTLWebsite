@@ -1,4 +1,4 @@
-const siteOrigin = "https://tamarajewelry.vercel.app";
+const siteOrigin = "https://tamaradelaunay.com";
 const pageDescriptions = {
   en: {
     home: "Fine jewelry of unmistakable presence. Discover nine diamond creations or commission bespoke jewelry with natural or lab-grown stones. From Paris to Seoul.",
